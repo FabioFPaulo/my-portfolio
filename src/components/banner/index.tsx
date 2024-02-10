@@ -3,6 +3,7 @@ import { componentData } from "./utils";
 export default function Banner() {
   return (
     <div className="banner">
+      <img src="/images/bg.jpg" alt="background" className="bg-image" />
       <div className="main-content">
         <div className="left-side">
           <div className="content">
