@@ -1,0 +1,43 @@
+.experiences {
+  @apply py-10 px-3;
+  background: linear-gradient(180deg, #4b5563 33.86%, #27272a 100%);
+
+  .experiences-content {
+    @apply max-w-[80%] sm:max-w-[440px] mx-auto lg:max-w-screen-sm xl:max-w-screen-md;
+  }
+
+  .title {
+    @apply text-center text-3xl font-bold text-white mb-2;
+  }
+
+  .subtitle {
+    @apply text-center text-sm text-white mb-3;
+    letter-spacing: 0.2px;
+  }
+
+  .list {
+    @apply py-8;
+
+    .item {
+      @apply flex flex-col pt-3 pb-5 border-t-2 rounded-sm;
+
+      .date {
+        @apply text-sm text-slate-50 font-medium;
+      }
+
+      .content {
+        .item-title {
+          @apply text-xl text-blue-400 font-bold mb-3 uppercase;
+        }
+
+        .item-description {
+          @apply text-justify text-slate-50 font-light mb-4;
+        }
+
+        .item-company {
+          @apply font-bold text-slate-50 text-sm mb-8;
+        }
+      }
+    }
+  }
+}
