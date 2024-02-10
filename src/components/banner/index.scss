@@ -1,0 +1,84 @@
+.banner {
+  @apply h-[calc(80vh-56px)];
+  background: linear-gradient(270deg, #27272a 33.86%, #4b5563 100%);
+
+  .main-content {
+    @apply flex h-full relative lg:max-w-screen-xl lg:mx-auto justify-center xl:max-w-screen-2xl;
+
+    div {
+      &.left-side {
+        /*xs*/
+        @apply absolute flex justify-center   bg-zinc-900 bg-opacity-60 top-0 bottom-0 left-0 right-0 z-10   h-full  text-slate-50;
+
+        /*md*/
+        @apply lg:static flex-1 lg:bg-transparent;
+
+        .content {
+          @apply px-10 flex flex-col  justify-center h-full;
+
+          @apply sm:px-0 max-w-screen-sm;
+
+          @apply lg:px-3;
+        }
+
+        .titles {
+          letter-spacing: 2px;
+
+          .subtitle {
+            @apply text-lg;
+          }
+
+          .title {
+            @apply text-[5rem] font-extrabold py-4;
+            line-break: normal;
+            line-height: 5.3rem;
+          }
+        }
+
+        .divider {
+          @apply h-1 w-full bg-slate-50 rounded-full;
+        }
+
+        .fields {
+          @apply py-8;
+
+          .field {
+            @apply flex w-full py-1;
+
+            .label {
+              width: 40%;
+              @apply font-semibold;
+            }
+
+            .value {
+              width: 60%;
+            }
+          }
+        }
+
+        button {
+          @apply w-full sm:w-[50%] bg-blue-400 py-3 text-lg font-medium uppercase rounded-xl border-b-4 border-b-blue-600 active:translate-y-[4px] active:border-b-0 active:border-t-4 active:border-t-transparent transition-all duration-[5ms] hover:bg-blue-500 hover:border-b-blue-700;
+          letter-spacing: 2px;
+        }
+      }
+
+      &.right-side {
+        @apply flex  overflow-hidden flex-1;
+
+        .content {
+          @apply flex h-full w-full mx-auto;
+
+          @apply lg:px-0 max-w-screen-md;
+
+          @apply lg:px-3;
+        }
+
+        img {
+          @apply w-full h-full scale-125 sm:scale-100 md:scale-100;
+          object-fit: cover;
+          filter: brightness(40%) contrast(120%) saturate(50%);
+        }
+      }
+    }
+  }
+}
