@@ -12,12 +12,12 @@ export default function Banner() {
   const mainControls = useAnimation();
 
   useEffect(() => {
-    if (isInView) {
+    if (isInView && !app.isLoading) {
       mainControls.start("visible");
     } else {
       mainControls.set("hidden");
     }
-  }, [isInView, mainControls]);
+  }, [isInView, mainControls, app.isLoading]);
 
   return (
     <div ref={ref} className="banner" id="home">
