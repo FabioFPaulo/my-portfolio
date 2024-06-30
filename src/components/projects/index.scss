@@ -22,7 +22,7 @@
       @apply col-span-12 sm:col-span-6 md:col-span-4;
       @apply flex flex-col space-y-3 mb-5 border rounded-xl border-blue-400 overflow-hidden hover:ring-4 transition-all;
       img {
-        @apply w-full h-[150px] object-scale-down;
+        @apply self-center w-full h-[150px] object-scale-down;
       }
 
       div {

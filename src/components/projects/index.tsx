@@ -12,7 +12,11 @@ export default function Projects() {
         <div className="list">
           {projectsList.map((project) => (
             <div className="item">
-              <img src={project.image_src} alt={project.label} />
+              <img
+                src={project.image_src}
+                style={project.image_size ? { width: project.image_size } : {}}
+                alt={project.label}
+              />
               <div>{project.label}</div>
             </div>
           ))}

@@ -8,6 +8,12 @@ export const projectsList: IProject[] = [
   },
   {
     description: "",
+    label: "CeDRI",
+    image_src: "/images/cedri_logo.png",
+    image_size: "60% !important",
+  },
+  {
+    description: "",
     label: "Swopi",
     image_src: "/images/swopi_logo.png",
   },
