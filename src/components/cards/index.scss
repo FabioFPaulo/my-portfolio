@@ -1,0 +1,22 @@
+.card-experience {
+  @apply flex flex-col pt-3 pb-5 border-t-2 rounded-sm;
+
+  .date {
+    @apply text-sm text-slate-50 font-medium;
+  }
+
+  .content {
+    .item-title {
+      @apply text-xl text-blue-400 font-bold mb-3 uppercase;
+    }
+
+    .item-description {
+      @apply text-justify text-slate-50 font-light mb-4;
+      white-space: pre-wrap;
+    }
+
+    .item-company {
+      @apply font-bold text-slate-50 text-sm mb-8;
+    }
+  }
+}

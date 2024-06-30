@@ -1,3 +1,4 @@
+import Cards from "../cards";
 import "./index.scss";
 import { experiencesData, formatStartEndDate } from "./utils";
 
@@ -11,19 +12,13 @@ export default function Experiences() {
         </div>
         <div className="list">
           {experiencesData.map((item, index) => (
-            <div className="item" key={index}>
-              <div className="date">
-                {formatStartEndDate(item.start_at, item.end_at)}
-              </div>
-              <div className="content">
-                <div className="item-title">{item.title}</div>
-                <div
-                  className="item-description"
-                  dangerouslySetInnerHTML={{ __html: item.description }}
-                />
-                <div className="item-company">{item.company}</div>
-              </div>
-            </div>
+            <Cards.Experience
+              key={index}
+              date={formatStartEndDate(item.start_at, item.end_at)}
+              title={item.title}
+              company={item.company}
+              description={item.description}
+            />
           ))}
         </div>
       </div>
