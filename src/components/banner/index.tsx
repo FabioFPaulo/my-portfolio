@@ -3,7 +3,11 @@ import { componentData } from "./utils";
 export default function Banner() {
   return (
     <div className="banner" id="home">
-      <img src="/images/bg.jpg" alt="background" className="bg-image" />
+      <img
+        src="/my-portfolio/images/bg.jpg"
+        alt="background"
+        className="bg-image"
+      />
       <div className="main-content">
         <div className="left-side">
           <div className="content">
@@ -25,7 +29,10 @@ export default function Banner() {
         </div>
         <div className="right-side">
           <div className="content">
-            <img alt="Fábio Paulo" src={"/images/person_lg.png"}></img>
+            <img
+              alt="Fábio Paulo"
+              src={"/my-portfolio/images/person_lg.png"}
+            ></img>
           </div>
         </div>
       </div>
