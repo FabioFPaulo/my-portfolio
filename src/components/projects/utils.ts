@@ -10,7 +10,7 @@ export const projectsList: IProject[] = [
     description: "",
     label: "CeDRI",
     image_src: "/images/cedri_logo.png",
-    image_size: "60% !important",
+    image_size: "60% ",
   },
   {
     description: "",

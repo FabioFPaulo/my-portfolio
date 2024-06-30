@@ -10,8 +10,8 @@ export default function Experiences() {
           Discover the experiences that have shaped my professional journey
         </div>
         <div className="list">
-          {experiencesData.map((item) => (
-            <div className="item">
+          {experiencesData.map((item, index) => (
+            <div className="item" key={index}>
               <div className="date">
                 {formatStartEndDate(item.start_at, item.end_at)}
               </div>
