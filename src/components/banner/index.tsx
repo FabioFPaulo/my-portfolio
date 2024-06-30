@@ -31,7 +31,7 @@ export default function Banner() {
           <div className="content">
             <img
               alt="Fábio Paulo"
-              src={"/my-portfolio/images/person_lg.png"}
+              src={"/my-portfolio/images/person_lg2.png"}
             ></img>
           </div>
         </div>
