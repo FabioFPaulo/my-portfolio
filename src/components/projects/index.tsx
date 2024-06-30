@@ -12,8 +12,8 @@ export default function Projects() {
           Discover the projects that have shaped my professional journey
         </div>
         <div className="list">
-          {projectsList.map((project) => (
-            <div className="item">
+          {projectsList.map((project, index) => (
+            <div className="item" key={index}>
               <img
                 src={project.image_src}
                 style={project.image_size ? { width: project.image_size } : {}}
