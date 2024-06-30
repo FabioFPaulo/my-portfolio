@@ -1,12 +1,15 @@
+import useApp from "@/hooks/useApp";
 import "./index.scss";
 import { componentData } from "./utils";
 export default function Banner() {
+  const app = useApp();
   return (
     <div className="banner" id="home">
       <img
         src="/my-portfolio/images/bg.jpg"
         alt="background"
         className="bg-image"
+        onLoad={app.incrementImages}
       />
       <div className="main-content">
         <div className="left-side">
@@ -32,7 +35,8 @@ export default function Banner() {
             <img
               alt="Fábio Paulo"
               src={"/my-portfolio/images/person_lg2.png"}
-            ></img>
+              onLoad={app.incrementImages}
+            />
           </div>
         </div>
       </div>

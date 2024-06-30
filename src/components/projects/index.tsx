@@ -1,7 +1,9 @@
+import useApp from "@/hooks/useApp";
 import "./index.scss";
 import { projectsList } from "./utils";
 
 export default function Projects() {
+  const app = useApp();
   return (
     <div className="projects">
       <div className="projects-content">
@@ -16,6 +18,7 @@ export default function Projects() {
                 src={project.image_src}
                 style={project.image_size ? { width: project.image_size } : {}}
                 alt={project.label}
+                onLoad={app.incrementImages}
               />
               <div>{project.label}</div>
             </div>
