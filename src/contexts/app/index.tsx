@@ -13,7 +13,9 @@ export default function AppProvider({ children }: IProviderProps) {
   }, []);
 
   return (
-    <AppContext.Provider value={{ incrementImages }}>
+    <AppContext.Provider
+      value={{ incrementImages, isLoading: imagesCounter < totalImages }}
+    >
       {imagesCounter < totalImages && <LoadingComponent />}
       {children}
     </AppContext.Provider>

@@ -1,5 +1,6 @@
 export interface IContext {
   incrementImages(): void;
+  isLoading: boolean;
 }
 
 export interface IProviderProps {
