@@ -1,8 +1,8 @@
 .loading-container {
-  @apply w-screen space-y-3 h-screen flex bg-slate-700 z-[1000] fixed overflow-hidden bg-opacity-90 justify-center items-center flex-col;
+  @apply w-screen space-y-5 h-screen flex bg-slate-700 z-[1000] fixed overflow-hidden bg-opacity-90 justify-center items-center flex-col;
 
   .loading-circle {
-    @apply inline w-12 h-12 text-gray-400 animate-spin  fill-white;
+    @apply w-[100px] h-[100px] bg-white;
   }
 
   .loading-text {
