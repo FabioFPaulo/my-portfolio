@@ -55,7 +55,7 @@ export default function Banner() {
             <button>download cv</button>
           </motion.div>
         </div>
-        <div className="right-side">
+        <div className="right-side relative">
           <motion.div
             variants={{
               hidden: { opacity: 0, x: 74 },

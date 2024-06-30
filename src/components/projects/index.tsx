@@ -1,6 +1,7 @@
 import useApp from "@/hooks/useApp";
 import "./index.scss";
 import { projectsList } from "./utils";
+import Cards from "../cards";
 
 export default function Projects() {
   const app = useApp();
@@ -13,15 +14,14 @@ export default function Projects() {
         </div>
         <div className="list">
           {projectsList.map((project, index) => (
-            <div className="item" key={index}>
-              <img
-                src={project.image_src}
-                style={project.image_size ? { width: project.image_size } : {}}
-                alt={project.label}
-                onLoad={app.incrementImages}
-              />
-              <div>{project.label}</div>
-            </div>
+            <Cards.Project
+              key={index}
+              onLoad={app.incrementImages}
+              imageSrc={project.image_src}
+              imageSize={project.image_size}
+              label={project.label}
+              position={index}
+            />
           ))}
         </div>
       </div>
