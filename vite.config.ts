@@ -5,7 +5,7 @@ import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/my-portfolio/",
+  base: "https://fabiofpaulo.github.io/my-portfolio/",
   plugins: [react(), tsconfigPaths()],
   resolve: {
     alias: {
