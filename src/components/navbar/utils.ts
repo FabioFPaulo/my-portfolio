@@ -6,15 +6,15 @@ export const items: IItem[] = [
     url: "experiences",
   },
   {
-    label: "portfolio",
-    url: "portfolio",
+    label: "projects",
+    url: "projects",
   },
-  {
-    label: "about me",
-    url: "about-me",
-  },
-  {
-    label: "contact me",
-    url: "contact-me",
-  },
+  // {
+  //   label: "about me",
+  //   url: "about-me",
+  // },
+  // {
+  //   label: "contact me",
+  //   url: "contact-me",
+  // },
 ];

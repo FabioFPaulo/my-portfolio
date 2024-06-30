@@ -3,7 +3,7 @@ import { experiencesData, formatStartEndDate } from "./utils";
 
 export default function Experiences() {
   return (
-    <div className="experiences">
+    <div className="experiences" id="experiences">
       <div className="experiences-content">
         <div className="title">Experiences</div>
         <div className="subtitle">
@@ -17,7 +17,10 @@ export default function Experiences() {
               </div>
               <div className="content">
                 <div className="item-title">{item.title}</div>
-                <div className="item-description">{item.description}</div>
+                <div
+                  className="item-description"
+                  dangerouslySetInnerHTML={{ __html: item.description }}
+                />
                 <div className="item-company">{item.company}</div>
               </div>
             </div>

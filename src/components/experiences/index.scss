@@ -32,6 +32,7 @@
 
         .item-description {
           @apply text-justify text-slate-50 font-light mb-4;
+          white-space: pre-wrap;
         }
 
         .item-company {
