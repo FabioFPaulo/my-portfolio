@@ -36,7 +36,7 @@ jobs:
           node-version: 20.10
           cache: "npm"
       - name: Install dependencies
-        run: yarn ci
+        run: yarn install
       - name: Build
         run: npm run build
       - name: Setup Pages
