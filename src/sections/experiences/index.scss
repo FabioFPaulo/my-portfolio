@@ -6,15 +6,6 @@
     @apply max-w-[80%] sm:max-w-[440px] mx-auto md:max-w-screen-md xl:max-w-screen-lg;
   }
 
-  .title {
-    @apply text-center text-3xl font-bold text-white mb-2;
-  }
-
-  .subtitle {
-    @apply text-center text-sm text-white mb-3;
-    letter-spacing: 0.2px;
-  }
-
   .list {
     @apply py-8;
   }
