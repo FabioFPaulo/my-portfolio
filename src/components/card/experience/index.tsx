@@ -1,8 +1,8 @@
-import { CardExperienceProps } from "./types";
 import "./index.scss";
 import useApp from "@/hooks/useApp";
 import { useEffect, useRef } from "react";
 import { useAnimation, useInView, motion } from "framer-motion";
+import { CardExperienceProps } from "./types";
 
 export default function CardExperienceComponent(props: CardExperienceProps) {
   const app = useApp();

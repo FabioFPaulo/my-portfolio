@@ -1,0 +1,39 @@
+.card-academic-container {
+  @apply col-span-12 sm:col-span-6 md:col-span-6;
+  @apply rounded-xl relative py-12 px-6 flex flex-col;
+  @apply cursor-pointer select-none z-[10] overflow-hidden;
+  @apply bg-gray-700 transition-all duration-500;
+
+  &::before {
+    content: "";
+    @apply absolute top-[50%] left-0 right-0 bottom-[50%] -z-10;
+    @apply transition-all duration-300 rotate-45;
+    @apply border-0 bg-slate-700;
+  }
+
+  &:hover::before {
+    @apply top-0 left-0 right-0 bottom-0 rounded-none border-4 border-blue-500;
+  }
+  &:hover {
+    @apply scale-105 shadow-xl;
+
+    .card-academic-title {
+      @apply text-blue-300;
+    }
+    .card-academic-date {
+      @apply text-blue-50;
+    }
+  }
+
+  img {
+    @apply mb-5 w-[50%] object-center contrast-0;
+  }
+
+  .card-academic-title {
+    @apply text-zinc-100 font-medium text-lg;
+  }
+
+  .card-academic-date {
+    @apply text-zinc-400 text-sm;
+  }
+}
