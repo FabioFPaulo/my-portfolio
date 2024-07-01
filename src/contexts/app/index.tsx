@@ -3,9 +3,8 @@ import { IContext, IProviderProps } from "./types";
 import LoadingComponent from "@/components/loading";
 
 export const AppContext = createContext<IContext>({} as IContext);
-const totalImages = 6;
 
-export default function AppProvider({ children }: IProviderProps) {
+export default function AppProvider({ children, totalImages }: IProviderProps) {
   // counter
   const [imagesCounter, setImagesCounter] = useState<number>(0);
   const incrementImages = useCallback(() => {
