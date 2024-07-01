@@ -1,0 +1,5 @@
+#academic-education {
+  .list {
+    @apply py-8 grid grid-cols-12 gap-y-5 sm:gap-x-5;
+  }
+}
