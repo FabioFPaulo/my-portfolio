@@ -1,7 +1,11 @@
 .container-section-container-gradient {
-  @apply py-10 px-3;
   background: linear-gradient(180deg, #4b5563 33.86%, #27272a 100%);
+}
 
+.container-section-container-gradient,
+.container-section-container-color-1,
+.container-section-container-color-2 {
+  @apply py-10 px-3;
   .container-section-content {
     @apply max-w-[80%] sm:max-w-[440px] mx-auto md:max-w-screen-md xl:max-w-screen-lg;
   }

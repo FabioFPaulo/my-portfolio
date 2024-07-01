@@ -6,7 +6,7 @@ export default function ContainersSectionComponent(
 ) {
   return (
     <div
-      className="container-section-container"
+      className={`container-section-container-${props.colorScheme}`}
       id={props.id}
       data-testid={props.id}
     >

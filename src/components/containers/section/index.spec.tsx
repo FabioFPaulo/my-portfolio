@@ -7,7 +7,7 @@ describe("Container Section Tests", () => {
 
     const Children = <p>Hello</p>;
     const { getByTestId } = render(
-      <ContainersSectionComponent id={ID}>
+      <ContainersSectionComponent colorScheme="gradient" id={ID}>
         {Children}
       </ContainersSectionComponent>
     );
