@@ -6,13 +6,13 @@
 
   &::before {
     content: "";
-    @apply absolute top-[50%] left-0 right-0 bottom-[50%] -z-10;
+    @apply absolute top-[50%] -left-0 -right-0 bottom-[50%] -z-10;
     @apply transition-all duration-300 rotate-45;
     @apply border-0 bg-slate-700;
   }
 
   &:hover::before {
-    @apply top-0 left-0 right-0 bottom-0 rounded-none border-4 border-blue-500;
+    @apply top-0 left-0 right-0 bottom-0 rounded-none border-y-4 border-blue-500;
   }
   &:hover {
     @apply scale-105 shadow-xl;

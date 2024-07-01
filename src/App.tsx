@@ -4,6 +4,7 @@ import Experiences from "./sections/experiences";
 import Projects from "./sections/projects";
 import AppProvider from "./contexts/app";
 import AcademicSection from "./sections/academic";
+import FooterSection from "./sections/footer";
 // import About from "./components/about";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <Experiences />
       <Projects />
       {/* <About /> */}
+      <FooterSection />
     </AppProvider>
   );
 }
