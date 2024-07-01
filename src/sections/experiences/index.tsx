@@ -1,12 +1,12 @@
 import Cards from "../../components/cards";
-import Containers from "../../components/containers";
+import Container from "../../components/container";
 import Title from "../../components/title";
 import "./index.scss";
 import { experiencesData, formatStartEndDate } from "./utils";
 
 export default function Experiences() {
   return (
-    <Containers.Section colorScheme="gradient" id="experiences">
+    <Container.Section colorScheme="gradient" id="experiences">
       <Title.Primary
         title="Experiences"
         subtitle="Discover the experiences that have shaped my professional journey"
@@ -22,6 +22,6 @@ export default function Experiences() {
           />
         ))}
       </div>
-    </Containers.Section>
+    </Container.Section>
   );
 }

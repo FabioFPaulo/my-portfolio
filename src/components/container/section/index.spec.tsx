@@ -1,5 +1,5 @@
 import { render } from "@testing-library/react";
-import ContainersSectionComponent from ".";
+import ContainerSectionComponent from ".";
 
 describe("Container Section Tests", () => {
   test("Render Container Section and verify id and children", () => {
@@ -7,9 +7,9 @@ describe("Container Section Tests", () => {
 
     const Children = <p>Hello</p>;
     const { getByTestId } = render(
-      <ContainersSectionComponent colorScheme="gradient" id={ID}>
+      <ContainerSectionComponent colorScheme="gradient" id={ID}>
         {Children}
-      </ContainersSectionComponent>
+      </ContainerSectionComponent>
     );
 
     const container = getByTestId(ID);

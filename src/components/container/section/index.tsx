@@ -1,8 +1,8 @@
-import { ContainersSectionProps } from "./types";
+import { ContainerSectionProps } from "./types";
 import "./index.scss";
 
-export default function ContainersSectionComponent(
-  props: ContainersSectionProps
+export default function ContainerSectionComponent(
+  props: ContainerSectionProps
 ) {
   return (
     <div

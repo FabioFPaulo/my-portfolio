@@ -2,13 +2,13 @@ import useApp from "@/hooks/useApp";
 import "./index.scss";
 import { projectsList } from "./utils";
 import Cards from "../../components/cards";
-import Containers from "@/components/containers";
+import Container from "@/components/container";
 import Title from "@/components/title";
 
 export default function Projects() {
   const app = useApp();
   return (
-    <Containers.Section colorScheme="color-1" id="projects">
+    <Container.Section colorScheme="color-1" id="projects">
       <Title.Primary
         title="Projects"
         subtitle="Discover the projects that have shaped my professional journey"
@@ -26,6 +26,6 @@ export default function Projects() {
           />
         ))}
       </div>
-    </Containers.Section>
+    </Container.Section>
   );
 }
