@@ -1,4 +1,4 @@
-import Banner from "@/components/banner";
+import Banner from "@/sections/banner";
 import Navbar from "@/components/navbar";
 import Experiences from "./sections/experiences";
 import Projects from "./components/projects";
