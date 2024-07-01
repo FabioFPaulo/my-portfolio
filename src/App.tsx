@@ -1,7 +1,7 @@
 import Banner from "@/sections/banner";
 import Navbar from "@/components/navbar";
 import Experiences from "./sections/experiences";
-import Projects from "./components/projects";
+import Projects from "./sections/projects";
 import AppProvider from "./contexts/app";
 // import About from "./components/about";
 
