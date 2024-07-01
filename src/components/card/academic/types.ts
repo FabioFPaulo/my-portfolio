@@ -3,4 +3,5 @@ export interface CardAcademicProps {
   title: string;
   dateString: string;
   href: string;
+  leftAnimation?: boolean;
 }

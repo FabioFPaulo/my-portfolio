@@ -20,6 +20,7 @@ export default function AcademicSection() {
             title={item.title}
             src={item.src}
             dateString={formatStartEndDate(item.start_at, item.end_at)}
+            leftAnimation={index % 2 === 0}
           />
         ))}
       </div>
