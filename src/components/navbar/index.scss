@@ -1,28 +1,73 @@
-.navbar {
-  @apply h-[56px] bg-zinc-800 w-full flex items-center px-5 sticky top-0 z-50;
+#horizontal-nav {
+  @apply sticky top-0 z-50 px-4 py-4 flex justify-between items-center bg-zinc-800;
 
-  .items-list {
-    @apply flex space-x-4 items-center text-slate-300 capitalize text-sm;
-    letter-spacing: 0.1rem;
+  .logo {
+    @apply text-3xl font-bold text-white leading-none;
 
-    .item {
-      @apply transition-all relative cursor-pointer;
+    svg {
+      @apply text-white h-10;
+    }
+  }
 
-      &:hover,
+  .burger {
+    @apply lg:hidden;
+
+    button {
+      @apply flex items-center text-blue-300 p-3;
+    }
+  }
+
+  .horizontal-list {
+    @apply hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2  lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6;
+
+    li a {
+      @apply text-sm text-gray-400 hover:text-gray-500 capitalize;
+
       &.active {
-        @apply text-slate-50;
-        &::after {
-          @apply w-full bg-slate-50;
+        @apply text-blue-600 font-bold;
+      }
+    }
+
+    li {
+      @apply cursor-pointer;
+    }
+
+    li.separator {
+      @apply text-gray-300;
+      svg {
+        @apply w-4 h-4;
+      }
+    }
+  }
+}
+
+#vertical-nav {
+  @apply relative z-50 transition-all;
+
+  .navbar-backdrop {
+    @apply fixed inset-0 bg-gray-800 opacity-25;
+  }
+
+  nav {
+    @apply fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-zinc-800 border-r overflow-y-auto;
+
+    .sidebar-header {
+      @apply flex items-center mb-8;
+
+      a {
+        @apply mr-auto text-3xl font-bold leading-none;
+        svg {
+          @apply h-12;
         }
       }
-
-      &::after {
-        content: "";
-        @apply h-[2px] w-[0px] absolute -bottom-1 left-0 rounded-full bg-slate-300 transition-all;
+      button svg {
+        @apply h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500;
       }
+    }
 
-      &:hover::after {
-        @apply w-full bg-slate-50;
+    .sidebar-list {
+      li a {
+        @apply block p-4 text-sm font-semibold text-gray-400 hover:bg-zinc-700 hover:text-zinc-100 rounded capitalize;
       }
     }
   }

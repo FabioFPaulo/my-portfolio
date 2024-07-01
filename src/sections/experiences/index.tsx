@@ -1,4 +1,4 @@
-import Cards from "../../components/cards";
+import Cards from "../../components/card";
 import Container from "../../components/container";
 import Title from "../../components/title";
 import "./index.scss";
@@ -6,7 +6,7 @@ import { experiencesData, formatStartEndDate } from "./utils";
 
 export default function Experiences() {
   return (
-    <Container.Section colorScheme="gradient" id="experiences">
+    <Container.Section colorScheme="color-1" id="experiences">
       <Title.Primary
         title="Experiences"
         subtitle="Discover the experiences that have shaped my professional journey"

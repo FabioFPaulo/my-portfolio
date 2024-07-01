@@ -2,7 +2,7 @@ import useApp from "@/hooks/useApp";
 import { CardProjectProps } from "./types";
 import { useEffect, useRef } from "react";
 import { useAnimation, useInView, motion } from "framer-motion";
-
+import "./index.scss";
 const DURATION = 0.1;
 
 export default function CardProjectComponent(props: CardProjectProps) {

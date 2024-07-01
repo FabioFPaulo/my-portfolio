@@ -1,14 +1,14 @@
 import useApp from "@/hooks/useApp";
 import "./index.scss";
 import { projectsList } from "./utils";
-import Cards from "../../components/cards";
+import Cards from "../../components/card";
 import Container from "@/components/container";
 import Title from "@/components/title";
 
 export default function Projects() {
   const app = useApp();
   return (
-    <Container.Section colorScheme="color-1" id="projects">
+    <Container.Section colorScheme="color-2" id="projects">
       <Title.Primary
         title="Projects"
         subtitle="Discover the projects that have shaped my professional journey"
