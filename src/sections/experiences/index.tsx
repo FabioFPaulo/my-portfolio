@@ -1,4 +1,4 @@
-import Cards from "../../components/cards";
+import Cards from "../../components/card";
 import Container from "../../components/container";
 import Title from "../../components/title";
 import "./index.scss";
