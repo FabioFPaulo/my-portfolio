@@ -1,0 +1,31 @@
+#vertical-nav {
+  @apply relative z-50 transition-all;
+
+  .navbar-backdrop {
+    @apply fixed inset-0 bg-gray-800 opacity-25;
+  }
+
+  nav {
+    @apply fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-zinc-800 border-r overflow-y-auto;
+
+    .sidebar-header {
+      @apply flex items-center mb-8;
+
+      a {
+        @apply mr-auto text-3xl font-bold leading-none;
+        svg {
+          @apply h-12;
+        }
+      }
+      button svg {
+        @apply h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500;
+      }
+    }
+
+    .sidebar-list {
+      li a {
+        @apply block p-4 text-sm font-semibold text-gray-400 hover:bg-zinc-700 hover:text-zinc-100 rounded capitalize;
+      }
+    }
+  }
+}

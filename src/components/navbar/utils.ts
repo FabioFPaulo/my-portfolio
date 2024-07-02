@@ -2,6 +2,10 @@ import { IItem } from "./types";
 
 export const items: IItem[] = [
   {
+    label: "home",
+    url: "home",
+  },
+  {
     label: "education",
     url: "academic-education",
   },

@@ -1,5 +1,4 @@
 import Banner from "@/sections/banner";
-import Navbar from "@/components/navbar";
 import Experiences from "./sections/experiences";
 import Projects from "./sections/projects";
 import AppProvider from "./contexts/app";
@@ -10,7 +9,6 @@ import FooterSection from "./sections/footer";
 function App() {
   return (
     <AppProvider totalImages={6}>
-      <Navbar />
       <Banner />
       <AcademicSection />
       <Experiences />

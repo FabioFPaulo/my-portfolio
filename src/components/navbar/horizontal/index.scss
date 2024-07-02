@@ -1,0 +1,42 @@
+#horizontal-nav {
+  @apply sticky h-[60px] top-0 z-50 px-4 py-4 flex justify-between items-center bg-zinc-800;
+
+  .logo {
+    @apply text-3xl font-bold text-white leading-none;
+
+    svg {
+      @apply text-white h-10;
+    }
+  }
+
+  .burger {
+    @apply lg:hidden;
+
+    button {
+      @apply flex items-center text-blue-300 p-3;
+    }
+  }
+
+  .horizontal-list {
+    @apply hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2  lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6;
+
+    li a {
+      @apply text-sm text-gray-400 hover:text-gray-500 capitalize transition-all;
+
+      &.active {
+        @apply text-blue-400 font-bold;
+      }
+    }
+
+    li {
+      @apply cursor-pointer;
+    }
+
+    li.separator {
+      @apply text-gray-300;
+      svg {
+        @apply w-4 h-4;
+      }
+    }
+  }
+}
