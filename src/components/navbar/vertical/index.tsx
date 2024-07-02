@@ -3,6 +3,7 @@ import { motion, useAnimation } from "framer-motion";
 import { IProps } from "./types";
 import { items } from "../utils";
 import NavabarItemComponent from "./item";
+import "./index.scss";
 
 const variants = {
   closed: {
