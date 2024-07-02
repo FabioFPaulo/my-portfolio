@@ -1,6 +1,7 @@
 import { createContext, useCallback, useState } from "react";
 import { IContext, IProviderProps } from "./types";
 import LoadingComponent from "@/components/loading";
+import NavbarComponent from "@/components/navbar";
 
 export const AppContext = createContext<IContext>({} as IContext);
 
@@ -16,6 +17,7 @@ export default function AppProvider({ children, totalImages }: IProviderProps) {
       value={{ incrementImages, isLoading: imagesCounter < totalImages }}
     >
       {imagesCounter < totalImages && <LoadingComponent />}
+      <NavbarComponent />
       {children}
     </AppContext.Provider>
   );
