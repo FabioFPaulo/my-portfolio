@@ -36,7 +36,7 @@ export default function LanguagesSection() {
     <Container.Section id="languages" colorScheme="color-1">
       <Title.Primary
         title="Most Used Languages"
-        subtitle="Uncover the programming languages that i frequently"
+        subtitle="Uncover the programming languages that i frequently use"
       />
       <motion.div
         ref={ref}
