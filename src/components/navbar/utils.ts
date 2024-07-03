@@ -17,6 +17,10 @@ export const items: IItem[] = [
     label: "projects",
     url: "projects",
   },
+  {
+    label: "languages",
+    url: "languages",
+  },
   // {
   //   label: "about me",
   //   url: "about-me",
