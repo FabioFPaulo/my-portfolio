@@ -52,7 +52,9 @@ export default function Banner() {
                 </div>
               ))}
             </div>
-            <button>download cv</button>
+            <a href={`${import.meta.env.BASE_URL}files/cv.pdf`} target="_blank">
+              download cv
+            </a>
           </motion.div>
         </div>
         <div className="right-side relative">
@@ -68,7 +70,7 @@ export default function Banner() {
           >
             <img
               alt="Fábio Paulo"
-              src={"/my-portfolio/images/person_lg2.png"}
+              src={`${import.meta.env.BASE_URL}images/person_lg2.png`}
               onLoad={app.incrementImages}
             />
           </motion.div>
