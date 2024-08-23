@@ -63,8 +63,8 @@
           }
         }
 
-        button {
-          @apply w-full sm:w-[50%] bg-blue-400 py-3 text-lg font-medium uppercase rounded-xl border-b-4 border-b-blue-600 active:translate-y-[4px] active:border-b-0 active:border-t-4 active:border-t-transparent transition-all duration-[5ms] hover:bg-blue-500 hover:border-b-blue-700;
+        a {
+          @apply w-full sm:w-[50%] text-center bg-blue-400 py-3 text-lg font-medium uppercase rounded-xl border-b-4 border-b-blue-600 active:translate-y-[4px] active:border-b-0 active:border-t-4 active:border-t-transparent transition-all duration-[5ms] hover:bg-blue-500 hover:border-b-blue-700;
           letter-spacing: 2px;
         }
       }
