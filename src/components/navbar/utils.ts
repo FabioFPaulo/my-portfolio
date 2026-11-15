@@ -22,6 +22,10 @@ export const items: IItem[] = [
     url: "projects",
   },
   {
+    label: "leadership",
+    url: "leadership",
+  },
+  {
     label: "skills",
     url: "languages",
   },

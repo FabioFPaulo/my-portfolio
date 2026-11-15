@@ -22,6 +22,7 @@ flowchart TD
         Academic["Academic Section (#academic-education)"]
         Exp["Experiences Section (#experiences)"]
         Projects["Personal Projects Section (#projects)"]
+        Leadership["Leadership Section (#leadership)"]
         Langs["Technical Skills Section (#languages)"]
         Footer["Footer Section (#footer)"]
         Loading["LoadingComponent"]
@@ -32,6 +33,7 @@ flowchart TD
         AcadRepo["LocalAcademicRepository (src/repositories/local/academic)"]
         ExpRepo["LocalExperiencesRepository (src/repositories/local/experiences)"]
         ProjRepo["LocalProjectsRepository (src/repositories/local/projects)"]
+        LeadershipRepo["LocalLeadershipRepository (src/repositories/local/leadership)"]
         SkillsRepo["LocalSkillsRepository (src/repositories/local/skills)"]
     end
 
@@ -54,6 +56,7 @@ flowchart TD
     Provider --> Academic
     Provider --> Exp
     Provider --> Projects
+    Provider --> Leadership
     Provider --> Langs
     Provider --> Footer
 
@@ -61,6 +64,7 @@ flowchart TD
     Academic -->|Consome Dados| AcadRepo
     Exp -->|Consome Dados| ExpRepo
     Projects -->|Consome Dados| ProjRepo
+    Leadership -->|Consome Dados| LeadershipRepo
     Langs -->|Consome Dados| SkillsRepo
     Banner -.->|Incrementa Contador| AppContext
     Banner -.-> PublicAssets
@@ -80,7 +84,12 @@ src/
 │
 ├── repositories/         # Camada de abstração e acesso a dados (Repository Pattern)
 │   ├── local/            # Repositórios locais tipados
-│   │   └── about/        # Dados biográficos mutáveis (types, data, repository)
+│   │   ├── about/        # Dados biográficos e links
+│   │   ├── academic/     # Histórico académico e certificações
+│   │   ├── experiences/  # Experiência profissional estruturada
+│   │   ├── projects/     # Projetos pessoais e destaques técnicos
+│   │   ├── leadership/   # Atividades de liderança e mentoria
+│   │   └── skills/       # Matriz técnica categorizada
 │   └── index.ts          # Barrel export de repositórios
 │
 ├── contexts/             # Contextos de estado global
@@ -109,10 +118,12 @@ src/
 │
 └── sections/             # Blocos estruturais da página
     ├── banner/           # Hero section, apresentação, foto e botão de CV
+    ├── about/            # Apresentação pessoal e pontos de contacto
     ├── academic/         # Formação académica e certificações
     ├── experiences/      # Histórico profissional com timeline e detalhe
-    ├── projects/         # Projetos em destaque com imagens e links
-    ├── languages/        # Barras de progresso circular de linguagens/stacks
+    ├── projects/         # Projetos pessoais em destaque com imagens e links
+    ├── leadership/       # Liderança, mentoria e supervisão de estágios
+    ├── languages/        # Matriz categorizada de competências técnicas (Skills)
     └── footer/           # Rodapé institucional com direitos e GitHub
 ```
 

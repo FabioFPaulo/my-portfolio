@@ -34,7 +34,7 @@ export default function LanguagesSection() {
   }, [isInView, mainControls, app.isLoading]);
 
   return (
-    <Container.Section id="languages" colorScheme="color-1">
+    <Container.Section id="languages" colorScheme="color-2">
       <Title.Primary
         title="Technical Skills"
         subtitle="Specialized engineering competencies, frameworks, and modern tools"

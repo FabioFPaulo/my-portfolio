@@ -1,0 +1,63 @@
+#leadership {
+  .leadership-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-6 mt-10 items-stretch;
+
+    .leadership-card {
+      @apply rounded-2xl p-6 sm:p-7 flex flex-col justify-between h-full;
+      @apply bg-slate-900/60 border border-slate-800/80 backdrop-blur-sm shadow-xl shadow-black/20;
+      @apply hover:border-sky-500/40 hover:shadow-sky-500/5 hover:-translate-y-1 transition-all duration-300;
+
+      .leadership-header {
+        @apply flex items-center justify-between gap-3 mb-3;
+
+        .leadership-badge {
+          @apply px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-sky-400 bg-sky-500/10 border border-sky-400/20 rounded-md;
+        }
+
+        .leadership-date {
+          @apply text-xs text-slate-300 bg-slate-800/80 border border-slate-700/50 px-2.5 py-1 rounded-md inline-flex items-center;
+        }
+      }
+
+      .leadership-role {
+        @apply text-lg sm:text-xl font-bold text-white tracking-tight mb-1 group-hover:text-sky-300 transition-colors;
+      }
+
+      .leadership-project-line {
+        @apply text-xs sm:text-sm font-medium text-slate-400 mb-3 flex flex-wrap items-center gap-1.5;
+
+        .leadership-project {
+          @apply text-sky-400/90;
+        }
+
+        .leadership-institution {
+          @apply text-slate-500;
+        }
+      }
+
+      .leadership-student-badge {
+        @apply mb-4 px-3 py-1.5 rounded-lg bg-slate-800/50 border border-slate-700/50 inline-flex items-center gap-2 self-start text-xs;
+
+        .student-label {
+          @apply text-slate-400 font-medium;
+        }
+
+        .student-name {
+          @apply text-slate-200 font-semibold;
+        }
+      }
+
+      .leadership-description {
+        @apply text-slate-300 text-sm leading-relaxed text-justify mb-6 font-normal;
+      }
+
+      .leadership-skills {
+        @apply flex flex-wrap gap-2 pt-3 border-t border-slate-800/70 mt-auto;
+
+        .leadership-skill-pill {
+          @apply px-2.5 py-1 text-xs font-medium text-slate-300 bg-slate-800/60 border border-slate-700/50 rounded-lg hover:border-sky-400/50 hover:text-white transition-all duration-200;
+        }
+      }
+    }
+  }
+}
