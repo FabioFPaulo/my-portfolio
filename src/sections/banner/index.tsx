@@ -78,36 +78,13 @@ export default function Banner() {
 
   return (
     <section ref={ref} className="hero-banner" id="home">
-      {/* Imagem de Fundo com Preservação de Preload */}
+      {/* Imagem de Fundo Original Preservada com Qualidade e Destaque */}
       <img
         src={`${import.meta.env.BASE_URL}images/bg.jpg`}
-        alt="Background Atmosphere"
-        className="hero-bg-image"
+        alt="Background"
+        className="bg-image"
         onLoad={app.incrementImages}
       />
-
-      {/* Orbs de Luz Ambiente Dinâmicos */}
-      <div className="hero-ambient-lights" aria-hidden="true">
-        <motion.div
-          animate={{
-            x: [0, 30, -20, 0],
-            y: [0, -40, 20, 0],
-            scale: [1, 1.15, 0.95, 1],
-          }}
-          transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
-          className="ambient-orb ambient-orb-primary"
-        />
-        <motion.div
-          animate={{
-            x: [0, -35, 25, 0],
-            y: [0, 35, -25, 0],
-            scale: [1, 1.2, 0.9, 1],
-          }}
-          transition={{ duration: 22, repeat: Infinity, ease: "easeInOut" }}
-          className="ambient-orb ambient-orb-secondary"
-        />
-        <div className="hero-grid-overlay" />
-      </div>
 
       {/* Conteúdo Principal */}
       <div className="hero-container">
