@@ -33,7 +33,7 @@ export default function LanguagesSection() {
   }, [isInView, mainControls, app.isLoading]);
 
   return (
-    <Container.Section id="languages" colorScheme="color-1">
+    <Container.Section id="languages" colorScheme="color-2">
       <Title.Primary
         title="Most Used Languages"
         subtitle="Uncover the programming languages that i frequently use"

@@ -21,7 +21,6 @@ flowchart TD
         About["About Me Section (#about-me)"]
         Academic["Academic Section (#academic-education)"]
         Exp["Experiences Section (#experiences)"]
-        Projects["Projects Section (#projects)"]
         Langs["Languages Section (#languages)"]
         Footer["Footer Section (#footer)"]
         Loading["LoadingComponent"]
@@ -29,6 +28,8 @@ flowchart TD
 
     subgraph Repositories ["Camada de Dados / Repositórios"]
         AboutRepo["LocalAboutRepository (src/repositories/local/about)"]
+        ExpRepo["LocalExperiencesRepository (src/repositories/local/experiences)"]
+        AcadRepo["LocalAcademicRepository (src/repositories/local/academic)"]
     end
 
     subgraph State ["Camada de Estado"]
@@ -49,16 +50,15 @@ flowchart TD
     Provider --> About
     Provider --> Academic
     Provider --> Exp
-    Provider --> Projects
     Provider --> Langs
     Provider --> Footer
 
     About -->|Consome Dados| AboutRepo
+    Academic -->|Consome Dados| AcadRepo
+    Exp -->|Consome Dados| ExpRepo
     Banner -.->|Incrementa Contador| AppContext
-    Projects -.->|Incrementa Contador| AppContext
     Banner -.-> PublicAssets
     Academic -.-> PublicAssets
-    Projects -.-> PublicAssets
 ```
 
 ---
