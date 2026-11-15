@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { PDFViewer } from "@embedpdf/viewer-react";
 import { IDocumentDrawerProps } from "./types";
 import "./index.scss";
 
@@ -35,6 +34,9 @@ export default function DocumentDrawer({
   }, [isOpen, onClose]);
 
   if (typeof document === "undefined") return null;
+
+  // Parâmetros de visualização nativa: ajustar à largura e exibir toolbar
+  const pdfViewerSrc = pdfUrl ? `${pdfUrl}#view=FitH&toolbar=1&navpanes=0` : "";
 
   return createPortal(
     <AnimatePresence>
@@ -136,12 +138,34 @@ export default function DocumentDrawer({
               </div>
             </div>
 
-            {/* Corpo do Drawer: EmbedPDF Viewer preenchendo a altura vertical */}
+            {/* Corpo do Drawer: Visualizador Nativo de Alta Performance */}
             <div className="drawer-body">
-              <PDFViewer
-                src={pdfUrl}
-                style={{ width: "100%", height: "100%" }}
-              />
+              <object
+                data={pdfViewerSrc}
+                type="application/pdf"
+                className="w-full h-full border-0"
+                aria-label={title}
+              >
+                <iframe
+                  src={pdfViewerSrc}
+                  title={title}
+                  className="w-full h-full border-0"
+                >
+                  <div className="flex flex-col items-center justify-center h-full p-8 text-center">
+                    <p className="text-slate-300 text-sm mb-4">
+                      Unable to display PDF preview directly.
+                    </p>
+                    <a
+                      href={downloadUrl || pdfUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="px-4 py-2 bg-sky-500 hover:bg-sky-400 text-white rounded-lg text-xs font-semibold"
+                    >
+                      Open Document
+                    </a>
+                  </div>
+                </iframe>
+              </object>
             </div>
           </motion.div>
         </>

@@ -11,7 +11,6 @@
     "test": "jest"
   },
   "dependencies": {
-    "@embedpdf/viewer-react": "^3.2.0",
     "framer-motion": "^11.2.12",
     "react": "^18.2.0",
     "react-circular-progressbar": "^2.1.0",
