@@ -8,7 +8,7 @@ Este documento cataloga todas as funcionalidades ativas, módulos funcionais e r
 
 | Funcionalidade | Localização no Código | Estado | Descrição |
 | :--- | :--- | :--- | :--- |
-| **Ecrã de Carregamento (Preloader)** | `src/components/loading/` | **Ativo** | Animação geométrica contínua que bloqueia o ecrã até que 6 imagens críticas sejam carregadas. |
+| **Ecrã de Carregamento (Preloader)** | `src/components/loading/` | **Ativo** | Preloader cinematográfico *Tech Monogram & Precision Progress* com emblema FP, anéis orbitais pulsantes, barra de precisão e transição de saída suave (*exit blur & scale* via `AnimatePresence`). |
 | **Navbar Desktop com Rolagem Suave** | `src/components/navbar/horizontal/` | **Ativo** | Barra fixa de navegação superior com links âncora e destaque da secção ativa (`activeClass`). |
 | **Menu Gaveta Mobile (Drawer)** | `src/components/navbar/vertical/` | **Ativo** | Menu lateral retrátil acionado por ícone hambúrguer para dispositivos móveis. |
 | **Hero Banner & Download de CV** | `src/sections/banner/` | **Ativo** | Apresentação com dados pessoais, foto com efeitos de filtro e botão 3D para descarregar o PDF do currículo. |
@@ -26,9 +26,14 @@ Este documento cataloga todas as funcionalidades ativas, módulos funcionais e r
 
 ## 2. Detalhe das Funcionalidades Ativas
 
-### 2.1. Preloader Inteligente com Contagem de Assets
-* **Mecanismo:** A aplicação não depende de um timer artificial; consome o estado `isLoading` derivado de `imagesCounter < totalImages` fornecido pelo `AppContext`.
-* **Animação:** O componente `LoadingComponent` usa o Framer Motion para alternar o elemento de quadrado para círculo e rotações em loop (`scale`, `rotate`, `borderRadius`).
+### 2.1. Preloader Cinematográfico com Identidade Visual & AnimatePresence
+* **Mecanismo:** Consome o estado `isLoading` derivado de `imagesCounter < totalImages` fornecido pelo `AppContext`, envolto em `AnimatePresence`.
+* **Design & Animação:** 
+  * Fundo *Deep Slate* (`#060913`) com luz radial difusa ciano.
+  * Monograma **`FP`** estilizado central com anel orbital externo em rotação contínua e anel interno tracejado pulsante.
+  * Tipografia refinada com identificação profissional e status badge animado.
+  * Micro-barra de progresso com feixe luminescente e legenda monoespacada *"INITIALIZING ENVIRONMENT..."*.
+  * Dissolução suave de saída com *fade out*, ligeira expansão de escala e *blur filter* revelando o Hero Banner.
 
 ### 2.2. Navegação Responsiva
 * **Desktop:** Navbar minimalista translúcida ou integrada no topo com offsets calculados para não sobrepor títulos durante a rolagem (`offset={-60}`).

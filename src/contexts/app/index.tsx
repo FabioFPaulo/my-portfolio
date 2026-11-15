@@ -1,4 +1,5 @@
 import {createContext, useCallback, useState} from "react";
+import {AnimatePresence} from "framer-motion";
 import type {IContext, IProviderProps} from "./types";
 import LoadingComponent from "@/components/loading";
 import NavbarComponent from "@/components/navbar";
@@ -16,7 +17,9 @@ export default function AppProvider({children, totalImages}: IProviderProps) {
         <AppContext.Provider
             value={{incrementImages, isLoading: imagesCounter < totalImages}}
         >
-            {imagesCounter < totalImages && <LoadingComponent/>}
+            <AnimatePresence>
+                {imagesCounter < totalImages && <LoadingComponent key="preloader" />}
+            </AnimatePresence>
             <NavbarComponent/>
             {children}
         </AppContext.Provider>
