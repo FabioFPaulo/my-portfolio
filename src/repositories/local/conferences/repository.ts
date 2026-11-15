@@ -1,20 +1,20 @@
-import { localConferencesData } from "./data";
-import { IConferenceItem, IConferencesRepository } from "./types";
+import {localConferencesData} from "./data";
+import type {IConferenceItem, IConferencesRepository} from "./types";
 
 export class LocalConferencesRepository implements IConferencesRepository {
-  private data: IConferenceItem[];
+    private data: IConferenceItem[];
 
-  constructor(initialData: IConferenceItem[] = localConferencesData) {
-    this.data = initialData;
-  }
+    constructor(initialData: IConferenceItem[] = localConferencesData) {
+        this.data = initialData;
+    }
 
-  getConferencesData(): IConferenceItem[] {
-    return this.data;
-  }
+    getConferencesData(): IConferenceItem[] {
+        return this.data;
+    }
 
-  getConferenceById(id: string): IConferenceItem | undefined {
-    return this.data.find((item) => item.id === id);
-  }
+    getConferenceById(id: string): IConferenceItem | undefined {
+        return this.data.find((item) => item.id === id);
+    }
 }
 
 export const conferencesRepository = new LocalConferencesRepository();

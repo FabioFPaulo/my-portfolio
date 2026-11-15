@@ -1,10 +1,10 @@
-import { localSkillsData } from "./data";
-import { ISkillCategory, ISkillsRepository } from "./types";
+import {localSkillsData} from "./data";
+import type {ISkillCategory, ISkillsRepository} from "./types";
 
 export class LocalSkillsRepository implements ISkillsRepository {
-  getSkillsData(): ISkillCategory[] {
-    return localSkillsData;
-  }
+    getSkillsData(): ISkillCategory[] {
+        return localSkillsData;
+    }
 }
 
 export const skillsRepository = new LocalSkillsRepository();

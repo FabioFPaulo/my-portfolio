@@ -1,21 +1,21 @@
-import { ContainerSectionProps } from "./types";
+import type {ContainerSectionProps} from "./types";
 import "./index.css";
 
 export default function ContainerSectionComponent(
-  props: ContainerSectionProps
+    props: ContainerSectionProps
 ) {
-  return (
-    <div
-      className={`container-section-container-${props.colorScheme}`}
-      id={props.id}
-      data-testid={props.id}
-    >
-      <div
-        className="container-section-content"
-        data-testid={`${props.id}-content`}
-      >
-        {props.children}
-      </div>
-    </div>
-  );
+    return (
+        <div
+            className={`container-section-container-${props.colorScheme}`}
+            id={props.id}
+            data-testid={props.id}
+        >
+            <div
+                className="container-section-content"
+                data-testid={`${props.id}-content`}
+            >
+                {props.children}
+            </div>
+        </div>
+    );
 }

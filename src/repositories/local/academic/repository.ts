@@ -1,10 +1,10 @@
-import { localAcademicData } from "./data";
-import { IAcademicItem, IAcademicRepository } from "./types";
+import {localAcademicData} from "./data";
+import type {IAcademicItem, IAcademicRepository} from "./types";
 
 export class LocalAcademicRepository implements IAcademicRepository {
-  getAcademicData(): IAcademicItem[] {
-    return localAcademicData;
-  }
+    getAcademicData(): IAcademicItem[] {
+        return localAcademicData;
+    }
 }
 
 export const academicRepository = new LocalAcademicRepository();

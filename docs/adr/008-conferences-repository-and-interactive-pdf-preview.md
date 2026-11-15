@@ -26,12 +26,13 @@ Cada registo de conferência possui um comprovativo ou documento PDF associado (
      - Painel lateral vertical com slide da borda direita (`x: "100%" -> "0%"`), ocupando largura total em mobile e 50% (`max-w-2xl`) em desktop.
    - Bloqueio automático de scroll do `document.body` e escuta da tecla `Escape` para fecho ergonómico.
 
-3. **Visualizador de PDF Nativo Resiliente (Object / iFrame + Fallback):**
-   - Substituição do motor WebAssembly pesado (`@embedpdf/viewer-react`), cujos Web Workers falhavam ao resolver módulos em caminhos com base path (`/my-portfolio/`), disparando o erro de estrito MIME type (`text/html`).
-   - Implementação de um visualizador nativo acelerado por hardware via tags `<object data="..." type="application/pdf">` e `<iframe>` embutido.
-   - Fornece instantaneamente controlos completos de PDF (fit to width, zoom, rotação, impressão, download) sem carregar dependências externas de WebAssembly.
-   - Barra de ações superior preservada com botões para abertura no Google Drive/nova aba e botão de fechar `✕`.
-   - Redução de ~3 MB no tamanho de bundle e aceleração do tempo de build para menos de 5 segundos.
+3. **Visualizador de PDF Totalmente Customizado via `react-pdf` & `pdfjs-dist`:**
+   - Para evitar a interface cinzenta padrão e genérica do leitor de PDF do browser, foi implementada renderização direta em `<canvas>` vetorial com `react-pdf`.
+   - **UI 100% Integrada no Design System:**
+     - Barra de ferramentas em *Dark Glassmorphism* com botões táteis para Zoom In (`+`), Zoom Out (`-`), percentagem de escala, rotação (`↻`) e navegação de páginas.
+     - Folha do documento centralizada com cantos arredondados, borda subtil (`border-slate-700/60`) e sombra flutuante luminescente (`shadow-2xl shadow-sky-500/10`) sobre o fundo escuro do drawer.
+     - Indicador de loading suave com spinner em SVG neon e estado de erro resiliente com link de download.
+   - **Resolução de Workers no Vite:** O worker do PDF.js é empacotado pelo Vite via `new URL("pdfjs-dist/build/pdf.worker.min.mjs", import.meta.url)`, garantindo compatibilidade total com o base path (`/my-portfolio/`) tanto em dev como em produção.
 
 4. **Navegação e Ritmo Visual:**
    - Inserção da secção no `App.tsx` com `colorScheme="color-2"`.
