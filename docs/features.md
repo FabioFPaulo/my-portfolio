@@ -12,7 +12,7 @@ Este documento cataloga todas as funcionalidades ativas, módulos funcionais e r
 | **Navbar Desktop com Rolagem Suave** | `src/components/navbar/horizontal/` | **Ativo** | Barra fixa de navegação superior com links âncora e destaque da secção ativa (`activeClass`). |
 | **Menu Gaveta Mobile (Drawer)** | `src/components/navbar/vertical/` | **Ativo** | Menu lateral retrátil acionado por ícone hambúrguer para dispositivos móveis. |
 | **Hero Banner & Download de CV** | `src/sections/banner/` | **Ativo** | Apresentação com dados pessoais, foto com efeitos de filtro e botão 3D para descarregar o PDF do currículo. |
-| **Secção de Formação Académica** | `src/sections/academic/` | **Ativo** | Cartões interativos que ligam para as instituições de ensino (CTeSP e Licenciatura no IPB). |
+| **Secção de Formação Académica** | `src/sections/academic/` | **Ativo** | Cartões modernos com o novo `logo_upb.svg`, 4 formações oficiais (MSc, Licenciatura, CTeSP e Secundário), médias finais e repositório local. |
 | **Histórico de Experiências Profissionais** | `src/sections/experiences/` | **Ativo** | Linha temporal detalhando estágios e cargos técnicos (CeDRI, Techwelf). |
 | **Montra de Projetos (Portfolio Showcase)**| `src/sections/projects/` | **Ativo** | Grelha de logotipos e títulos de projetos desenvolvidos (Pin2Give, CeDRI, Swopi, Thermalconf). |
 | **Competências & Linguagens** | `src/sections/languages/` | **Ativo** | Apresentação de competências com gráficos circulares de percentagem e ícones SVG. |
