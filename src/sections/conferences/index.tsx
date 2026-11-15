@@ -172,7 +172,9 @@ export default function ConferencesSection() {
             : undefined
         }
         pdfUrl={selectedConference?.certificatePdf || ""}
-        downloadUrl={selectedConference?.certificatePdf}
+        downloadUrl={
+          selectedConference?.driveUrl || selectedConference?.certificatePdf
+        }
       />
     </Container.Section>
   );

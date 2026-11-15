@@ -10,6 +10,7 @@ export interface IConferenceItem {
   paperTitle: string;
   officialLink: string;
   certificatePdf: string;
+  driveUrl?: string;
   description?: string;
   topics?: string[];
 }
