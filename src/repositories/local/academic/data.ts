@@ -48,7 +48,7 @@ export const localAcademicData: IAcademicItem[] = [
     startDate: "Sep, 2017",
     endDate: "Jul, 2020",
     website: "https://www.aemirandela.pt",
-    logo: `${import.meta.env.BASE_URL}images/logo_upb.svg`,
+    logo: `${import.meta.env.BASE_URL}images/logo_aem.png`,
     badge: "High School",
   },
 ];
