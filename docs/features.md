@@ -15,7 +15,7 @@ Este documento cataloga todas as funcionalidades ativas, módulos funcionais e r
 | **Secção de Formação Académica** | `src/sections/academic/` | **Ativo** | Cartões modernos com o novo `logo_upb.svg`, 4 formações oficiais (MSc, Licenciatura, CTeSP e Secundário), médias finais e repositório local. |
 | **Histórico de Experiências Profissionais** | `src/sections/experiences/` | **Ativo** | Timeline interativa moderna com nós luminosos, 6 experiências completas do CV (VIMOS 3D/LSTM, Thermalconf IoT, Swopi, Techwelf, CeDRI), tags de tecnologias e repositório local. |
 | **Montra de Projetos (Portfolio Showcase)** | `src/sections/projects/` | **Removido** | Secção descontinuada (projetos integrados diretamente na timeline enriquecida de experiências). |
-| **Competências & Linguagens** | `src/sections/languages/` | **Ativo** | Apresentação de competências com gráficos circulares de percentagem e ícones SVG. |
+| **Competências & Linguagens (Skills)** | `src/sections/languages/` | **Ativo** | Matriz de competências em 6 categorias de domínio (Deep Learning & 3D, Backend, Frontend, Mobile, Databases, DevOps), tags interativas e repositório local. |
 | **Rodapé Institucional** | `src/sections/footer/` | **Ativo** | Informação de direitos de autor e ligação direta para o perfil GitHub. |
 | **Secção "About Me"** | `src/sections/about/` | **Ativo** | Apresentação biográfica completa extraída do CV Europass, destaques académicos e de investigação, consumindo `src/repositories/local`. |
 | **Secção "Contact Me"** | `src/components/navbar/utils.ts` | **Pendente** | Rota/âncora prevista no menu, mas sem componente de formulário associado. |

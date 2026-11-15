@@ -1,37 +1,33 @@
-.card-language {
-  @apply col-span-12 sm:col-span-6 md:col-span-4 flex flex-col items-center relative;
+.card-skill-category {
+  @apply rounded-2xl p-6 flex flex-col justify-between h-full;
+  @apply bg-slate-900/60 border border-slate-800/80 backdrop-blur-sm shadow-xl shadow-black/20;
+  @apply hover:border-sky-500/40 hover:shadow-sky-500/5 hover:-translate-y-1 transition-all duration-300;
 
-  .progress {
-    width: 40%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
+  .category-header {
+    @apply flex items-center gap-3.5 mb-2;
 
-    svg.CircularProgressbar {
-      .CircularProgressbar-trail {
-        stroke: #fff;
-        stroke-width: 2pt;
-      }
+    .icon-wrapper {
+      @apply w-10 h-10 rounded-xl bg-gradient-to-tr from-sky-500/20 to-indigo-500/20 border border-sky-400/30 flex items-center justify-center text-sky-400 shrink-0 shadow-sm shadow-sky-500/10;
 
-      .CircularProgressbar-path {
-        stroke: #fff;
-        stroke-width: 6pt;
+      .category-icon {
+        @apply w-5 h-5;
       }
     }
 
-    svg.icon {
-      width: 50px;
-      height: 50px;
-      position: absolute;
-      align-self: center;
-      margin-left: auto;
-      margin-top: auto;
-      margin-bottom: auto;
-      margin-right: auto;
+    .category-title {
+      @apply text-base sm:text-lg font-bold text-white tracking-tight;
     }
   }
-  .title {
-    @apply text-2xl text-white;
+
+  .category-description {
+    @apply text-xs sm:text-sm text-slate-400 mb-5 font-normal leading-relaxed;
+  }
+
+  .skills-badge-list {
+    @apply flex flex-wrap gap-2 pt-3 border-t border-slate-800/70 mt-auto;
+
+    .skill-pill {
+      @apply px-2.5 py-1 text-xs font-medium text-slate-300 bg-slate-800/60 border border-slate-700/50 rounded-lg hover:border-sky-400/50 hover:text-white transition-all duration-200;
+    }
   }
 }

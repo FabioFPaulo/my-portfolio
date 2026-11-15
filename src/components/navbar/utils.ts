@@ -18,7 +18,7 @@ export const items: IItem[] = [
     url: "experiences",
   },
   {
-    label: "languages",
+    label: "skills",
     url: "languages",
   },
 ];
