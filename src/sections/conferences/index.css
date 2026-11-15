@@ -2,7 +2,7 @@
 
 #conferences {
   .conferences-container {
-    @apply mt-10 max-w-3xl mx-auto;
+    @apply mt-10 max-w-4xl mx-auto;
 
     /* Cartão Principal da Conferência */
     .conference-card {

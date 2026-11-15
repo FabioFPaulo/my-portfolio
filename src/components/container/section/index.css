@@ -14,8 +14,8 @@
 .container-section-container-gradient,
 .container-section-container-color-1,
 .container-section-container-color-2 {
-  @apply py-24 px-3 overflow-x-hidden;
+  @apply py-20 sm:py-24 px-4 sm:px-6 lg:px-8 overflow-x-hidden;
   .container-section-content {
-    @apply max-w-[80%] sm:max-w-[440px] mx-auto md:max-w-screen-md xl:max-w-screen-lg;
+    @apply w-full max-w-7xl mx-auto;
   }
 }

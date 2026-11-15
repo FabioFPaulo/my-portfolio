@@ -4,15 +4,15 @@
   @apply sticky top-0 z-50 h-[70px] w-full bg-slate-950/85 backdrop-blur-md border-b border-slate-800/80 transition-all duration-300;
 
   .navbar-container {
-    @apply max-w-screen-2xl mx-auto h-full px-4 sm:px-6 lg:px-8 flex items-center justify-between;
+    @apply max-w-7xl mx-auto h-full px-4 sm:px-6 lg:px-8 flex items-center justify-between;
   }
 
   .navbar-brand {
-    @apply flex items-center;
+    @apply flex items-center shrink-0;
   }
 
   .horizontal-list {
-    @apply hidden lg:flex items-center space-x-1 py-1.5 px-2.5 rounded-full bg-slate-900/60 border border-slate-800/70 backdrop-blur-sm shadow-inner;
+    @apply hidden lg:flex items-center space-x-0.5 py-1 px-2 xl:px-2.5 rounded-full bg-slate-900/60 border border-slate-800/70 backdrop-blur-sm shadow-inner;
 
     .active-nav-link {
       @apply text-sky-400 font-semibold bg-sky-500/15 border border-sky-400/30 shadow-sm shadow-sky-500/10;

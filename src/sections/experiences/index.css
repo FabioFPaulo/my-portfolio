@@ -2,7 +2,7 @@
 
 #experiences {
   .timeline-container {
-    @apply relative py-10 max-w-4xl mx-auto;
+    @apply relative py-10 max-w-5xl mx-auto;
 
     &::before {
       content: "";

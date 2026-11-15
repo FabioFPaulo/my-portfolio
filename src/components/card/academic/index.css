@@ -1,7 +1,7 @@
 @reference "../../../index.css";
 
 .card-academic-container {
-  @apply rounded-2xl p-6 flex flex-col justify-between;
+  @apply rounded-2xl p-6 sm:p-7 flex flex-col justify-between h-full;
   @apply cursor-pointer select-none overflow-hidden;
   @apply bg-slate-900/60 border border-slate-800/80 backdrop-blur-sm shadow-xl shadow-black/20;
   @apply hover:border-sky-500/40 hover:shadow-sky-500/10 hover:-translate-y-1 transition-all duration-300;
