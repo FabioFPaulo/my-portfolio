@@ -45,6 +45,20 @@
   }
 
   .drawer-body {
-    @apply flex-1 relative w-full h-full bg-slate-950 overflow-hidden;
+    @apply flex-1 relative w-full h-full bg-slate-950/95 overflow-y-auto overflow-x-hidden;
+    @apply flex flex-col items-center justify-start;
+
+    .react-pdf__Document {
+      @apply flex flex-col items-center justify-start w-full min-h-full;
+    }
+
+    .react-pdf__Page {
+      @apply max-w-full flex justify-center my-auto transition-transform duration-200;
+
+      canvas {
+        @apply max-w-full rounded-xl shadow-2xl shadow-black/90 border border-slate-800/80;
+        height: auto !important;
+      }
+    }
   }
 }
