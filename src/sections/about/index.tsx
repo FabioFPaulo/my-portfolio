@@ -4,7 +4,7 @@ import Container from "@/components/container";
 import Title from "@/components/title";
 import useApp from "@/hooks/useApp";
 import { aboutRepository } from "@/repositories";
-import "./index.scss";
+import "./index.css";
 
 export default function AboutSection() {
   const app = useApp();

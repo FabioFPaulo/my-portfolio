@@ -1,4 +1,4 @@
-import "./index.scss";
+import "./index.css";
 import { CardLanguageProps } from "./types";
 import { motion } from "framer-motion";
 

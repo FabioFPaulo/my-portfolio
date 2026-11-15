@@ -1,4 +1,4 @@
-import "./index.scss";
+import "./index.css";
 import { motion } from "framer-motion";
 
 export default function LoadingComponent() {

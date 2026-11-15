@@ -1,3 +1,5 @@
+@reference "../../index.css";
+
 #experiences {
   .timeline-container {
     @apply relative py-10 max-w-4xl mx-auto;

@@ -1,3 +1,5 @@
+@reference "../../../index.css";
+
 .card-academic-container {
   @apply rounded-2xl p-6 flex flex-col justify-between;
   @apply cursor-pointer select-none overflow-hidden;

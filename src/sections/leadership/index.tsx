@@ -4,7 +4,7 @@ import Title from "@/components/title";
 import { leadershipRepository } from "@/repositories";
 import { useEffect, useRef } from "react";
 import { useAnimation, useInView, motion } from "framer-motion";
-import "./index.scss";
+import "./index.css";
 
 const listVariants = {
   open: {

@@ -6,7 +6,7 @@ import { experiencesRepository } from "@/repositories";
 import { formatStartEndDate } from "./utils";
 import { useEffect, useRef } from "react";
 import { useAnimation, useInView, motion } from "framer-motion";
-import "./index.scss";
+import "./index.css";
 
 const listVariants = {
   open: {

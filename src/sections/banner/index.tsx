@@ -1,5 +1,5 @@
 import useApp from "@/hooks/useApp";
-import "./index.scss";
+import "./index.css";
 import { componentData } from "./utils";
 import { useEffect, useRef } from "react";
 import { useInView, motion, useAnimation } from "framer-motion";

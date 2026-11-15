@@ -1,0 +1,13 @@
+@reference "../../index.css";
+
+.loading-container {
+  @apply w-screen space-y-5 h-screen flex bg-slate-900/90 z-[1000] fixed overflow-hidden justify-center items-center flex-col;
+
+  .loading-circle {
+    @apply w-[100px] h-[100px] bg-white;
+  }
+
+  .loading-text {
+    @apply text-white font-bold;
+  }
+}

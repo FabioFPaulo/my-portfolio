@@ -1,3 +1,5 @@
+@reference "../../../index.css";
+
 .timeline-item {
   @apply relative pl-8 sm:pl-10 pb-12 last:pb-0;
 

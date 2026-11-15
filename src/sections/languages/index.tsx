@@ -5,7 +5,7 @@ import { skillsRepository } from "@/repositories";
 import { motion, useAnimation, useInView } from "framer-motion";
 import useApp from "@/hooks/useApp";
 import { useEffect, useRef } from "react";
-import "./index.scss";
+import "./index.css";
 
 const listVariants = {
   open: {

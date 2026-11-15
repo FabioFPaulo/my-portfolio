@@ -3,7 +3,7 @@ import Title from "@/components/title";
 import Card from "@/components/card";
 import { academicRepository } from "@/repositories";
 import { formatStartEndDate } from "../experiences/utils";
-import "./index.scss";
+import "./index.css";
 
 export default function AcademicSection() {
   const academicList = academicRepository.getAcademicData();

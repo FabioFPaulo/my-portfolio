@@ -1,3 +1,5 @@
+@reference "../../index.css";
+
 #footer {
   div {
     @apply text-center text-white;

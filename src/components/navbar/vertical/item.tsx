@@ -1,8 +1,8 @@
 import { IItem } from "../types";
 import { Link } from "react-scroll";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 
-const itemVariants = {
+const itemVariants: Variants = {
   open: {
     x: 0,
     opacity: 1,

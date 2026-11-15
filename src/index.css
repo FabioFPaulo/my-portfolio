@@ -1,6 +1,15 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-brand-bg: #0a0e1a;
+  --color-brand-surface: #0f172a;
+  --color-brand-card: rgba(15, 23, 42, 0.75);
+  --color-brand-sky: #38bdf8;
+  --color-brand-indigo: #6366f1;
+  --color-brand-emerald: #10b981;
+  --shadow-glow: 0 0 30px -5px rgba(56, 189, 248, 0.2);
+  --shadow-glow-indigo: 0 0 30px -5px rgba(99, 102, 241, 0.2);
+}
 
 @layer base {
   body {

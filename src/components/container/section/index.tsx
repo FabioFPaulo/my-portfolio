@@ -1,5 +1,5 @@
 import { ContainerSectionProps } from "./types";
-import "./index.scss";
+import "./index.css";
 
 export default function ContainerSectionComponent(
   props: ContainerSectionProps

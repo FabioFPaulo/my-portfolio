@@ -5,7 +5,7 @@ import DocumentDrawer from "@/components/drawer/document";
 import { conferencesRepository, IConferenceItem } from "@/repositories";
 import { useEffect, useRef, useState } from "react";
 import { useAnimation, useInView, motion } from "framer-motion";
-import "./index.scss";
+import "./index.css";
 
 export default function ConferencesSection() {
   const app = useApp();

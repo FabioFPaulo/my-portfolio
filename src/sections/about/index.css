@@ -1,3 +1,5 @@
+@reference "../../index.css";
+
 #about-me {
   .about-grid {
     @apply grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 mt-10 items-start;

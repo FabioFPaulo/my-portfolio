@@ -1,12 +1,12 @@
 import { useCallback, useEffect, useState } from "react";
-import { motion, useAnimation } from "framer-motion";
+import { motion, useAnimation, type Variants } from "framer-motion";
 import { IProps } from "./types";
 import { items } from "../utils";
 import NavabarItemComponent from "./item";
 import NavbarLogo from "../logo";
-import "./index.scss";
+import "./index.css";
 
-const panelVariants = {
+const panelVariants: Variants = {
   closed: {
     x: "-100%",
     transition: { type: "tween", duration: 0.25 },
@@ -17,7 +17,7 @@ const panelVariants = {
   },
 };
 
-const listVariants = {
+const listVariants: Variants = {
   open: {
     transition: { staggerChildren: 0.05, delayChildren: 0.15 },
   },

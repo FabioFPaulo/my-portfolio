@@ -1,4 +1,4 @@
-import "./index.scss";
+import "./index.css";
 import { motion } from "framer-motion";
 import { CardExperienceProps } from "./types";
 

@@ -1,5 +1,5 @@
 import Container from "@/components/container";
-import "./index.scss";
+import "./index.css";
 
 export default function FooterSection() {
   return (

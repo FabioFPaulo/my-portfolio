@@ -1,5 +1,5 @@
 import { CardAcademicProps } from "./types";
-import "./index.scss";
+import "./index.css";
 import useApp from "@/hooks/useApp";
 import { useEffect, useRef } from "react";
 import { useAnimation, useInView, motion } from "framer-motion";

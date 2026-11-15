@@ -1,5 +1,5 @@
 import { TitlePrimaryProps } from "./types";
-import "./index.scss";
+import "./index.css";
 
 export default function TitlePrimaryComponent(props: TitlePrimaryProps) {
   return (

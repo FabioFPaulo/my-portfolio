@@ -1,3 +1,5 @@
+@reference "../../index.css";
+
 .about {
   @apply py-20 px-3;
   background: linear-gradient(180deg, #4b5563 33.86%, #27272a 100%);

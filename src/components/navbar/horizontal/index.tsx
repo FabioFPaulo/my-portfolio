@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import "./index.scss";
+import "./index.css";
 import { items } from "../utils";
 import NavbarHorizontalItem from "./item";
 import { IProps } from "./types";

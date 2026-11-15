@@ -1,3 +1,5 @@
+@reference "../../index.css";
+
 #conferences {
   .conferences-container {
     @apply mt-10 max-w-3xl mx-auto;

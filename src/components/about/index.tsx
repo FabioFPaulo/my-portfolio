@@ -1,4 +1,4 @@
-import "./index.scss";
+import "./index.css";
 import { aboutData } from "./utils";
 
 export default function About() {
