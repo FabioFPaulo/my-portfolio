@@ -1,12 +1,12 @@
 .banner {
   @apply h-[calc(80vh-56px)] relative;
   .bg-image {
-    @apply absolute -z-10 top-0 bottom-0 left-0 right-0 h-full w-full;
+    @apply absolute -z-10 top-0 bottom-0 left-0 right-0 h-full w-full opacity-40;
   }
   background: linear-gradient(
     270deg,
-    rgba(39, 39, 42, 0.95) 33.86%,
-    #27272a 100%
+    rgba(10, 14, 26, 0.94) 33.86%,
+    #0a0e1a 100%
   );
 
   .main-content {
@@ -15,75 +15,76 @@
     div {
       &.left-side {
         /*xs*/
-        @apply absolute flex justify-center   bg-zinc-900 bg-opacity-60 top-0 bottom-0 left-0 right-0 z-10   h-full  text-slate-50;
+        @apply absolute flex justify-center bg-slate-950/80 backdrop-blur-sm top-0 bottom-0 left-0 right-0 z-10 h-full text-slate-50;
 
         /*md*/
-        @apply lg:static flex-1 lg:bg-transparent;
+        @apply lg:static flex-1 lg:bg-transparent lg:backdrop-blur-none;
 
         .content {
-          @apply px-10 flex flex-col  justify-center h-full;
-
+          @apply px-10 flex flex-col justify-center h-full;
           @apply sm:px-0 max-w-screen-sm;
-
           @apply lg:px-3;
         }
 
         .titles {
-          letter-spacing: 2px;
+          letter-spacing: 1.5px;
 
           .subtitle {
-            @apply text-lg;
+            @apply text-lg sm:text-xl font-medium text-sky-400;
           }
 
           .title {
-            @apply text-[5rem] font-extrabold py-4;
+            @apply text-[3.8rem] sm:text-[5rem] font-extrabold py-3 text-white tracking-tight;
             line-break: normal;
-            line-height: 5.3rem;
+            line-height: 4.5rem;
+            background: linear-gradient(135deg, #ffffff 40%, #bae6fd 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
           }
         }
 
         .divider {
-          @apply h-1 w-full bg-blue-500 rounded-full;
+          @apply h-1 w-full bg-gradient-to-r from-sky-400 to-indigo-500 rounded-full shadow-sm shadow-sky-400/30;
         }
 
         .fields {
-          @apply py-8;
+          @apply py-6;
 
           .field {
-            @apply flex w-full py-1;
+            @apply flex w-full py-1.5 border-b border-slate-800/40;
 
             .label {
               width: 40%;
-              @apply font-semibold;
+              @apply font-semibold text-slate-300;
             }
 
             .value {
               width: 60%;
+              @apply text-slate-200;
             }
           }
         }
 
         a {
-          @apply w-full sm:w-[50%] text-center bg-blue-400 py-3 text-lg font-medium uppercase rounded-xl border-b-4 border-b-blue-600 active:translate-y-[4px] active:border-b-0 active:border-t-4 active:border-t-transparent transition-all duration-[5ms] hover:bg-blue-500 hover:border-b-blue-700;
-          letter-spacing: 2px;
+          @apply w-full sm:w-[50%] text-center bg-gradient-to-r from-sky-400 via-blue-500 to-indigo-600 py-3.5 text-base font-semibold uppercase rounded-xl shadow-lg shadow-sky-500/20 hover:shadow-sky-500/40 hover:brightness-110 active:scale-95 transition-all duration-200 text-white tracking-wider;
         }
       }
 
       &.right-side {
-        @apply flex  overflow-hidden flex-1;
+        @apply flex overflow-hidden flex-1;
 
         .content {
           @apply flex h-full w-full mx-auto;
-
           @apply lg:px-0 max-w-screen-md;
-
           @apply lg:px-3;
         }
 
         img {
           @apply w-full h-full scale-125 sm:scale-100 md:scale-100;
           object-fit: cover;
-          filter: brightness(40%) contrast(120%) saturate(50%);
+          filter: brightness(95%) contrast(105%) saturate(100%);
+          mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+          -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
         }
       }
     }

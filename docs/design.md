@@ -1,101 +1,93 @@
 # Sistema de Design e Estilos (`docs/design.md`)
+## Design System Atualizado: Deep Slate & Vibrant Tech
 
-Este documento serve como fonte única de verdade (*source of truth*) para as diretrizes visuais do portfólio, incluindo a paleta de cores, tipografia, escalas de espaçamento, comportamento de botões e padrões de componentes.
+Este documento serve como fonte única de verdade (*source of truth*) para as diretrizes visuais do portfólio de **Fábio Paulo**, formalizando a nova paleta de cores luminosa, tipografia, escalas de espaçamento e componentes chave.
 
 ---
 
 ## 1. Paleta de Cores e Tokens Semânticos
 
-O portfólio adota uma estética **Dark Mode / Industrial Tech**, utilizando tons neutros escuros (Zinc/Gray) contrastados com um azul vivo como cor de destaque (*accent*).
+A paleta transita do cinzento neutro e opaco para a estética **Deep Slate Tecnológico**, combinando profundidade noturna com acentos vivos em ciano, azul-celeste e índigo.
 
-### Cores Base & Neutras
+### Cores Base & Superfícies (Superfícies Escuras Vivas)
 
-| Token / Nome | Valor Hex / Tailwind | Aplicação no Projeto |
+| Token Semântico | Valor Hex / Tailwind | Aplicação no Projeto |
 | :--- | :--- | :--- |
-| **Dark Background (Principal)** | `#27272a` (`zinc-800`) | Fundo do banner, navbar, cards e secções `color-1`. |
-| **Dark Neutral (Intermédio)** | `#18181b` (`zinc-900`) | Overlay escuro semi-transparente do banner em mobile (`bg-zinc-900/60`). |
-| **Secondary Background** | `#4b5563` (`gray-600`) | Fundo das secções alternadas `color-2` e topo do gradiente. |
-| **Text Primary (Alto Contraste)** | `#f8fafc` (`slate-50`) | Títulos, textos principais, cabeçalhos de secção e rótulos. |
-| **Text Muted / Secondary** | `#9ca3af` (`gray-400` / `#cbd5e1`) | Subtítulos, descrições detalhadas e datas em cartões. |
+| `surface-base` | `#0a0e1a` (`slate-950`) | Fundo principal da página; profundo e rico. |
+| `surface-elevated` | `#0f172a` (`slate-900`) | Fundo de secções alternadas e contentores. |
+| `surface-card` | `rgba(15, 23, 42, 0.75)` | Cartões com transparência e desfoque (*glassmorphism*). |
+| `surface-nav` | `rgba(10, 14, 26, 0.8)` | Barra flutuante de navegação com `backdrop-blur-md`. |
+| `border-subtle` | `rgba(51, 65, 85, 0.5)` (`slate-700/50`) | Bordas finas de separação de vidro nos cartões e navbar. |
+| `border-glow` | `rgba(56, 189, 248, 0.3)` (`sky-400/30`) | Efeito de borda luminosa ao passar o rato (*hover*). |
 
-### Cores de Destaque (Accent Colors)
+### Cores de Texto e Contraste (Tipografia Clara)
 
-| Token / Nome | Valor Hex / Tailwind | Aplicação no Projeto |
+| Token Semântico | Valor Hex / Tailwind | Aplicação no Projeto |
 | :--- | :--- | :--- |
-| **Brand Blue (Base)** | `#3b82f6` (`blue-500`) | Linha divisória de títulos, indicador ativo da navbar e barra de progresso. |
-| **Interactive Blue (Botão)** | `#60a5fa` (`blue-400`) | Cor padrão do botão de chamada para ação (CTA "Download CV"). |
-| **Interactive Blue (Hover)** | `#3b82f6` (`blue-500`) | Efeito hover do botão principal. |
-| **Interactive Blue (Borda 3D)** | `#2563eb` (`blue-600`) | Borda inferior que confere profundidade ao botão (`border-b-4`). |
-| **Interactive Blue (Hover Borda)**| `#1d4ed8` (`blue-700`) | Borda inferior durante o hover. |
+| `text-primary` | `#f8fafc` (`slate-50`) | Títulos, cabeçalhos e rótulos de alto destaque. |
+| `text-secondary`| `#cbd5e1` (`slate-300`) | Texto de leitura regular e descrições detalhadas. |
+| `text-muted` | `#94a3b8` (`slate-400`) | Metadados, subtítulos, datas e links neutros. |
+| `text-accent` | `#38bdf8` (`sky-400`) | Links ativos, palavras-chave e elementos em destaque. |
+
+### Cores de Acento e Gradientes de Luz
+
+| Token Semântico | Valor Hex / Tailwind | Aplicação no Projeto |
+| :--- | :--- | :--- |
+| `accent-primary` | `#38bdf8` (`sky-400`) | Cor primária para foco, links ativos e realces. |
+| `accent-secondary`| `#6366f1` (`indigo-500`) | Cor secundária de apoio e base para botões em gradiente. |
+| `accent-glow` | `rgba(56, 189, 248, 0.15)` | Luz difusa ambiente (*radial glow*) no topo da página. |
+| `accent-emerald` | `#10b981` (`emerald-500`) | Indicador de disponibilidade / status ativo. |
 
 ---
 
-## 2. Gradientes Definidos
+## 2. Gradientes e Efeitos Atmosféricos
 
-1. **Banner Gradient (Horizontal):**
+1. **Luz Ambiente Superior (*Atmospheric Glow*):**
    ```css
-   background: linear-gradient(270deg, rgba(39, 39, 42, 0.95) 33.86%, #27272a 100%);
+   background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.18) 0%, rgba(56, 189, 248, 0.08) 40%, transparent 70%);
    ```
-2. **Container Section Gradient (Vertical):**
+2. **Gradiente de Títulos em Destaque:**
    ```css
-   background: linear-gradient(180deg, #4b5563 97%, #27272a 100%);
+   background: linear-gradient(135deg, #ffffff 30%, #38bdf8 100%);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   ```
+3. **Botão de Ação Primário com Gradiente:**
+   ```css
+   background: linear-gradient(135deg, #38bdf8 0%, #6366f1 100%);
    ```
 
 ---
 
 ## 3. Tipografia e Escalas de Texto
 
-* **Família Tipográfica:** Pilha padrão do sistema via Tailwind CSS (`font-sans`: Inter, system-ui, -apple-system, sans-serif).
-* **Espaçamento entre Letras (Letter Spacing):**
-  * Títulos e Botões: `letter-spacing: 2px;` (estética moderna e legível em caixa alta).
+* **Família Tipográfica:** Pilha do sistema via Tailwind CSS (`font-sans`: Inter, system-ui, sans-serif).
+* **Tracking:** `letter-spacing: 1px;` em botões e subtítulos para elegância moderna.
 
 | Nível / Uso | Classes Tailwind | Tamanho Calculado | Peso da Fonte |
 | :--- | :--- | :--- | :--- |
-| **Hero Title (Nome)** | `text-[5rem] leading-[5.3rem]` | ~80px | `font-extrabold` (800) |
-| **Hero Subtitle** | `text-lg` | 18px (1.125rem) | `font-normal` (400) |
-| **Section Primary Title** | `text-2xl sm:text-3xl uppercase` | 24px - 30px | `font-bold` (700) |
-| **Card Header / Cargo** | `text-lg font-semibold` | 18px | `font-semibold` (600) |
-| **Body / Descrições** | `text-sm sm:text-base` | 14px - 16px | `font-normal` (400) |
-| **Metadados / Datas** | `text-xs sm:text-sm` | 12px - 14px | `font-light` / `font-medium` |
+| **Hero Title** | `text-4xl sm:text-6xl lg:text-7xl` | 36px a 72px | `font-extrabold` (800) |
+| **Hero Subtitle** | `text-lg sm:text-xl text-sky-400` | 18px a 20px | `font-medium` (500) |
+| **Section Title** | `text-2xl sm:text-3xl font-bold uppercase` | 24px a 30px | `font-bold` (700) |
+| **Card Header** | `text-lg font-semibold text-white` | 18px | `font-semibold` (600) |
+| **Body Text** | `text-sm sm:text-base text-slate-300` | 14px a 16px | `font-normal` (400) |
 
 ---
 
-## 4. Espaçamentos e Estrutura de Layout
+## 4. Componentes Chave
 
-* **Espaçamento Vertical de Secções:**
-  * Todas as secções usam `@apply py-24 px-3` (96px de respiro superior/inferior), permitindo ritmo visual consistente.
-* **Contentores de Largura Máxima (`container-section-content`):**
-  * Mobile (< 640px): `max-w-[80%]`
-  * Pequenos ecrãs (sm): `max-w-[440px]`
-  * Ecrãs médios (md): `max-w-screen-md` (768px)
-  * Ecrãs grandes (xl): `max-w-screen-lg` (1024px)
-  * Banner Hero (2xl): `max-w-screen-2xl` (1536px)
+### 4.1. Navbar Flutuante (*Floating Glass Navbar*)
+* **Estrutura:**
+  * Posição fixa no topo (`sticky top-0 z-50`), com contentor central flutuante ou barra limpa com `backdrop-blur-md` e borda inferior `border-b border-slate-800/60`.
+  * **Logo:** Monograma `FP` em caixa com gradiente `from-sky-400 to-indigo-500` acompanhado do nome "Fábio Paulo".
+  * **Links Centrais:** Transição suave com `hover:text-sky-300` e classe ativa `text-sky-400 font-semibold relative`.
+  * **Ação Direta:** Botão de chamada para ação rápida à direita para contacto ou CV.
 
----
+### 4.2. Cartões de Vidro (*Glass Cards*)
+* Fundo: `bg-slate-900/60 backdrop-blur-sm`.
+* Borda: `border border-slate-800/80 hover:border-sky-500/40 transition-colors`.
+* Sombra: `shadow-lg shadow-black/20 hover:shadow-sky-500/5`.
 
-## 5. Padrões de Componentes de UI
-
-### Botão 3D CTA ("Download CV")
-Combina cores e descolamento vertical instantâneo para sensação táctil tátil física:
-```scss
-a {
-  @apply w-full sm:w-[50%] text-center bg-blue-400 py-3 text-lg font-medium 
-         uppercase rounded-xl border-b-4 border-b-blue-600 
-         active:translate-y-[4px] active:border-b-0 active:border-t-4 active:border-t-transparent 
-         transition-all duration-[5ms] hover:bg-blue-500 hover:border-b-blue-700;
-  letter-spacing: 2px;
-}
-```
-
-### Divisor de Secção (`.divider`)
-Elemento gráfico de assinatura em títulos e blocos biográficos:
-```scss
-.divider {
-  @apply h-1 w-full bg-blue-500 rounded-full;
-}
-```
-
-### Cards e Efeitos Visuais
-* **Academic Card:** Link com transição horizontal animada, ícone institucional e data.
-* **Project Card:** Cartão com imagem de destaque, centralização flexível e efeito de escala ao entrar em foco.
-* **Language / Skill Card:** Cartão com SVG monocromático e círculo de progresso (`CircularProgressbar`) integrado.
+### 4.3. Foto de Perfil Iluminada
+* Brilho calibrado a **95%** (`brightness(95%)`), contraste em **105%** e saturação a **100%**.
+* Máscara suave em gradiente na base para fundir suavemente a foto no fundo sem cortes abruptos.
