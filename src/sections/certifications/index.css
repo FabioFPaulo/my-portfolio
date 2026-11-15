@@ -2,12 +2,12 @@
 
 #certifications {
   .certifications-container {
-    @apply mt-10 max-w-4xl mx-auto;
+    @apply mt-10 max-w-3xl mx-auto flex flex-col gap-6;
 
     .certification-card {
       @apply rounded-2xl p-6 sm:p-8 flex flex-col justify-between;
       @apply bg-slate-900/60 border border-slate-800/80 backdrop-blur-sm shadow-xl shadow-black/20;
-      @apply hover:border-sky-500/40 hover:shadow-sky-500/5 transition-all duration-300;
+      @apply hover:border-sky-500/40 hover:shadow-sky-500/5 hover:-translate-y-0.5 transition-all duration-300;
 
       .certification-header {
         @apply flex flex-wrap items-center justify-between gap-4 mb-4 pb-4 border-b border-slate-800/70;
@@ -58,11 +58,19 @@
       }
 
       .certification-title {
-        @apply text-xl sm:text-2xl font-bold text-white tracking-tight mb-1;
+        @apply text-xl sm:text-2xl font-bold text-white tracking-tight mb-2 group-hover:text-sky-300 transition-colors;
       }
 
-      .certification-program {
-        @apply text-xs sm:text-sm font-semibold text-sky-400/90 mb-4;
+      .certification-program-line {
+        @apply flex flex-wrap items-center gap-2.5 text-xs font-semibold mb-4;
+
+        .edition-badge {
+          @apply px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wider text-indigo-300 bg-indigo-500/15 border border-indigo-500/25 rounded-md;
+        }
+
+        .program-text {
+          @apply text-sky-400/90 font-medium;
+        }
       }
 
       .certification-description {
@@ -77,54 +85,18 @@
         }
       }
 
-      .editions-section {
-        @apply mt-2 pt-5 border-t border-slate-800/80;
+      .certification-actions {
+        @apply flex flex-wrap items-center gap-3 pt-4 border-t border-slate-800/70;
 
-        .editions-title {
-          @apply flex items-center gap-2 text-sm font-semibold text-slate-200 mb-3;
+        .btn-preview-cert {
+          @apply flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-semibold rounded-xl;
+          @apply text-white bg-gradient-to-r from-sky-500 to-indigo-600 hover:from-sky-400 hover:to-indigo-500;
+          @apply shadow-lg shadow-sky-500/20 hover:shadow-sky-500/30 transition-all duration-200 cursor-pointer;
         }
 
-        .editions-list {
-          @apply flex flex-col gap-3;
-
-          .edition-item {
-            @apply p-4 rounded-xl bg-slate-800/40 border border-slate-700/40 hover:border-slate-600/60;
-            @apply flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition-all duration-200;
-
-            .edition-info {
-              @apply flex-1;
-
-              .edition-header {
-                @apply flex items-center gap-2 mb-1.5;
-
-                .edition-badge {
-                  @apply px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-indigo-300 bg-indigo-500/15 border border-indigo-500/25 rounded;
-                }
-
-                .edition-date {
-                  @apply text-xs text-slate-400 flex items-center gap-1;
-                }
-              }
-
-              .edition-name {
-                @apply text-sm font-semibold text-slate-100 italic leading-snug;
-              }
-
-              .edition-description {
-                @apply text-xs text-slate-400 mt-1 leading-normal text-justify;
-              }
-            }
-
-            .edition-action {
-              @apply shrink-0 sm:self-center;
-
-              .btn-preview-cert {
-                @apply inline-flex items-center justify-center gap-2 px-3.5 py-2 text-xs font-semibold rounded-xl;
-                @apply text-white bg-gradient-to-r from-sky-500 to-indigo-600 hover:from-sky-400 hover:to-indigo-500;
-                @apply shadow-md shadow-sky-500/15 hover:shadow-sky-500/25 transition-all duration-200 cursor-pointer whitespace-nowrap;
-              }
-            }
-          }
+        .btn-drive-link {
+          @apply inline-flex items-center gap-1.5 px-3.5 py-2.5 text-xs font-medium text-slate-300 hover:text-white;
+          @apply bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700/60 rounded-xl transition-all duration-200;
         }
       }
     }

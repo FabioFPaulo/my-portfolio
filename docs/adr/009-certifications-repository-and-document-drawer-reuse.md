@@ -16,15 +16,16 @@ De acordo com as diretrizes de arquitetura do projeto:
 
 1. **Repositório de Dados Isolado (`LocalCertificationsRepository`):**
    - Criada a pasta `src/repositories/local/certifications/` com:
-     - `types.ts`: Definição das interfaces `ICertificationDocument`, `ICertificationItem` e do contrato `ICertificationsRepository`.
-     - `data.ts`: Coleção tipada com os dados do programa Verão Ciência do IPB (2024–2026), listando as 3 edições com títulos específicos, datas oficiais, competências instruídas e respetivos paths para os certificados PDF.
+     - `types.ts`: Definição da interface `ICertificationItem` (ano, edição, título, programa, instituição "Universidade Politécnica de Bragança", localização, modalidade presencial, data, categoria, competências, PDF local e link Google Drive) e contrato `ICertificationsRepository`.
+     - `data.ts`: Coleção tipada com 3 cartões individuais para cada certificado do Verão Ciência (2026, 2025 e 2024), contendo as descrições literais do CV Europass, logotipo `logo_upb.svg`, ficheiros locais (`public/files/verao_ciencia_*.pdf`) e links diretos do Google Drive.
      - `repository.ts`: Implementação da classe `LocalCertificationsRepository` com métodos `getCertificationsData()` e `getCertificationById(id)`.
      - `index.ts`: Ponto de entrada barrel exportado centralmente em `src/repositories/index.ts`.
 
-2. **Componente de Apresentação `CertificationsSection`:**
+2. **Componente de Apresentação `CertificationsSection` (Cards Individuais por Certificado):**
    - Criado em `src/sections/certifications/`:
-     - `index.tsx`: Renderiza o cartão de acreditação com o logotipo do IPB (`ipb_logo.png`), metadados institucionais (Localização, modalidade presencial, categoria "Teaching & Mentoring"), descrição justificada (`text-justify`), tags de competências e lista detalhada das edições anuais.
-     - Cada edição anual dispõe de um botão de ação com ícone que aciona o `DocumentDrawer`, definindo o documento selecionado em estado local.
+     - `index.tsx`: Renderiza um cartão dedicado por cada certificado com animações de cascata (`staggerChildren`), exibindo o logotipo da UPB, metadados institucionais ("Universidade Politécnica de Bragança", "Presential", "Teaching & Mentoring"), título de workshop, badge de edição, descrição justificada (`text-justify`), tags de competências e dupla ação:
+       - Botão primário **"Visualizar Certificado"**: aciona o `DocumentDrawer` para pré-visualização vetorial imediata em ecrã.
+       - Botão secundário **"Google Drive"**: ligação externa direta para o ficheiro partilhado.
      - `index.css`: Estilização nativa Tailwind CSS v4 (`@reference "../../index.css"`), respeitando o design system Deep Slate / Neon Sky / Indigo.
 
 3. **Reutilização do `DocumentDrawer`:**

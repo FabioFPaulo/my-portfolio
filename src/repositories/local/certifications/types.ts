@@ -1,26 +1,19 @@
-export interface ICertificationDocument {
-  id: string;
-  edition: string;
-  date: string;
-  title: string;
-  pdfUrl: string;
-  driveUrl?: string;
-  description?: string;
-}
-
 export interface ICertificationItem {
   id: string;
+  year: string;
+  edition: string;
   title: string;
   program: string;
   institution: string;
   location: string;
   mode: string;
-  dateRange: string;
+  date: string;
   badge: string;
   logo?: string;
   description: string;
   skills: string[];
-  documents: ICertificationDocument[];
+  pdfUrl: string;
+  driveUrl?: string;
 }
 
 export interface ICertificationsRepository {

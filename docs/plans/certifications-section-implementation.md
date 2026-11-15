@@ -25,17 +25,18 @@ Este plano detalha o processo de desconstrução, arquitetura de dados e impleme
 ## 2. Fases de Execução
 
 ### Fase 1: Camada de Dados (Repository Pattern)
-- [x] Criar `src/repositories/local/certifications/types.ts` com interfaces `ICertificationItem`, `ICertificationDocument` e `ICertificationsRepository`.
-- [x] Criar `src/repositories/local/certifications/data.ts` com os dados completos e precisos das 3 edições.
+- [x] Criar `src/repositories/local/certifications/types.ts` com interfaces `ICertificationItem` e `ICertificationsRepository`.
+- [x] Descarregar os 3 PDFs oficiais do Google Drive para `public/files/` (`verao_ciencia_2024_certificate.pdf`, `verao_ciencia_2025_certificate.pdf`, `verao_ciencia_2026_certificate.pdf`).
+- [x] Criar `src/repositories/local/certifications/data.ts` com 3 registos individuais para cada certificado do Verão Ciência (2026, 2025, 2024), nomeados como "Universidade Politécnica de Bragança".
 - [x] Criar `src/repositories/local/certifications/repository.ts` implementando a classe e exportando a instância `certificationsRepository`.
 - [x] Criar barrel `index.ts` e expor em `src/repositories/index.ts`.
 
-### Fase 2: Componente e Apresentação
+### Fase 2: Componente e Apresentação (1 Card por Certificado)
 - [x] Criar `src/sections/certifications/index.tsx`:
-  - Cartão de apresentação com logotipo IPB (`ipb_logo.png`), badges e metadados.
-  - Parágrafo descritivo justificado.
-  - Tags de competências (ReactJS, Component Architecture, etc.).
-  - Sub-grelha com as 3 edições e botões para acionar o `DocumentDrawer`.
+  - Cartões individuais por certificado com logotipo UPB (`logo_upb.svg`), badges de edição, data e metadados.
+  - Parágrafo descritivo justificado literal do CV Europass.
+  - Tags de competências específicas de cada edição.
+  - Botão de pré-visualização em ecrã via `DocumentDrawer` e botão com ligação para o Google Drive.
 - [x] Criar `src/sections/certifications/index.css` utilizando Tailwind CSS v4 e nesting limpo.
 
 ### Fase 3: Integração no Layout Principal
