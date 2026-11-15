@@ -1,5 +1,14 @@
 #experiences {
-  .list {
-    @apply py-8;
+  .timeline-container {
+    @apply relative py-10 max-w-4xl mx-auto;
+
+    &::before {
+      content: "";
+      @apply absolute left-2.5 sm:left-2.5 top-4 bottom-4 w-0.5 bg-gradient-to-b from-sky-400 via-indigo-500/50 to-slate-800/80;
+    }
+
+    .timeline-list {
+      @apply relative z-10;
+    }
   }
 }
