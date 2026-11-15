@@ -20,7 +20,7 @@ Este documento cataloga todas as funcionalidades ativas, módulos funcionais e r
 | **Certificações & Workshops (Certifications)** | `src/sections/certifications/` | **Ativo** | Atividades de instrução e mentoria técnica no programa Verão Ciência do IPB (2024–2026), repositório local e visualização de certificados via DocumentDrawer. |
 | **Competências & Linguagens (Skills)** | `src/sections/languages/` | **Ativo** | Matriz de competências em 6 categorias de domínio (Deep Learning & 3D, Backend, Frontend, Mobile, Databases, DevOps), tags interativas e repositório local. |
 | **Publicações Científicas (Publications)** | `src/sections/publications/` | **Ativo** | Catálogo dos 4 artigos científicos de conferências internacionais (AmI, Springer LNNS, IEEE ICEET), com repositório local e cópia rápida de citações. |
-| **Rodapé Institucional** | `src/sections/footer/` | **Ativo** | Informação de direitos de autor e ligação direta para o perfil GitHub. |
+| **Rodapé Institucional Moderno (Footer)** | `src/sections/footer/` | **Ativo** | Footer completo em 4 colunas com monograma de marca, bio institucional, beacon de disponibilidade, navegação rápida via react-scroll, secção académica/científica, contacto direto com cópia de email, botões GitHub/CV e botão de regresso ao topo. |
 | **Secção "About Me"** | `src/sections/about/` | **Ativo** | Apresentação biográfica completa extraída do CV Europass, destaques académicos e de investigação, consumindo `src/repositories/local`. |
 | **Secção "Contact Me"** | `src/components/navbar/utils.ts` | **Pendente** | Rota/âncora prevista no menu, mas sem componente de formulário associado. |
 
