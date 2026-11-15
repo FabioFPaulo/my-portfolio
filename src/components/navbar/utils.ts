@@ -26,6 +26,10 @@ export const items: IItem[] = [
     url: "leadership",
   },
   {
+    label: "conferences",
+    url: "conferences",
+  },
+  {
     label: "skills",
     url: "languages",
   },
