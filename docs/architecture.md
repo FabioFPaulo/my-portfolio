@@ -114,6 +114,8 @@ src/
 │   │   └── project/
 │   ├── container/        # Container e Section wrappers com esquemas de cor
 │   │   └── section/
+│   ├── drawer/           # Painéis laterais e visualizadores (React Portal)
+│   │   └── document/     # Visualizador vertical de PDFs (EmbedPDF)
 │   ├── loading/          # Animação de tela de splash/loading (Framer Motion)
 │   ├── navbar/           # Barra de navegação com suporte a versão mobile e desktop
 │   │   ├── horizontal/   # Versão desktop com scroll suave

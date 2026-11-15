@@ -18,10 +18,13 @@ Cada registo de conferência possui um comprovativo ou documento PDF associado (
      - `repository.ts`: Classe `LocalConferencesRepository` com métodos `getConferencesData()` e `getConferenceById(id)`.
      - `index.ts`: Ponto de exportação barrel integrado em `src/repositories/index.ts`.
 
-2. **Transição de Layout Fluida (Master-Detail Split-View):**
-   - Utilização de `framer-motion` (`layout` prop e transições `spring`/`tween`) para redimensionar o container da conferência quando um item está selecionado (`selectedConference`).
-   - Quando nenhum item está ativo, o card é exibido centrado com largura otimizada (`max-w-3xl mx-auto`).
-   - Ao selecionar a conferência, a coluna principal divide-se e um painel deslizante entra pela direita com animação suave de slide e opacidade (`x: [40, 0]`, `opacity: [0, 1]`).
+2. **Visualizador Vertical de Página Inteira (Slide-over Drawer via React Portal):**
+   - Criação do componente desacoplado `DocumentDrawer` em `src/components/drawer/document/`, montado diretamente na raiz do DOM (`document.body`) via `createPortal`.
+   - A secção `ConferencesSection` preserva a simetria de grelha centrada (`max-w-3xl mx-auto`). Ao clicar em "View Document / Certificate", ativa o drawer com 100% da altura da viewport.
+   - Transição combinada via `Framer Motion` (`AnimatePresence`):
+     - Backdrop escuro translúcido com fade (`opacity: 0 -> 1`).
+     - Painel lateral vertical com slide da borda direita (`x: "100%" -> "0%"`), ocupando largura total em mobile e 50% (`max-w-2xl`) em desktop.
+   - Bloqueio automático de scroll do `document.body` e escuta da tecla `Escape` para fecho ergonómico.
 
 3. **Integração do Visualizador de PDF (`@embedpdf/viewer-react`):**
    - O visualizador é encapsulado com barra de ações dedicada:

@@ -1,0 +1,50 @@
+.document-drawer-backdrop {
+  @apply fixed inset-0 z-50 bg-slate-950/75 backdrop-blur-sm cursor-pointer;
+}
+
+.document-drawer-panel {
+  @apply fixed top-0 right-0 bottom-0 z-50 h-full w-full md:w-1/2 max-w-2xl;
+  @apply bg-slate-900/95 border-l border-slate-800/90 backdrop-blur-md shadow-2xl shadow-black/80;
+  @apply flex flex-col overflow-hidden;
+
+  .drawer-header {
+    @apply px-5 sm:px-6 py-4 bg-slate-950/90 border-b border-slate-800/80 flex items-center justify-between gap-4 shrink-0;
+
+    .drawer-title-group {
+      @apply flex items-center gap-3 min-w-0;
+
+      .drawer-icon-box {
+        @apply w-9 h-9 rounded-xl bg-sky-500/10 border border-sky-400/20 text-sky-400 flex items-center justify-center shrink-0;
+      }
+
+      .drawer-title-text {
+        @apply min-w-0;
+
+        .drawer-title {
+          @apply text-sm sm:text-base font-bold text-white tracking-tight truncate block;
+        }
+
+        .drawer-subtitle {
+          @apply text-xs text-slate-400 truncate block;
+        }
+      }
+    }
+
+    .drawer-actions {
+      @apply flex items-center gap-2.5 shrink-0;
+
+      .btn-open-external {
+        @apply hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-sky-400 hover:text-sky-300;
+        @apply bg-sky-500/10 hover:bg-sky-500/20 border border-sky-400/20 rounded-lg transition-colors;
+      }
+
+      .btn-close-drawer {
+        @apply p-2 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800/80 border border-transparent hover:border-slate-700/60 transition-all;
+      }
+    }
+  }
+
+  .drawer-body {
+    @apply flex-1 relative w-full h-full bg-slate-950 overflow-hidden;
+  }
+}
