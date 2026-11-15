@@ -1,9 +1,10 @@
+import { useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
+import { useAnimation, useInView, motion } from "framer-motion";
 import useApp from "@/hooks/useApp";
 import Container from "@/components/container";
 import Title from "@/components/title";
 import { leadershipRepository } from "@/repositories";
-import { useEffect, useRef } from "react";
-import { useAnimation, useInView, motion } from "framer-motion";
 import "./index.css";
 
 const listVariants = {
@@ -28,6 +29,7 @@ const cardVariants = {
 };
 
 export default function LeadershipSection() {
+  const { t } = useTranslation();
   const app = useApp();
   const leadershipList = leadershipRepository.getLeadershipData();
 
@@ -46,8 +48,8 @@ export default function LeadershipSection() {
   return (
     <Container.Section colorScheme="color-1" id="leadership">
       <Title.Primary
-        title="Leadership & Mentoring"
-        subtitle="Technical guidance, code reviews, and software engineering supervision"
+        title={t("sections.leadership.title")}
+        subtitle={t("sections.leadership.subtitle")}
       />
       <motion.div
         ref={ref}
@@ -93,7 +95,7 @@ export default function LeadershipSection() {
             {/* Orientando (se aplicável) */}
             {item.student && (
               <div className="leadership-student-badge">
-                <span className="student-label">Supervisão:</span>
+                <span className="student-label">{t("sections.leadership.supervision")}:</span>
                 <span className="student-name">{item.student}</span>
               </div>
             )}

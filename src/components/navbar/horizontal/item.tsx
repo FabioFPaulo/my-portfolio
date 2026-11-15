@@ -1,6 +1,8 @@
 import {motion} from "framer-motion";
 import {Link} from "react-scroll";
+import {useTranslation} from "react-i18next";
 import type {IItem} from "../types";
+import {getNavLabel} from "../nav-translation";
 
 export default function NavbarHorizontalItem({
                                                  item,
@@ -8,6 +10,7 @@ export default function NavbarHorizontalItem({
     item: IItem;
     haveSeparator?: boolean;
 }) {
+    const {t} = useTranslation();
     return (
         <motion.li
             whileHover={{y: -1}}
@@ -22,7 +25,7 @@ export default function NavbarHorizontalItem({
                 activeClass="active-nav-link"
                 className="px-2 xl:px-3 py-1.5 text-xs xl:text-sm font-medium text-slate-300 hover:text-white transition-all duration-200 rounded-full capitalize cursor-pointer block hover:bg-slate-800/60 whitespace-nowrap"
             >
-                {item.label}
+                {getNavLabel(item.label, t)}
             </Link>
         </motion.li>
     );

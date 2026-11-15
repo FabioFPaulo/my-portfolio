@@ -1,9 +1,11 @@
 import {motion} from "framer-motion";
+import {useTranslation} from "react-i18next";
 import "./index.css";
 import {items} from "../utils";
 import NavbarHorizontalItem from "./item";
 import type {IProps} from "./types";
 import NavbarLogo from "../logo";
+import LanguageSelector from "@/components/language-selector";
 
 const listVariants = {
     open: {
@@ -15,6 +17,7 @@ const listVariants = {
 };
 
 export default function NavbarHorizontal(props: IProps) {
+    const {t} = useTranslation();
     return (
         <nav id="horizontal-nav">
             <div className="navbar-container">
@@ -37,13 +40,14 @@ export default function NavbarHorizontal(props: IProps) {
 
                 {/* Ação rápida à direita e botão hambúrguer para mobile */}
                 <div className="navbar-actions">
+                    <LanguageSelector />
                     <a
                         href={`${import.meta.env.BASE_URL}files/cv.pdf`}
                         target="_blank"
                         rel="noreferrer"
                         className="navbar-cta-btn hidden md:inline-flex"
                     >
-                        <span>Currículo</span>
+                        <span>{t("nav.cv")}</span>
                         <svg
                             className="w-3.5 h-3.5 ml-1.5 transition-transform group-hover:translate-y-0.5"
                             fill="none"

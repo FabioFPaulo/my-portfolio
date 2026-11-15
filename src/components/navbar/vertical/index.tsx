@@ -1,9 +1,11 @@
 import {useCallback, useEffect, useState} from "react";
 import {motion, useAnimation} from "framer-motion";
+import {useTranslation} from "react-i18next";
 import type {IProps} from "./types";
 import {items} from "../utils";
 import NavabarItemComponent from "./item";
 import NavbarLogo from "../logo";
+import LanguageSelector from "@/components/language-selector";
 import "./index.css";
 
 const panelVariants = {
@@ -27,6 +29,7 @@ const listVariants = {
 };
 
 export default function NavbarVertical(props: IProps) {
+    const {t} = useTranslation();
     const [isHidden, setIsHidden] = useState(!props.isOpen);
     const mainControls = useAnimation();
 
@@ -104,15 +107,19 @@ export default function NavbarVertical(props: IProps) {
                     </motion.ul>
                 </div>
 
-                {/* Rodapé do menu móvel com botão de CV */}
-                <div className="sidebar-footer">
+                {/* Rodapé do menu móvel com seletor de idioma e botão de CV */}
+                <div className="sidebar-footer flex flex-col gap-3">
+                    <div className="flex items-center justify-between px-1">
+                        <span className="text-xs text-slate-400 font-medium">Idioma / Language:</span>
+                        <LanguageSelector isCompact />
+                    </div>
                     <a
                         href={`${import.meta.env.BASE_URL}files/cv.pdf`}
                         target="_blank"
                         rel="noreferrer"
                         className="sidebar-cv-btn"
                     >
-                        <span>Descarregar Currículo</span>
+                        <span>{t("nav.downloadCv")}</span>
                         <svg
                             className="w-4 h-4 ml-2"
                             fill="none"

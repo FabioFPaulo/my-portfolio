@@ -1,10 +1,11 @@
+import { useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
+import { motion, useAnimation, useInView } from "framer-motion";
+import useApp from "@/hooks/useApp";
 import Container from "@/components/container";
 import Title from "@/components/title";
 import Card from "@/components/card";
 import { skillsRepository } from "@/repositories";
-import { motion, useAnimation, useInView } from "framer-motion";
-import useApp from "@/hooks/useApp";
-import { useEffect, useRef } from "react";
 import "./index.css";
 
 const listVariants = {
@@ -17,6 +18,7 @@ const listVariants = {
 };
 
 export default function LanguagesSection() {
+  const { t } = useTranslation();
   const app = useApp();
   const skillsList = skillsRepository.getSkillsData();
 
@@ -36,8 +38,8 @@ export default function LanguagesSection() {
   return (
     <Container.Section id="languages" colorScheme="color-2">
       <Title.Primary
-        title="Technical Skills"
-        subtitle="Specialized engineering competencies, frameworks, and modern tools"
+        title={t("sections.skills.title")}
+        subtitle={t("sections.skills.subtitle")}
       />
       <motion.div
         ref={ref}

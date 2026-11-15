@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { motion, useAnimation, useInView } from "framer-motion";
 import useApp from "@/hooks/useApp";
 import Container from "@/components/container";
@@ -31,6 +32,7 @@ const cardVariants = {
 };
 
 export default function PublicationsSection() {
+  const { t } = useTranslation();
   const app = useApp();
   const publicationsList = publicationsRepository.getPublicationsData();
   const [copiedId, setCopiedId] = useState<string | null>(null);
@@ -61,8 +63,8 @@ export default function PublicationsSection() {
   return (
     <Container.Section colorScheme="color-1" id="publications">
       <Title.Primary
-        title="Publications"
-        subtitle="Peer-reviewed conference papers, symposium proceedings, and scientific contributions"
+        title={t("sections.publications.title")}
+        subtitle={t("sections.publications.subtitle")}
       />
 
       <motion.div
@@ -169,7 +171,7 @@ export default function PublicationsSection() {
               </div>
               {item.publicationDetails && (
                 <div className="details-line">
-                  <span className="details-label">Citation & Index:</span>
+                  <span className="details-label">{t("sections.publications.citationAndIndex")}</span>
                   <span className="details-value">
                     {item.publicationDetails}
                   </span>
@@ -197,7 +199,7 @@ export default function PublicationsSection() {
                 type="button"
                 onClick={() => handleCopyCitation(item)}
                 className="btn-copy-citation"
-                title="Copiar citação formatada"
+                title={t("sections.publications.copyCitation")}
               >
                 {copiedId === item.id ? (
                   <>
@@ -215,7 +217,7 @@ export default function PublicationsSection() {
                       />
                     </svg>
                     <span className="text-emerald-300 font-semibold">
-                      Citação Copiada!
+                      {t("sections.publications.citationCopied")}
                     </span>
                   </>
                 ) : (
@@ -233,7 +235,7 @@ export default function PublicationsSection() {
                         d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"
                       />
                     </svg>
-                    <span>Copiar Citação</span>
+                    <span>{t("sections.publications.copyCitation")}</span>
                   </>
                 )}
               </button>
@@ -244,9 +246,9 @@ export default function PublicationsSection() {
                   target="_blank"
                   rel="noreferrer"
                   className="btn-venue-link"
-                  title="Visitar Website Oficial"
+                  title={t("sections.publications.conferenceWebsite")}
                 >
-                  <span>Conferência / Website</span>
+                  <span>{t("sections.publications.conferenceWebsite")}</span>
                   <svg
                     className="w-3.5 h-3.5 opacity-70"
                     fill="none"

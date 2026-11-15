@@ -1,6 +1,8 @@
 import type {IItem} from "../types";
 import {Link} from "react-scroll";
 import {motion} from "framer-motion";
+import {useTranslation} from "react-i18next";
+import {getNavLabel} from "../nav-translation";
 
 const itemVariants = {
     open: {
@@ -19,6 +21,7 @@ const itemVariants = {
 };
 
 export default function NavabarItemComponent({item}: { item: IItem }) {
+    const {t} = useTranslation();
     return (
         <motion.li variants={itemVariants} className="list-none">
             <Link
@@ -29,7 +32,7 @@ export default function NavabarItemComponent({item}: { item: IItem }) {
                 activeClass="sidebar-active-link"
                 className="block py-3 px-4 text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/60 rounded-xl transition-all capitalize cursor-pointer"
             >
-                {item.label}
+                {getNavLabel(item.label, t)}
             </Link>
         </motion.li>
     );

@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import { motion, useAnimation, useInView } from "framer-motion";
 import Container from "@/components/container";
 import Title from "@/components/title";
@@ -7,6 +8,7 @@ import { aboutRepository } from "@/repositories";
 import "./index.css";
 
 export default function AboutSection() {
+  const { t } = useTranslation();
   const app = useApp();
   const aboutData = aboutRepository.getAboutData();
 
@@ -26,8 +28,8 @@ export default function AboutSection() {
     <Container.Section colorScheme="color-1" id="about-me">
       <div ref={ref}>
         <Title.Primary
-          title={aboutData.title}
-          subtitle={aboutData.subtitle}
+          title={t("sections.about.title")}
+          subtitle={t("sections.about.subtitle")}
         />
 
         <div className="about-grid">
@@ -51,7 +53,7 @@ export default function AboutSection() {
             </div>
 
             <div className="specializations-container">
-              <span className="specializations-title">Core Technologies:</span>
+              <span className="specializations-title">{t("sections.about.specializations")}:</span>
               <div className="specializations-list">
                 {aboutData.specializations.map((spec, index) => (
                   <span key={index} className="spec-badge">

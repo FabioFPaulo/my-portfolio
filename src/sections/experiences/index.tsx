@@ -1,11 +1,12 @@
+import { useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
+import { useAnimation, useInView, motion } from "framer-motion";
 import useApp from "@/hooks/useApp";
 import Cards from "@/components/card";
 import Container from "@/components/container";
 import Title from "@/components/title";
 import { experiencesRepository } from "@/repositories";
 import { formatStartEndDate } from "./utils";
-import { useEffect, useRef } from "react";
-import { useAnimation, useInView, motion } from "framer-motion";
 import "./index.css";
 
 const listVariants = {
@@ -18,6 +19,7 @@ const listVariants = {
 };
 
 export default function Experiences() {
+  const { t } = useTranslation();
   const app = useApp();
   const experiencesList = experiencesRepository.getExperiencesData();
 
@@ -36,8 +38,8 @@ export default function Experiences() {
   return (
     <Container.Section colorScheme="color-1" id="experiences">
       <Title.Primary
-        title="Work Experience"
-        subtitle="Professional roles, research projects, and systems engineering contributions"
+        title={t("sections.experiences.title")}
+        subtitle={t("sections.experiences.subtitle")}
       />
       <div className="timeline-container">
         <motion.div

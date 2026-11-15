@@ -1,10 +1,11 @@
+import { useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
+import { useAnimation, useInView, motion } from "framer-motion";
 import useApp from "@/hooks/useApp";
 import Cards from "@/components/card";
 import Container from "@/components/container";
 import Title from "@/components/title";
 import { projectsRepository } from "@/repositories";
-import { useEffect, useRef } from "react";
-import { useAnimation, useInView, motion } from "framer-motion";
 import "./index.css";
 
 const listVariants = {
@@ -17,6 +18,7 @@ const listVariants = {
 };
 
 export default function Projects() {
+  const { t } = useTranslation();
   const app = useApp();
   const projectsList = projectsRepository.getProjectsData();
 
@@ -35,8 +37,8 @@ export default function Projects() {
   return (
     <Container.Section colorScheme="color-2" id="projects">
       <Title.Primary
-        title="Personal Projects"
-        subtitle="Featured open-source software, 3D graphics experiments, and mobile applications"
+        title={t("sections.projects.title")}
+        subtitle={t("sections.projects.subtitle")}
       />
       <motion.div
         ref={ref}

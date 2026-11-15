@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { motion, useAnimation, useInView } from "framer-motion";
 import useApp from "@/hooks/useApp";
 import Container from "@/components/container";
@@ -32,6 +33,7 @@ const cardVariants = {
 };
 
 export default function CertificationsSection() {
+  const { t } = useTranslation();
   const app = useApp();
   const certificationsList = certificationsRepository.getCertificationsData();
   const [selectedCertification, setSelectedCertification] =
@@ -52,8 +54,8 @@ export default function CertificationsSection() {
   return (
     <Container.Section colorScheme="color-1" id="certifications">
       <Title.Primary
-        title="Certifications"
-        subtitle="Professional accreditations, scientific mentoring programs, and technical workshop certificates"
+        title={t("sections.certifications.title")}
+        subtitle={t("sections.certifications.subtitle")}
       />
 
       <motion.div
@@ -175,7 +177,7 @@ export default function CertificationsSection() {
                     d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
                   />
                 </svg>
-                <span>Visualizar Certificado</span>
+                <span>{t("sections.certifications.viewCertificate")}</span>
               </button>
 
               {item.driveUrl && (

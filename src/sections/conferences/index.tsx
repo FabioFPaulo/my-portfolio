@@ -1,13 +1,15 @@
+import {useEffect, useRef, useState} from "react";
+import {useTranslation} from "react-i18next";
+import {motion, useAnimation, useInView} from "framer-motion";
 import useApp from "@/hooks/useApp";
 import Container from "@/components/container";
 import Title from "@/components/title";
 import DocumentDrawer from "@/components/drawer/document";
 import {conferencesRepository, type IConferenceItem} from "@/repositories";
-import {useEffect, useRef, useState} from "react";
-import {motion, useAnimation, useInView} from "framer-motion";
 import "./index.css";
 
 export default function ConferencesSection() {
+    const { t } = useTranslation();
     const app = useApp();
     const conferencesList = conferencesRepository.getConferencesData();
     const [selectedConference, setSelectedConference] =
@@ -28,8 +30,8 @@ export default function ConferencesSection() {
     return (
         <Container.Section colorScheme="color-2" id="conferences">
             <Title.Primary
-                title="Conferences & Seminars"
-                subtitle="International presentations, emerging technologies, and academic proceedings"
+                title={t("sections.conferences.title")}
+                subtitle={t("sections.conferences.subtitle")}
             />
 
             <motion.div
@@ -132,7 +134,7 @@ export default function ConferencesSection() {
                                         d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
                                     />
                                 </svg>
-                                <span>View Document / Certificate</span>
+                                <span>{t("sections.conferences.viewDocument")}</span>
                             </button>
 
                             <a
@@ -141,7 +143,7 @@ export default function ConferencesSection() {
                                 rel="noreferrer"
                                 className="btn-official-link"
                             >
-                                <span>Website</span>
+                                <span>{t("sections.conferences.website")}</span>
                                 <svg
                                     className="w-3.5 h-3.5 opacity-70"
                                     fill="none"

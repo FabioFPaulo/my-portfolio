@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import Container from "@/components/container";
 import Title from "@/components/title";
 import Card from "@/components/card";
@@ -6,13 +7,14 @@ import { formatStartEndDate } from "../experiences/utils";
 import "./index.css";
 
 export default function AcademicSection() {
+  const { t } = useTranslation();
   const academicList = academicRepository.getAcademicData();
 
   return (
     <Container.Section colorScheme="color-2" id="academic-education">
       <Title.Primary
-        title="Academic Education"
-        subtitle="Academic degrees and qualifications shaping my engineering foundation"
+        title={t("sections.academic.title")}
+        subtitle={t("sections.academic.subtitle")}
       />
       <div className="academic-grid">
         {academicList.map((item, index) => (

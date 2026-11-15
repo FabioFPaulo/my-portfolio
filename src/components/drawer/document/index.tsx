@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import { createPortal } from "react-dom";
+import { useTranslation } from "react-i18next";
 import { AnimatePresence, motion } from "framer-motion";
 import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/Page/AnnotationLayer.css";
@@ -21,6 +22,7 @@ export default function DocumentDrawer({
   pdfUrl,
   downloadUrl,
 }: IDocumentDrawerProps) {
+  const { t } = useTranslation();
   const [numPages, setNumPages] = useState<number | null>(null);
   const [pageNumber, setPageNumber] = useState<number>(1);
   const [scale, setScale] = useState<number>(1.0);
@@ -160,7 +162,7 @@ export default function DocumentDrawer({
                   rel="noreferrer"
                   className="btn-open-external"
                 >
-                  <span>Open in Tab</span>
+                  <span>{t("sections.drawer.openDirectly")}</span>
                   <svg
                     className="w-3.5 h-3.5"
                     fill="none"
@@ -180,7 +182,7 @@ export default function DocumentDrawer({
                   type="button"
                   onClick={onClose}
                   className="btn-close-drawer"
-                  aria-label="Close Document Preview"
+                  aria-label={t("sections.drawer.close")}
                 >
                   <svg
                     className="w-5 h-5"
@@ -207,8 +209,8 @@ export default function DocumentDrawer({
                   type="button"
                   onClick={zoomOut}
                   className="toolbar-btn"
-                  title="Zoom Out"
-                  aria-label="Zoom Out"
+                  title={t("sections.drawer.zoomOut")}
+                  aria-label={t("sections.drawer.zoomOut")}
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20 12H4" />
@@ -228,8 +230,8 @@ export default function DocumentDrawer({
                   type="button"
                   onClick={zoomIn}
                   className="toolbar-btn"
-                  title="Zoom In"
-                  aria-label="Zoom In"
+                  title={t("sections.drawer.zoomIn")}
+                  aria-label={t("sections.drawer.zoomIn")}
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4" />
@@ -243,8 +245,8 @@ export default function DocumentDrawer({
                   type="button"
                   onClick={rotateClockwise}
                   className="toolbar-btn"
-                  title="Rotate Clockwise"
-                  aria-label="Rotate"
+                  title={t("sections.drawer.rotate")}
+                  aria-label={t("sections.drawer.rotate")}
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
@@ -297,7 +299,7 @@ export default function DocumentDrawer({
                 <div className="pdf-loading-state">
                   <div className="pdf-spinner" />
                   <p className="text-xs text-slate-400 mt-3 font-medium">
-                    Rendering certificate with high precision...
+                    {t("sections.drawer.loadingDocument")}
                   </p>
                 </div>
               )}
@@ -318,10 +320,10 @@ export default function DocumentDrawer({
                     />
                   </svg>
                   <p className="text-sm font-semibold text-slate-200">
-                    Failed to load document preview
+                    {t("sections.drawer.failedToLoad")}
                   </p>
                   <p className="text-xs text-slate-400 mt-1 mb-4 text-center max-w-xs">
-                    You can still open and download the official document directly.
+                    {t("sections.drawer.openDirectly")}
                   </p>
                   <a
                     href={downloadUrl || pdfUrl}
@@ -329,7 +331,7 @@ export default function DocumentDrawer({
                     rel="noreferrer"
                     className="px-4 py-2 bg-sky-500 hover:bg-sky-400 text-white rounded-xl text-xs font-semibold shadow-lg shadow-sky-500/20"
                   >
-                    Open Document in New Tab
+                    {t("sections.drawer.openDirectly")}
                   </a>
                 </div>
               ) : (

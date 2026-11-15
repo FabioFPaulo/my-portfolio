@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { Link } from "react-scroll";
+import { useTranslation } from "react-i18next";
 import useApp from "@/hooks/useApp";
 import { componentData } from "./utils";
 import "./index.css";
@@ -27,6 +28,7 @@ const itemVariants = {
 
 export default function Banner() {
   const app = useApp();
+  const { t } = useTranslation();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false });
   const mainControls = useAnimation();
@@ -38,6 +40,21 @@ export default function Banner() {
       mainControls.start("hidden");
     }
   }, [isInView, mainControls, app.isLoading]);
+
+  const getFieldLabel = (label: string) => {
+    switch (label.toLowerCase()) {
+      case "date of birth":
+        return t("banner.fields.dateOfBirth");
+      case "address":
+        return t("banner.fields.address");
+      case "email":
+        return t("banner.fields.email");
+      case "phone":
+        return t("banner.fields.phone");
+      default:
+        return label;
+    }
+  };
 
   // Ícones representativos para os metadados biográficos
   const getFieldIcon = (label: string) => {
@@ -102,20 +119,20 @@ export default function Banner() {
                 <span className="beacon-ping" />
                 <span className="beacon-dot" />
               </span>
-              <span className="status-label">Available for engineering & research</span>
+              <span className="status-label">{t("banner.available")}</span>
             </div>
-            <span className="hero-role-tag">MSc in Informatics</span>
+            <span className="hero-role-tag">{t("banner.msc")}</span>
           </motion.div>
 
           {/* Título & Subtítulo */}
           <motion.div variants={itemVariants} className="hero-headings">
             <span className="hero-greeting">
-              HELLO WORLD, I'M
+              {t("banner.greeting")}
             </span>
             <h1 className="hero-title">{componentData.title}</h1>
             <p className="hero-subtitle">
-              {componentData.subtitle} &bull;{" "}
-              <span className="hero-specialty">Full-Stack & Applied Deep Learning</span>
+              {t("banner.role")} &bull;{" "}
+              <span className="hero-specialty">{t("banner.specialty")}</span>
             </p>
           </motion.div>
 
@@ -130,7 +147,7 @@ export default function Banner() {
                   {getFieldIcon(field.label)}
                 </div>
                 <div className="field-data">
-                  <span className="field-label">{field.label}</span>
+                  <span className="field-label">{getFieldLabel(field.label)}</span>
                   <span className="field-value" title={field.value}>
                     {field.value}
                   </span>
@@ -150,7 +167,7 @@ export default function Banner() {
               <svg className="w-5 h-5 mr-2 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
               </svg>
-              <span>Download CV</span>
+              <span>{t("banner.downloadCv")}</span>
             </a>
 
             <Link
@@ -160,7 +177,7 @@ export default function Banner() {
               duration={500}
               className="btn-hero-secondary"
             >
-              <span>Explore Projects</span>
+              <span>{t("banner.exploreProjects")}</span>
               <svg className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
@@ -213,8 +230,8 @@ export default function Banner() {
                 </svg>
               </div>
               <div className="badge-text-box">
-                <span className="badge-primary">Applied Deep Learning</span>
-                <span className="badge-secondary">Real-Time Web3D & HCI</span>
+                <span className="badge-primary">{t("banner.badgeDeepLearning")}</span>
+                <span className="badge-secondary">{t("banner.badgeWeb3D")}</span>
               </div>
             </motion.div>
 
@@ -230,8 +247,8 @@ export default function Banner() {
                 </svg>
               </div>
               <div className="badge-text-box">
-                <span className="badge-primary">4+ Scientific Papers</span>
-                <span className="badge-secondary">Springer & IEEE Xplore</span>
+                <span className="badge-primary">{t("banner.badgePapers")}</span>
+                <span className="badge-secondary">{t("banner.badgeIndexing")}</span>
               </div>
             </motion.div>
           </motion.div>
@@ -247,7 +264,7 @@ export default function Banner() {
           duration={500}
           className="scroll-cue-link group"
         >
-          <span className="scroll-cue-text">SCROLL TO EXPLORE</span>
+          <span className="scroll-cue-text">{t("banner.scrollToExplore")}</span>
           <div className="scroll-cue-mouse">
             <span className="scroll-cue-dot" />
           </div>
