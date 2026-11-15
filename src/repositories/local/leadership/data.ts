@@ -20,22 +20,4 @@ export const localLeadershipData: ILeadershipItem[] = [
       "System Stability",
     ],
   },
-  {
-    id: "verao-ciencia-mentorship",
-    role: "Technical Instructor & Mentor",
-    project: "Verão Ciência (2024 – 2026 Editions)",
-    institution: "Polytechnic University of Bragança",
-    startDate: "Jul, 2024",
-    endDate: "Aug, 2026",
-    badge: "Academic Mentorship",
-    description:
-      "Collaborated with professors across consecutive annual editions (2024, 2025, 2026) to mentor students developing their first web and mobile applications using ReactJS. Prepared instructional materials, introduced fundamental component-based architecture patterns, and guided students in implementing mobile-first layouts, adaptive components, and media-query responsive techniques.",
-    skills: [
-      "ReactJS Instruction",
-      "Component Architecture",
-      "Mobile-First Design",
-      "Student Coaching",
-      "Hands-on Workshops",
-    ],
-  },
 ];

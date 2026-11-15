@@ -54,7 +54,7 @@ export default function LeadershipSection() {
         variants={listVariants}
         initial="closed"
         animate={mainControls}
-        className="leadership-grid"
+        className={`leadership-grid ${leadershipList.length === 1 ? "is-single" : ""}`}
       >
         {leadershipList.map((item) => (
           <motion.div

@@ -2,6 +2,10 @@
   .leadership-grid {
     @apply grid grid-cols-1 md:grid-cols-2 gap-6 mt-10 items-stretch;
 
+    &.is-single {
+      @apply max-w-3xl mx-auto md:grid-cols-1;
+    }
+
     .leadership-card {
       @apply rounded-2xl p-6 sm:p-7 flex flex-col justify-between h-full;
       @apply bg-slate-900/60 border border-slate-800/80 backdrop-blur-sm shadow-xl shadow-black/20;
