@@ -1,21 +1,21 @@
 import Banner from "@/sections/banner";
+import AboutSection from "@/sections/about";
+import AcademicSection from "./sections/academic";
 import Experiences from "./sections/experiences";
 import Projects from "./sections/projects";
-import AppProvider from "./contexts/app";
-import AcademicSection from "./sections/academic";
-import FooterSection from "./sections/footer";
 import LanguagesSection from "./sections/languages";
-// import About from "./components/about";
+import FooterSection from "./sections/footer";
+import AppProvider from "./contexts/app";
 
 function App() {
   return (
     <AppProvider totalImages={6}>
       <Banner />
+      <AboutSection />
       <AcademicSection />
       <Experiences />
       <Projects />
       <LanguagesSection />
-      {/* <About /> */}
       <FooterSection />
     </AppProvider>
   );

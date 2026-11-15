@@ -6,6 +6,10 @@ export const items: IItem[] = [
     url: "home",
   },
   {
+    label: "about me",
+    url: "about-me",
+  },
+  {
     label: "education",
     url: "academic-education",
   },
@@ -21,12 +25,4 @@ export const items: IItem[] = [
     label: "languages",
     url: "languages",
   },
-  // {
-  //   label: "about me",
-  //   url: "about-me",
-  // },
-  // {
-  //   label: "contact me",
-  //   url: "contact-me",
-  // },
 ];

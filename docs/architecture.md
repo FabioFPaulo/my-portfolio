@@ -18,12 +18,17 @@ flowchart TD
         Provider["AppProvider (Context)"]
         Nav["Navbar (Horizontal / Vertical)"]
         Banner["Banner Section (#home)"]
+        About["About Me Section (#about-me)"]
         Academic["Academic Section (#academic-education)"]
         Exp["Experiences Section (#experiences)"]
         Projects["Projects Section (#projects)"]
         Langs["Languages Section (#languages)"]
         Footer["Footer Section (#footer)"]
         Loading["LoadingComponent"]
+    end
+
+    subgraph Repositories ["Camada de Dados / Repositórios"]
+        AboutRepo["LocalAboutRepository (src/repositories/local/about)"]
     end
 
     subgraph State ["Camada de Estado"]
@@ -41,12 +46,14 @@ flowchart TD
     Provider --> Loading
     Provider --> Nav
     Provider --> Banner
+    Provider --> About
     Provider --> Academic
     Provider --> Exp
     Provider --> Projects
     Provider --> Langs
     Provider --> Footer
 
+    About -->|Consome Dados| AboutRepo
     Banner -.->|Incrementa Contador| AppContext
     Projects -.->|Incrementa Contador| AppContext
     Banner -.-> PublicAssets
@@ -64,6 +71,11 @@ src/
 ├── App.tsx               # Montagem das secções e injeção do AppProvider
 ├── index.css             # Importação das diretivas Tailwind base/components/utilities
 ├── vite-env.d.ts         # Declaração de tipos de ambiente Vite
+│
+├── repositories/         # Camada de abstração e acesso a dados (Repository Pattern)
+│   ├── local/            # Repositórios locais tipados
+│   │   └── about/        # Dados biográficos mutáveis (types, data, repository)
+│   └── index.ts          # Barrel export de repositórios
 │
 ├── contexts/             # Contextos de estado global
 │   └── app/

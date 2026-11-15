@@ -17,7 +17,7 @@ Este documento cataloga todas as funcionalidades ativas, módulos funcionais e r
 | **Montra de Projetos (Portfolio Showcase)**| `src/sections/projects/` | **Ativo** | Grelha de logotipos e títulos de projetos desenvolvidos (Pin2Give, CeDRI, Swopi, Thermalconf). |
 | **Competências & Linguagens** | `src/sections/languages/` | **Ativo** | Apresentação de competências com gráficos circulares de percentagem e ícones SVG. |
 | **Rodapé Institucional** | `src/sections/footer/` | **Ativo** | Informação de direitos de autor e ligação direta para o perfil GitHub. |
-| **Secção "About Me"** | `src/components/about/` | **Desativado** | Componente e estilos existentes, mas comentados no `App.tsx` e `navbar/utils.ts`. |
+| **Secção "About Me"** | `src/sections/about/` | **Ativo** | Apresentação biográfica completa extraída do CV Europass, destaques académicos e de investigação, consumindo `src/repositories/local`. |
 | **Secção "Contact Me"** | `src/components/navbar/utils.ts` | **Pendente** | Rota/âncora prevista no menu, mas sem componente de formulário associado. |
 
 ---
