@@ -41,10 +41,13 @@ Este documento cataloga todas as funcionalidades ativas, módulos funcionais e r
 * **Desktop:** Navbar minimalista translúcida ou integrada no topo com offsets calculados para não sobrepor títulos durante a rolagem (`offset={-60}`).
 * **Mobile:** Botão hambúrguer com transição de opacidade e gaveta com efeito sanfona animada.
 
-### 2.3. Secção Hero (Banner)
-* Apresenta o título "Fábio Paulo" e subtítulo "I'm a Web Developer".
-* Tabela de metadados pessoais (Data de nascimento, morada, e-mail e telefone).
-* Botão de conversão direto com target `_blank` apontando para o ficheiro estático `cv.pdf`.
+### 2.3. Secção Hero (Banner Moderno & Animado)
+* **Atmosfera Visual & Orbs:** Fundo com luzes ambientais ciano/índigo animadas em ciclo infinito (`ambient-orb`), grelha técnica pontilhada e imagem de fundo com efeito luminescente.
+* **Tipografia & Destaque:** Título "Fábio Paulo" com gradiente de alta definição, subtítulo dinâmico e live beacon de disponibilidade profissional ("Available for engineering & research").
+* **Cartões de Metadados Biográficos:** Apresentação dos dados pessoais (Data de nascimento, morada, e-mail e telefone) em micro-cartões em formato grelha com ícones SVG dedicados e estados de hover tátil.
+* **Ações Hero:** Botão primário "Download CV" com gradiente luminescente e botão secundário "Explore Projects" com rolagem suave (`react-scroll`).
+* **Retrato Interativo:** Fotografia pessoal envolta em halo de luz difusa, movimento contínuo flutuante suave (*floating motion*) e badges suspensas de mestrado ("Applied Deep Learning") e produção científica ("4+ Scientific Papers").
+* **Indicador de Rolagem:** Rato animado interativo na base do banner convidando à exploração ("SCROLL TO EXPLORE").
 
 ### 2.4. Linha de Tempo de Experiência
 * Suporta formatação de datas via função `formatStartEndDate`.
