@@ -1,10 +1,11 @@
-import {createContext, useCallback, useState} from "react";
+import {useCallback, useState} from "react";
 import {AnimatePresence} from "framer-motion";
-import type {IContext, IProviderProps} from "./types";
+import type {IProviderProps} from "./types";
+import {AppContext} from "./context";
 import LoadingComponent from "@/components/loading";
 import NavbarComponent from "@/components/navbar";
 
-export const AppContext = createContext<IContext>({} as IContext);
+export {AppContext};
 
 export default function AppProvider({children, totalImages}: IProviderProps) {
     // counter

@@ -24,6 +24,7 @@ flowchart TD
         Projects["Personal Projects Section (#projects)"]
         Leadership["Leadership Section (#leadership)"]
         Conferences["Conferences Section (#conferences)"]
+        Certifications["Certifications Section (#certifications)"]
         Langs["Technical Skills Section (#languages)"]
         Footer["Footer Section (#footer)"]
         Loading["LoadingComponent"]
@@ -36,6 +37,7 @@ flowchart TD
         ProjRepo["LocalProjectsRepository (src/repositories/local/projects)"]
         LeadershipRepo["LocalLeadershipRepository (src/repositories/local/leadership)"]
         ConferencesRepo["LocalConferencesRepository (src/repositories/local/conferences)"]
+        CertificationsRepo["LocalCertificationsRepository (src/repositories/local/certifications)"]
         SkillsRepo["LocalSkillsRepository (src/repositories/local/skills)"]
     end
 
@@ -60,6 +62,7 @@ flowchart TD
     Provider --> Projects
     Provider --> Leadership
     Provider --> Conferences
+    Provider --> Certifications
     Provider --> Langs
     Provider --> Footer
 
@@ -69,6 +72,7 @@ flowchart TD
     Projects -->|Consome Dados| ProjRepo
     Leadership -->|Consome Dados| LeadershipRepo
     Conferences -->|Consome Dados| ConferencesRepo
+    Certifications -->|Consome Dados| CertificationsRepo
     Langs -->|Consome Dados| SkillsRepo
     Banner -.->|Incrementa Contador| AppContext
     Banner -.-> PublicAssets
@@ -94,6 +98,7 @@ src/
 │   │   ├── projects/     # Projetos pessoais e destaques técnicos
 │   │   ├── leadership/   # Atividades de liderança e mentoria
 │   │   ├── conferences/  # Conferências e seminários internacionais
+│   │   ├── certifications/ # Certificações e workshops ministrados
 │   │   └── skills/       # Matriz técnica categorizada
 │   └── index.ts          # Barrel export de repositórios
 │
@@ -131,6 +136,7 @@ src/
     ├── projects/         # Projetos pessoais em destaque com imagens e links
     ├── leadership/       # Liderança, mentoria e supervisão de estágios
     ├── conferences/      # Conferências, seminários e visualizador de PDF
+    ├── certifications/   # Certificações e workshops com visualizador de PDF
     ├── languages/        # Matriz categorizada de competências técnicas (Skills)
     └── footer/           # Rodapé institucional com direitos e GitHub
 ```
