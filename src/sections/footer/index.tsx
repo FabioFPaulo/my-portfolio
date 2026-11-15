@@ -3,7 +3,7 @@ import "./index.css";
 
 export default function FooterSection() {
   return (
-    <Container.Section id="footer" colorScheme="color-1">
+    <Container.Section id="footer" colorScheme="color-2">
       <div>
         &copy; Copyright{" "}
         <a href="https://github.com/FabioFPaulo" target="_blank">

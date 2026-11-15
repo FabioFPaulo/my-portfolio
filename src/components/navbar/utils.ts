@@ -37,4 +37,8 @@ export const items: IItem[] = [
         label: "skills",
         url: "languages",
     },
+    {
+        label: "publications",
+        url: "publications",
+    },
 ];

@@ -7,6 +7,7 @@ import LeadershipSection from "./sections/leadership";
 import ConferencesSection from "./sections/conferences";
 import CertificationsSection from "./sections/certifications";
 import LanguagesSection from "./sections/languages";
+import PublicationsSection from "./sections/publications";
 import FooterSection from "./sections/footer";
 import AppProvider from "./contexts/app";
 
@@ -22,6 +23,7 @@ function App() {
       <ConferencesSection />
       <CertificationsSection />
       <LanguagesSection />
+      <PublicationsSection />
       <FooterSection />
     </AppProvider>
   );

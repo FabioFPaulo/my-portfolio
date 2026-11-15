@@ -26,6 +26,7 @@ flowchart TD
         Conferences["Conferences Section (#conferences)"]
         Certifications["Certifications Section (#certifications)"]
         Langs["Technical Skills Section (#languages)"]
+        Publications["Publications Section (#publications)"]
         Footer["Footer Section (#footer)"]
         Loading["LoadingComponent"]
     end
@@ -39,6 +40,7 @@ flowchart TD
         ConferencesRepo["LocalConferencesRepository (src/repositories/local/conferences)"]
         CertificationsRepo["LocalCertificationsRepository (src/repositories/local/certifications)"]
         SkillsRepo["LocalSkillsRepository (src/repositories/local/skills)"]
+        PubsRepo["LocalPublicationsRepository (src/repositories/local/publications)"]
     end
 
     subgraph State ["Camada de Estado"]
@@ -64,6 +66,7 @@ flowchart TD
     Provider --> Conferences
     Provider --> Certifications
     Provider --> Langs
+    Provider --> Publications
     Provider --> Footer
 
     About -->|Consome Dados| AboutRepo
@@ -74,6 +77,7 @@ flowchart TD
     Conferences -->|Consome Dados| ConferencesRepo
     Certifications -->|Consome Dados| CertificationsRepo
     Langs -->|Consome Dados| SkillsRepo
+    Publications -->|Consome Dados| PubsRepo
     Banner -.->|Incrementa Contador| AppContext
     Banner -.-> PublicAssets
     Academic -.-> PublicAssets
@@ -99,6 +103,7 @@ src/
 │   │   ├── leadership/   # Atividades de liderança e mentoria
 │   │   ├── conferences/  # Conferências e seminários internacionais
 │   │   ├── certifications/ # Certificações e workshops ministrados
+│   │   ├── publications/ # Artigos científicos e proceedings
 │   │   └── skills/       # Matriz técnica categorizada
 │   └── index.ts          # Barrel export de repositórios
 │
@@ -138,6 +143,7 @@ src/
     ├── conferences/      # Conferências, seminários e visualizador de PDF
     ├── certifications/   # Certificações e workshops com visualizador de PDF
     ├── languages/        # Matriz categorizada de competências técnicas (Skills)
+    ├── publications/     # Publicações científicas e artigos
     └── footer/           # Rodapé institucional com direitos e GitHub
 ```
 

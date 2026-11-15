@@ -6,6 +6,7 @@ export * from "./local/projects";
 export * from "./local/leadership";
 export * from "./local/conferences";
 export * from "./local/certifications";
+export * from "./local/publications";
 
 
 
