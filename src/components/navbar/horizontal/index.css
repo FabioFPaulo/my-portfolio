@@ -11,14 +11,6 @@
     @apply flex items-center shrink-0;
   }
 
-  .horizontal-list {
-    @apply hidden lg:flex items-center space-x-0.5 py-1 px-2 xl:px-2.5 rounded-full bg-slate-900/60 border border-slate-800/70 backdrop-blur-sm shadow-inner;
-
-    .active-nav-link {
-      @apply text-sky-400 font-semibold bg-sky-500/15 border border-sky-400/30 shadow-sm shadow-sky-500/10;
-    }
-  }
-
   .navbar-actions {
     @apply flex items-center gap-3;
 
@@ -27,7 +19,7 @@
     }
 
     .burger {
-      @apply lg:hidden;
+      @apply 2xl:hidden;
 
       .burger-btn {
         @apply flex items-center justify-center p-2 rounded-xl text-slate-300 hover:text-white bg-slate-900/70 border border-slate-800 hover:border-slate-700 hover:bg-slate-800 transition-all;

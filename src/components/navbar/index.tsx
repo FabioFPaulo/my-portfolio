@@ -1,6 +1,7 @@
 import { useCallback, useState } from "react";
 import NavbarHorizontal from "./horizontal";
 import NavbarVertical from "./vertical";
+import NavbarIsland from "./island";
 
 export default function NavbarComponent() {
   const [isOpenSidebar, setIsOpenSidebar] = useState(false);
@@ -11,6 +12,7 @@ export default function NavbarComponent() {
   return (
     <>
       <NavbarHorizontal toggle={toggleSidebar} />
+      <NavbarIsland />
       <NavbarVertical isOpen={isOpenSidebar} toggle={toggleSidebar} />
     </>
   );

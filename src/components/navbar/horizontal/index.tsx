@@ -1,20 +1,8 @@
-import {motion} from "framer-motion";
 import {useTranslation} from "react-i18next";
 import "./index.css";
-import {items} from "../utils";
-import NavbarHorizontalItem from "./item";
 import type {IProps} from "./types";
 import NavbarLogo from "../logo";
 import LanguageSelector from "@/components/language-selector";
-
-const listVariants = {
-    open: {
-        transition: {staggerChildren: 0.05, delayChildren: 0.1},
-    },
-    closed: {
-        transition: {staggerChildren: 0.04, staggerDirection: -1},
-    },
-};
 
 export default function NavbarHorizontal(props: IProps) {
     const {t} = useTranslation();
@@ -26,26 +14,14 @@ export default function NavbarHorizontal(props: IProps) {
                     <NavbarLogo/>
                 </div>
 
-                {/* Links centrais flutuantes (desktop) */}
-                <motion.ul
-                    variants={listVariants}
-                    initial="closed"
-                    animate="open"
-                    className="horizontal-list"
-                >
-                    {items.map((item, index) => (
-                        <NavbarHorizontalItem key={index} item={item}/>
-                    ))}
-                </motion.ul>
-
-                {/* Ação rápida à direita e botão hambúrguer para mobile */}
+                {/* Ações rápidas à direita (Idioma, CV e Menu Mobile) */}
                 <div className="navbar-actions">
                     <LanguageSelector />
                     <a
                         href={`${import.meta.env.BASE_URL}files/cv.pdf`}
                         target="_blank"
                         rel="noreferrer"
-                        className="navbar-cta-btn hidden md:inline-flex"
+                        className="navbar-cta-btn hidden sm:inline-flex"
                     >
                         <span>{t("nav.cv")}</span>
                         <svg
@@ -66,7 +42,7 @@ export default function NavbarHorizontal(props: IProps) {
                     <div className="burger">
                         <button
                             onClick={props.toggle}
-                            aria-label="Abrir menu"
+                            aria-label="Abrir menu de navegação"
                             className="burger-btn"
                         >
                             <svg
