@@ -1,5 +1,10 @@
+import { JSX } from "react";
+
 export interface CardLanguageProps {
-  percent: number;
-  svg: JSX.Element;
   title: string;
+  percent?: number;
+  svg?: JSX.Element;
+  description?: string;
+  iconName?: "brain" | "server" | "layout" | "smartphone" | "database" | "terminal";
+  skills?: string[];
 }

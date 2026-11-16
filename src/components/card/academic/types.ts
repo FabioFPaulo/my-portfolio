@@ -4,4 +4,8 @@ export interface CardAcademicProps {
   dateString: string;
   href: string;
   leftAnimation?: boolean;
+  institution?: string;
+  location?: string;
+  badge?: string;
+  grade?: string;
 }

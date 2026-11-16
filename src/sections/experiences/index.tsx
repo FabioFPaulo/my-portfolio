@@ -1,27 +1,30 @@
-import useApp from "@/hooks/useApp";
-import Cards from "../../components/card";
-import Container from "../../components/container";
-import Title from "../../components/title";
-import "./index.scss";
-import { experiencesData, formatStartEndDate } from "./utils";
 import { useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import { useAnimation, useInView, motion } from "framer-motion";
+import useApp from "@/hooks/useApp";
+import Cards from "@/components/card";
+import Container from "@/components/container";
+import Title from "@/components/title";
+import { experiencesRepository } from "@/repositories";
+import { formatStartEndDate } from "./utils";
+import "./index.css";
 
-const variants = {
+const listVariants = {
   open: {
-    transition: { staggerChildren: 0.1, delayChildren: 0.5 },
+    transition: { staggerChildren: 0.12, delayChildren: 0.2 },
   },
   closed: {
-    transition: { staggerChildren: 0.1, staggerDirection: -1 },
+    transition: { staggerChildren: 0.08, staggerDirection: -1 },
   },
 };
 
 export default function Experiences() {
+  const { t } = useTranslation();
   const app = useApp();
+  const experiencesList = experiencesRepository.getExperiencesData();
 
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false });
-
   const mainControls = useAnimation();
 
   useEffect(() => {
@@ -35,26 +38,33 @@ export default function Experiences() {
   return (
     <Container.Section colorScheme="color-1" id="experiences">
       <Title.Primary
-        title="Experiences"
-        subtitle="Discover the experiences that have shaped my professional journey"
+        title={t("sections.experiences.title")}
+        subtitle={t("sections.experiences.subtitle")}
       />
-      <motion.div
-        ref={ref}
-        variants={variants}
-        initial="closed"
-        animate={mainControls}
-        className="list"
-      >
-        {experiencesData.map((item, index) => (
-          <Cards.Experience
-            key={index}
-            date={formatStartEndDate(item.start_at, item.end_at)}
-            title={item.title}
-            company={item.company}
-            description={item.description}
-          />
-        ))}
-      </motion.div>
+      <div className="timeline-container">
+        <motion.div
+          ref={ref}
+          variants={listVariants}
+          initial="closed"
+          animate={mainControls}
+          className="timeline-list"
+        >
+          {experiencesList.map((item) => (
+            <Cards.Experience
+              key={item.id}
+              date={formatStartEndDate(item.startDate, item.endDate)}
+              title={item.role}
+              project={item.project}
+              company={item.company}
+              location={item.location}
+              website={item.website}
+              isCurrent={item.isCurrent}
+              description={item.description}
+              technologies={item.technologies}
+            />
+          ))}
+        </motion.div>
+      </div>
     </Container.Section>
   );
 }

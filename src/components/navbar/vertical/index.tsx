@@ -1,89 +1,141 @@
-import { useCallback, useEffect, useState } from "react";
-import { motion, useAnimation } from "framer-motion";
-import { IProps } from "./types";
-import { items } from "../utils";
+import {useCallback, useEffect, useState} from "react";
+import {motion, useAnimation} from "framer-motion";
+import {useTranslation} from "react-i18next";
+import type {IProps} from "./types";
+import {items} from "../utils";
 import NavabarItemComponent from "./item";
-import "./index.scss";
+import NavbarLogo from "../logo";
+import LanguageSelector from "@/components/language-selector";
+import "./index.css";
 
-const variants = {
-  closed: {
-    x: -384,
-  },
-  open: {
-    x: 0,
-  },
+const panelVariants = {
+    closed: {
+        x: "-100%",
+        transition: {type: "tween", duration: 0.25},
+    },
+    open: {
+        x: 0,
+        transition: {type: "tween", duration: 0.3},
+    },
 };
 
-const variants2 = {
-  open: {
-    transition: { staggerChildren: 0.07, delayChildren: 0.2 },
-  },
-  closed: {
-    transition: { staggerChildren: 0.05, staggerDirection: -1 },
-  },
+const listVariants = {
+    open: {
+        transition: {staggerChildren: 0.05, delayChildren: 0.15},
+    },
+    closed: {
+        transition: {staggerChildren: 0.03, staggerDirection: -1},
+    },
 };
 
 export default function NavbarVertical(props: IProps) {
-  const [isHidden, setIsHidden] = useState(!props.isOpen);
-  const mainControls = useAnimation();
+    const {t} = useTranslation();
+    const [isHidden, setIsHidden] = useState(!props.isOpen);
+    const mainControls = useAnimation();
 
-  const onAnimationComplete = useCallback(() => {
-    if (isHidden) {
-      props.toggle();
-    }
-  }, [isHidden, props]);
+    const onAnimationComplete = useCallback(() => {
+        if (isHidden) {
+            props.toggle();
+        }
+    }, [isHidden, props]);
 
-  const onClose = useCallback(() => {
-    setIsHidden(true);
-    mainControls.start("closed");
-  }, [mainControls]);
+    const onClose = useCallback(() => {
+        setIsHidden(true);
+        mainControls.start("closed");
+    }, [mainControls]);
 
-  useEffect(() => {
-    if (props.isOpen) {
-      setIsHidden(false);
-      mainControls.start("open");
-    } else {
-      mainControls.set("closed");
-    }
-  }, [mainControls, props.isOpen]);
-  return (
-    <motion.div id="vertical-nav" className={props.isOpen ? "" : "hidden"}>
-      <div className="navbar-backdrop" onClick={onClose} />
-      <motion.nav
-        onAnimationComplete={onAnimationComplete}
-        variants={variants}
-        initial="closed"
-        animate={mainControls}
-      >
-        <div className="sidebar-header">
-          <button className="navbar-close" onClick={props.toggle}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+    useEffect(() => {
+        if (props.isOpen) {
+            setIsHidden(false);
+            mainControls.start("open");
+        } else {
+            mainControls.set("closed");
+        }
+    }, [mainControls, props.isOpen]);
+
+    return (
+        <div id="vertical-nav" className={props.isOpen ? "" : "hidden"}>
+            {/* Backdrop com desfoque escuro */}
+            <div
+                className="navbar-backdrop"
+                onClick={onClose}
+                aria-hidden="true"
+            />
+
+            {/* Painel lateral deslizante */}
+            <motion.nav
+                onAnimationComplete={onAnimationComplete}
+                variants={panelVariants}
+                initial="closed"
+                animate={mainControls}
+                className="sidebar-panel"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M6 18L18 6M6 6l12 12"
-              ></path>
-            </svg>
-          </button>
+                <div className="sidebar-header">
+                    <NavbarLogo/>
+                    <button
+                        className="navbar-close-btn"
+                        onClick={props.toggle}
+                        aria-label="Fechar menu"
+                    >
+                        <svg
+                            className="h-5 w-5"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth="2"
+                                d="M6 18L18 6M6 6l12 12"
+                            />
+                        </svg>
+                    </button>
+                </div>
+
+                <div className="sidebar-list">
+                    <motion.ul
+                        variants={listVariants}
+                        initial="closed"
+                        animate={mainControls}
+                        className="space-y-1"
+                    >
+                        {items.map((item, index) => (
+                            <NavabarItemComponent item={item} key={index}/>
+                        ))}
+                    </motion.ul>
+                </div>
+
+                {/* Rodapé do menu móvel com seletor de idioma e botão de CV */}
+                <div className="sidebar-footer flex flex-col gap-3">
+                    <div className="flex items-center justify-between px-1">
+                        <span className="text-xs text-slate-400 font-medium">Idioma / Language:</span>
+                        <LanguageSelector isCompact />
+                    </div>
+                    <a
+                        href={`${import.meta.env.BASE_URL}files/cv.pdf`}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="sidebar-cv-btn"
+                    >
+                        <span>{t("nav.downloadCv")}</span>
+                        <svg
+                            className="w-4 h-4 ml-2"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth="2"
+                                d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                            />
+                        </svg>
+                    </a>
+                </div>
+            </motion.nav>
         </div>
-        <div className="sidebar-list">
-          <motion.ul
-            variants={variants2}
-            initial="closed"
-            animate={mainControls}
-          >
-            {items.map((item, index) => (
-              <NavabarItemComponent item={item} key={index} />
-            ))}
-          </motion.ul>
-        </div>
-      </motion.nav>
-    </motion.div>
-  );
+    );
 }

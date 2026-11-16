@@ -1,17 +1,19 @@
-import { defineConfig } from "vite";
+import {defineConfig} from "vite";
 import react from "@vitejs/plugin-react";
-import tsconfigPaths from "vite-tsconfig-paths";
+import tailwindcss from "@tailwindcss/vite";
 import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/my-portfolio/",
-  plugins: [react(), tsconfigPaths()],
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src/"),
-      "@components/*": path.resolve(__dirname, "./src/components/"),
-      "@assets/*": path.resolve(__dirname, "./src/assets/"),
+    base: "/my-portfolio/",
+    plugins: [tailwindcss(), react()],
+    resolve: {
+        alias: {
+            "@": path.resolve(import.meta.dirname, "./src"),
+            "@assets": path.resolve(import.meta.dirname, "./src/assets"),
+            "@hooks": path.resolve(import.meta.dirname, "./src/hooks"),
+            "@repositories": path.resolve(import.meta.dirname, "./src/repositories"),
+            "@components": path.resolve(import.meta.dirname, "./src/components"),
+        },
     },
-  },
 });

@@ -1,23 +1,26 @@
-import Container from "@/components/container";
-import Title from "@/components/title";
-import "./index.scss";
-import Card from "@/components/card";
-import { listLanguages } from "./utils";
+import { useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import { motion, useAnimation, useInView } from "framer-motion";
 import useApp from "@/hooks/useApp";
-import { useEffect, useRef } from "react";
+import Container from "@/components/container";
+import Title from "@/components/title";
+import Card from "@/components/card";
+import { skillsRepository } from "@/repositories";
+import "./index.css";
 
-const variants = {
+const listVariants = {
   open: {
-    transition: { staggerChildren: 0.07, delayChildren: 0.2 },
+    transition: { staggerChildren: 0.1, delayChildren: 0.2 },
   },
   closed: {
-    transition: { staggerChildren: 0.05, staggerDirection: -1 },
+    transition: { staggerChildren: 0.06, staggerDirection: -1 },
   },
 };
 
 export default function LanguagesSection() {
+  const { t } = useTranslation();
   const app = useApp();
+  const skillsList = skillsRepository.getSkillsData();
 
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false });
@@ -33,24 +36,25 @@ export default function LanguagesSection() {
   }, [isInView, mainControls, app.isLoading]);
 
   return (
-    <Container.Section id="languages" colorScheme="color-1">
+    <Container.Section id="languages" colorScheme="color-2">
       <Title.Primary
-        title="Most Used Languages"
-        subtitle="Uncover the programming languages that i frequently use"
+        title={t("sections.skills.title")}
+        subtitle={t("sections.skills.subtitle")}
       />
       <motion.div
         ref={ref}
-        variants={variants}
+        variants={listVariants}
         initial="closed"
         animate={mainControls}
-        className="list"
+        className="skills-grid"
       >
-        {listLanguages.map((e, index) => (
+        {skillsList.map((category) => (
           <Card.Language
-            svg={e.svg}
-            percent={e.percent}
-            title={e.title}
-            key={index}
+            key={category.id}
+            title={category.title}
+            description={category.description}
+            iconName={category.iconName}
+            skills={category.skills}
           />
         ))}
       </motion.div>

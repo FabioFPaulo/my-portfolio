@@ -1,56 +1,37 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
-import { IItem } from "../types";
-
-const variants = {
-  open: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      y: { stiffness: 1000, velocity: -100 },
-    },
-  },
-  closed: {
-    y: 50,
-    opacity: 0,
-    transition: {
-      y: { stiffness: 1000 },
-    },
-  },
-};
+import { useTranslation } from "react-i18next";
+import type { IItem } from "../types";
+import { getNavLabel } from "../nav-translation";
 
 export default function NavbarHorizontalItem({
   item,
-  haveSeparator,
+  onClick,
 }: {
   item: IItem;
-  haveSeparator: boolean;
+  onClick?: () => void;
 }) {
+  const { t } = useTranslation();
+
   return (
-    <React.Fragment>
-      <motion.li variants={variants}>
-        <Link smooth spy to={item.url} offset={-60} activeClass="active">
-          {item.label}
-        </Link>
-      </motion.li>
-      {haveSeparator && (
-        <li className="separator">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"
-            />
-          </svg>
-        </li>
-      )}
-    </React.Fragment>
+    <motion.li
+      whileHover={{ x: 2 }}
+      transition={{ duration: 0.12 }}
+      className="list-none"
+    >
+      <Link
+        smooth
+        spy
+        to={item.url}
+        offset={-70}
+        duration={500}
+        activeClass="is-active"
+        onClick={onClick}
+        className="dropdown-item-link"
+      >
+        <span className="dropdown-item-dot" aria-hidden="true" />
+        <span className="dropdown-item-text">{getNavLabel(item.label, t)}</span>
+      </Link>
+    </motion.li>
   );
 }

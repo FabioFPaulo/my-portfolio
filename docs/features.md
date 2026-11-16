@@ -1,0 +1,71 @@
+# Funcionalidades Implementadas (`docs/features.md`)
+
+Este documento cataloga todas as funcionalidades ativas, módulos funcionais e recursos rascunhados/desativados no código atual.
+
+---
+
+## 1. Matriz de Funcionalidades
+
+| Funcionalidade | Localização no Código | Estado | Descrição |
+| :--- | :--- | :--- | :--- |
+| **Ecrã de Carregamento (Preloader)** | `src/components/loading/` | **Ativo** | Preloader cinematográfico *Tech Monogram & Precision Progress* com emblema FP, anéis orbitais pulsantes, barra de precisão e transição de saída suave (*exit blur & scale* via `AnimatePresence`). |
+| **Navbar Desktop com Rolagem Suave** | `src/components/navbar/horizontal/` | **Ativo** | Barra fixa de navegação superior com links âncora e destaque da secção ativa (`activeClass`). |
+| **Menu Gaveta Mobile (Drawer)** | `src/components/navbar/vertical/` | **Ativo** | Menu lateral retrátil acionado por ícone hambúrguer para dispositivos móveis. |
+| **Hero Banner & Download de CV** | `src/sections/banner/` | **Ativo** | Apresentação com dados pessoais, foto com efeitos de filtro e botão 3D para descarregar o PDF do currículo. |
+| **Secção de Formação Académica** | `src/sections/academic/` | **Ativo** | Cartões modernos com o novo `logo_upb.svg`, 4 formações oficiais (MSc, Licenciatura, CTeSP e Secundário), médias finais e repositório local. |
+| **Histórico de Experiências Profissionais** | `src/sections/experiences/` | **Ativo** | Timeline interativa moderna com nós luminosos, 6 experiências completas do CV (VIMOS 3D/LSTM, Thermalconf IoT, Swopi, Techwelf, CeDRI), tags de tecnologias e repositório local. |
+| **Projetos Pessoais (Personal Projects)** | `src/sections/projects/` | **Ativo** | Montra de projetos de engenharia do CV (Hand-Gesture 3D Controller, Interactive 3D MacBook, MMO Hub, Portfolio), tags de stack, links GitHub/Demo e repositório local. |
+| **Liderança & Mentoria (Leadership)** | `src/sections/leadership/` | **Ativo** | Supervisão técnica de estágio no portal CeDRI (orientação de aluno CTeSP, code reviews e estabilidade de sistemas) com repositório local. |
+| **Conferências & Seminários (Conferences)** | `src/sections/conferences/` | **Ativo** | Participação oral no ICEET 2025 (Malásia) sobre controlo térmico RFID, com repositório local e visualizador de PDF vertical em Slide-Over Drawer com link para Google Drive. |
+| **Certificações & Workshops (Certifications)** | `src/sections/certifications/` | **Ativo** | Atividades de instrução e mentoria técnica no programa Verão Ciência do IPB (2024–2026), repositório local e visualização de certificados via DocumentDrawer. |
+| **Competências & Linguagens (Skills)** | `src/sections/languages/` | **Ativo** | Matriz de competências em 6 categorias de domínio (Deep Learning & 3D, Backend, Frontend, Mobile, Databases, DevOps), tags interativas e repositório local. |
+| **Publicações Científicas (Publications)** | `src/sections/publications/` | **Ativo** | Catálogo dos 4 artigos científicos de conferências internacionais (AmI, Springer LNNS, IEEE ICEET), com repositório local e cópia rápida de citações. |
+| **Rodapé Institucional Moderno (Footer)** | `src/sections/footer/` | **Ativo** | Footer completo em 4 colunas com monograma de marca, bio institucional, beacon de disponibilidade, navegação rápida via react-scroll, secção académica/científica, contacto direto com cópia de email, botões GitHub/CV e botão de regresso ao topo. |
+| **Secção "About Me"** | `src/sections/about/` | **Ativo** | Apresentação biográfica completa extraída do CV Europass, destaques académicos e de investigação, consumindo `src/repositories/local`. |
+| **Secção "Contact Me"** | `src/components/navbar/utils.ts` | **Pendente** | Rota/âncora prevista no menu, mas sem componente de formulário associado. |
+
+---
+
+## 2. Detalhe das Funcionalidades Ativas
+
+### 2.1. Preloader Cinematográfico com Identidade Visual & AnimatePresence
+* **Mecanismo:** Consome o estado `isLoading` derivado de `imagesCounter < totalImages` fornecido pelo `AppContext`, envolto em `AnimatePresence`.
+* **Design & Animação:** 
+  * Fundo *Deep Slate* (`#060913`) com luz radial difusa ciano.
+  * Monograma **`FP`** estilizado central com anel orbital externo em rotação contínua e anel interno tracejado pulsante.
+  * Tipografia refinada com identificação profissional e status badge animado.
+  * Micro-barra de progresso com feixe luminescente e legenda monoespacada *"INITIALIZING ENVIRONMENT..."*.
+  * Dissolução suave de saída com *fade out*, ligeira expansão de escala e *blur filter* revelando o Hero Banner.
+
+### 2.2. Navegação Responsiva
+* **Desktop:** Navbar minimalista translúcida ou integrada no topo com offsets calculados para não sobrepor títulos durante a rolagem (`offset={-60}`).
+* **Mobile:** Botão hambúrguer com transição de opacidade e gaveta com efeito sanfona animada.
+
+### 2.3. Secção Hero (Banner Moderno & Animado)
+* **Atmosfera Visual & Orbs:** Fundo com luzes ambientais ciano/índigo animadas em ciclo infinito (`ambient-orb`), grelha técnica pontilhada e imagem de fundo com efeito luminescente.
+* **Tipografia & Destaque:** Título "Fábio Paulo" com gradiente de alta definição, subtítulo dinâmico e live beacon de disponibilidade profissional ("Available for engineering & research").
+* **Cartões de Metadados Biográficos:** Apresentação dos dados pessoais (Data de nascimento, morada, e-mail e telefone) em micro-cartões em formato grelha com ícones SVG dedicados e estados de hover tátil.
+* **Ações Hero:** Botão primário "Download CV" com gradiente luminescente e botão secundário "Explore Projects" com rolagem suave (`react-scroll`).
+* **Retrato Interativo:** Fotografia pessoal envolta em halo de luz difusa, movimento contínuo flutuante suave (*floating motion*) e badges suspensas de mestrado ("Applied Deep Learning") e produção científica ("4+ Scientific Papers").
+* **Indicador de Rolagem:** Rato animado interativo na base do banner convidando à exploração ("SCROLL TO EXPLORE").
+
+### 2.4. Linha de Tempo de Experiência
+* Suporta formatação de datas via função `formatStartEndDate`.
+* Renderiza descrições ricas com formatação HTML (`dangerouslySetInnerHTML`), permitindo parágrafos e ênfases no texto descritivo.
+
+### 2.5. Gráficos Circulares de Linguagens
+* Utiliza a biblioteca `react-circular-progressbar`.
+* Exibe a proficiência em TypeScript, Python e JavaScript com percentuais customizados e ícones SVG inline de alta resolução.
+
+---
+
+## 3. Funcionalidades Incompletas ou Ocultas no Código
+
+1. **Secção About (`src/components/about/`):**
+   * Possui ficheiro `index.tsx`, `index.scss`, `types.ts` e `utils.ts`.
+   * Contém estrutura para listar pontos fortes, biografia expandida e estatísticas, mas foi comentada no ficheiro `App.tsx` raiz.
+2. **Formulário de Contacto:**
+   * O menu de navegação tinha a entrada `"contact me"` prevista com a âncora `contact-me`.
+   * Atualmente, o utilizador só tem acesso ao email direto no banner, sem formulário de envio de mensagens integrado.
+3. **Links de Projetos Detalhados:**
+   * A lista `projectsList` em `src/sections/projects/utils.ts` contém campos `description` vazios e nenhum link direto para repositórios ou demonstrações online dos projetos.

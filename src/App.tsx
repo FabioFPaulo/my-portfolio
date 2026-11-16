@@ -1,21 +1,29 @@
 import Banner from "@/sections/banner";
+import AboutSection from "@/sections/about";
+import AcademicSection from "./sections/academic";
 import Experiences from "./sections/experiences";
 import Projects from "./sections/projects";
-import AppProvider from "./contexts/app";
-import AcademicSection from "./sections/academic";
-import FooterSection from "./sections/footer";
+import LeadershipSection from "./sections/leadership";
+import ConferencesSection from "./sections/conferences";
+import CertificationsSection from "./sections/certifications";
 import LanguagesSection from "./sections/languages";
-// import About from "./components/about";
+import PublicationsSection from "./sections/publications";
+import FooterSection from "./sections/footer";
+import AppProvider from "./contexts/app";
 
 function App() {
   return (
-    <AppProvider totalImages={6}>
+    <AppProvider totalImages={2}>
       <Banner />
+      <AboutSection />
       <AcademicSection />
       <Experiences />
       <Projects />
+      <LeadershipSection />
+      <ConferencesSection />
+      <CertificationsSection />
       <LanguagesSection />
-      {/* <About /> */}
+      <PublicationsSection />
       <FooterSection />
     </AppProvider>
   );

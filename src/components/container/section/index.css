@@ -1,0 +1,21 @@
+@reference "../../../index.css";
+
+.container-section-container-gradient {
+  background: linear-gradient(180deg, #0f172a 0%, #0a0e1a 100%);
+}
+.container-section-container-color-1 {
+  background-color: #0a0e1a;
+}
+
+.container-section-container-color-2 {
+  background-color: #0f172a;
+}
+
+.container-section-container-gradient,
+.container-section-container-color-1,
+.container-section-container-color-2 {
+  @apply py-20 sm:py-24 px-4 sm:px-6 lg:px-8 overflow-x-hidden;
+  .container-section-content {
+    @apply w-full max-w-7xl mx-auto;
+  }
+}

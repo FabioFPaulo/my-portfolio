@@ -1,32 +1,44 @@
-import { IItem } from "./types";
+import type {IItem} from "./types";
 
 export const items: IItem[] = [
-  {
-    label: "home",
-    url: "home",
-  },
-  {
-    label: "education",
-    url: "academic-education",
-  },
-  {
-    label: "experiences",
-    url: "experiences",
-  },
-  {
-    label: "projects",
-    url: "projects",
-  },
-  {
-    label: "languages",
-    url: "languages",
-  },
-  // {
-  //   label: "about me",
-  //   url: "about-me",
-  // },
-  // {
-  //   label: "contact me",
-  //   url: "contact-me",
-  // },
+    {
+        label: "home",
+        url: "home",
+    },
+    {
+        label: "about me",
+        url: "about-me",
+    },
+    {
+        label: "education",
+        url: "academic-education",
+    },
+    {
+        label: "experiences",
+        url: "experiences",
+    },
+    {
+        label: "projects",
+        url: "projects",
+    },
+    {
+        label: "leadership",
+        url: "leadership",
+    },
+    {
+        label: "conferences",
+        url: "conferences",
+    },
+    {
+        label: "certifications",
+        url: "certifications",
+    },
+    {
+        label: "skills",
+        url: "languages",
+    },
+    {
+        label: "publications",
+        url: "publications",
+    },
 ];

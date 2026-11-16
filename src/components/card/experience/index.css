@@ -1,0 +1,77 @@
+@reference "../../../index.css";
+
+.timeline-item {
+  @apply relative pl-8 sm:pl-10 pb-12 last:pb-0;
+
+  .timeline-node {
+    @apply absolute left-0 top-1.5 flex items-center justify-center;
+
+    .timeline-dot {
+      @apply w-5 h-5 rounded-full bg-slate-900 border-2 border-sky-400/80 shadow-md shadow-sky-500/20 transition-all duration-300;
+
+      &.current {
+        @apply border-emerald-400 bg-slate-950 shadow-emerald-500/30 relative flex items-center justify-center;
+
+        .current-pulse {
+          @apply absolute w-2 h-2 rounded-full bg-emerald-400 animate-ping;
+        }
+      }
+    }
+  }
+
+  .experience-card {
+    @apply p-6 sm:p-7 rounded-2xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-sm shadow-xl shadow-black/20 hover:border-sky-500/40 hover:shadow-sky-500/5 transition-all duration-300;
+
+    .experience-header {
+      @apply flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4 pb-4 border-b border-slate-800/80;
+
+      .experience-title-area {
+        @apply flex flex-col space-y-1.5;
+
+        .experience-role-line {
+          @apply flex flex-wrap items-center gap-2.5;
+
+          .experience-role {
+            @apply text-lg sm:text-xl font-bold text-white tracking-tight;
+          }
+
+          .experience-project-badge {
+            @apply px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wider text-sky-400 bg-sky-500/10 border border-sky-400/20 rounded-md;
+          }
+        }
+
+        .experience-company-line {
+          @apply text-xs sm:text-sm text-slate-400 flex flex-wrap items-center gap-1.5 font-medium;
+
+          .experience-company {
+            @apply text-slate-300;
+          }
+
+          .experience-location {
+            @apply text-slate-500;
+          }
+
+          .experience-website-link {
+            @apply text-sky-400 hover:text-sky-300 transition-colors;
+          }
+        }
+      }
+
+      .experience-date-badge {
+        @apply text-xs text-slate-300 bg-slate-800/80 border border-slate-700/50 px-3 py-1.5 rounded-full inline-flex items-center shrink-0 self-start;
+      }
+    }
+
+    .experience-description {
+      @apply text-slate-300 text-sm sm:text-base leading-relaxed text-justify mb-5 font-normal;
+    }
+
+    .experience-technologies {
+      @apply flex flex-wrap gap-2 pt-2;
+
+      .tech-pill {
+        @apply px-2.5 py-1 text-xs font-medium text-slate-300 bg-slate-800/60 border border-slate-700/50 rounded-lg hover:border-sky-400/50 hover:text-white transition-all duration-200;
+      }
+    }
+  }
+}

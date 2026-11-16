@@ -1,0 +1,10 @@
+@reference "../../../index.css";
+
+.title-primary-title {
+  @apply text-center text-3xl sm:text-4xl font-extrabold text-white mb-2.5 tracking-tight;
+}
+
+.title-primary-subtitle {
+  @apply text-center text-sm sm:text-base text-slate-400 mb-8 max-w-2xl mx-auto font-normal leading-relaxed;
+  letter-spacing: 0.2px;
+}
