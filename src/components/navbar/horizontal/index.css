@@ -11,6 +11,52 @@
     @apply flex items-center shrink-0;
   }
 
+  /* Pílula central com as 3 categorias */
+  .horizontal-categories-pill {
+    @apply items-center gap-1.5 py-1 px-2 rounded-full bg-slate-900/60 border border-slate-800/70 backdrop-blur-sm shadow-inner;
+
+    .category-trigger-btn {
+      @apply flex items-center gap-1.5 px-3.5 py-1.5 text-xs xl:text-sm font-medium text-slate-300 hover:text-white rounded-full transition-all duration-200 cursor-pointer select-none hover:bg-slate-800/60 focus:outline-none;
+
+      &.is-open {
+        @apply text-sky-300 bg-slate-800/80 shadow-sm shadow-black/20;
+      }
+    }
+
+    /* Contentor suspenso absoluto */
+    .category-dropdown-panel {
+      @apply absolute top-full left-1/2 -translate-x-1/2 pt-2 z-50;
+
+      .category-dropdown-inner {
+        @apply p-2 rounded-2xl bg-slate-950/95 backdrop-blur-2xl border border-slate-800/90 shadow-2xl shadow-black/70 min-w-[220px] whitespace-nowrap;
+      }
+
+      .dropdown-item-link {
+        @apply flex items-center gap-2.5 px-3 py-2 rounded-xl text-xs font-medium text-slate-400 hover:text-white hover:bg-slate-800/60 transition-all duration-150 cursor-pointer select-none;
+
+        .dropdown-item-dot {
+          @apply w-1.5 h-1.5 rounded-full bg-slate-600/70 transition-all duration-150 shrink-0;
+        }
+
+        &:hover .dropdown-item-dot {
+          @apply bg-slate-300;
+        }
+
+        .dropdown-item-text {
+          @apply capitalize tracking-wide;
+        }
+
+        &.is-active {
+          @apply text-sky-300 font-semibold bg-sky-500/15 border border-sky-400/25 shadow-sm shadow-sky-500/10;
+
+          .dropdown-item-dot {
+            @apply bg-sky-400 scale-125 shadow-sm shadow-sky-400/80;
+          }
+        }
+      }
+    }
+  }
+
   .navbar-actions {
     @apply flex items-center gap-3;
 
@@ -19,7 +65,7 @@
     }
 
     .burger {
-      @apply 2xl:hidden;
+      @apply lg:hidden;
 
       .burger-btn {
         @apply flex items-center justify-center p-2 rounded-xl text-slate-300 hover:text-white bg-slate-900/70 border border-slate-800 hover:border-slate-700 hover:bg-slate-800 transition-all;

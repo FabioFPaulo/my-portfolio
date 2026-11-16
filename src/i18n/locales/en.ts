@@ -12,6 +12,11 @@ export const en = {
     publications: "Publications",
     cv: "Resume",
     downloadCv: "Download Resume",
+    categories: {
+      profile: "Profile",
+      path: "Career & Education",
+      engineering: "Engineering & Research",
+    },
   },
   banner: {
     greeting: "HELLO WORLD, I'M",

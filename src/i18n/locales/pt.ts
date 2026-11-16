@@ -12,6 +12,11 @@ export const pt = {
     publications: "Publicações",
     cv: "Currículo",
     downloadCv: "Descarregar Currículo",
+    categories: {
+      profile: "Perfil",
+      path: "Percurso",
+      engineering: "Engenharia & Ciência",
+    },
   },
   banner: {
     greeting: "OLÁ MUNDO, EU SOU",
