@@ -13,11 +13,11 @@ export const navGroups: INavGroup[] = [
     items: [
       {
         label: "home",
-        url: "home",
+        url: "#home",
       },
       {
         label: "about me",
-        url: "about-me",
+        url: "#about-me",
       },
     ],
   },
@@ -27,15 +27,15 @@ export const navGroups: INavGroup[] = [
     items: [
       {
         label: "education",
-        url: "academic-education",
+        url: "#academic-education",
       },
       {
         label: "experiences",
-        url: "experiences",
+        url: "#experiences",
       },
       {
         label: "leadership",
-        url: "leadership",
+        url: "#leadership",
       },
     ],
   },
@@ -45,23 +45,23 @@ export const navGroups: INavGroup[] = [
     items: [
       {
         label: "projects",
-        url: "projects",
+        url: "#projects",
       },
       {
         label: "skills",
-        url: "languages",
+        url: "#languages",
       },
       {
         label: "publications",
-        url: "publications",
+        url: "#publications",
       },
       {
         label: "conferences",
-        url: "conferences",
+        url: "#conferences",
       },
       {
         label: "certifications",
-        url: "certifications",
+        url: "#certifications",
       },
     ],
   },

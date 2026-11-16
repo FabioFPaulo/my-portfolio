@@ -1,8 +1,11 @@
-import {createRoot} from 'react-dom/client'
-import './index.css'
-import './i18n'
-import App from './App.tsx'
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter } from 'react-router';
+import './index.css';
+import './i18n';
+import App from './App.tsx';
 
 createRoot(document.getElementById('root')!).render(
-    <App/>,
-)
+  <BrowserRouter basename={import.meta.env.BASE_URL}>
+    <App />
+  </BrowserRouter>,
+);

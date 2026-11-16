@@ -9,7 +9,7 @@ Este repositório contém o código-fonte do portfólio pessoal de **Fábio Paul
 * **Stack Principal:** React 18 (SPA), TypeScript (strict mode), Vite 5.
 * **Estilização Híbrida Atual:** Classes utilitárias Tailwind CSS combinadas com folhas de estilo Sass (`.scss`) locais via `@apply` e seletores aninhados.
 * **Gestão de Estado:** React Context API nativo (`src/contexts/app/index.tsx`) com Hook customizado (`useApp`).
-* **Animações e Interatividade:** `framer-motion` para animações baseadas em scroll (`useInView`, `useAnimation`) e `react-scroll` para âncoras de navegação suave.
+* **Animações e Interatividade:** `framer-motion` para animações baseadas em scroll (`useInView`, `useAnimation`) e `react-router` para roteamento SPA e navegação por âncoras `#<nome-section>` com rolagem suave.
 
 ---
 

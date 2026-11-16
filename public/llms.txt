@@ -1,0 +1,31 @@
+# Fábio Paulo — Software Engineer & MSc Researcher
+
+> Computer Engineer and MSc in Informatics from the Polytechnic University of Bragança (IPB). Specializing in React, TypeScript, Kotlin, Python, and applied Deep Learning for real-time Web3D gesture manipulation.
+
+## Profile Summary
+- **Name:** Fábio Paulo
+- **Role:** Software Engineer & MSc Researcher
+- **Location:** Bragança, Portugal
+- **Email:** fabiofrapaulo@outlook.pt
+- **Portfolio:** https://fabiofpaulo.github.io/my-portfolio/
+- **GitHub:** https://github.com/FabioFPaulo
+
+## Core Competencies & Tech Stack
+- **Frontend & Web:** TypeScript, React, Vite, Angular, Tailwind CSS, Framer Motion, Three.js / Web3D.
+- **Backend & APIs:** Python (Flask), Kotlin (Ktor), Node.js, REST APIs.
+- **Mobile Development:** Kotlin, Android SDK, Jetpack Compose.
+- **Artificial Intelligence & Deep Learning:** MediaPipe, LSTM / GRU, Computer Vision, real-time gesture tracking and 3D rendering optimization.
+- **DevOps & Tooling:** Docker, Git, Linux, GitHub Actions.
+
+## Academic & Research Background
+- **Master's Degree (MSc) in Informatics** — Polytechnic University of Bragança (IPB)
+  - Thesis: Real-Time 3D Gesture Manipulation with LSTM/GRU and MediaPipe in Web3D.
+- **Bachelor's Degree in Computer Engineering** — Polytechnic University of Bragança (IPB)
+- **CTeSP in Informatics Networks and Systems** — IPB
+
+## Key Portfolio Sections
+- [About Me](https://fabiofpaulo.github.io/my-portfolio/#about-me): Biographical overview and professional philosophy.
+- [Academic Education](https://fabiofpaulo.github.io/my-portfolio/#academic-education): University degrees and academic achievements.
+- [Work Experiences](https://fabiofpaulo.github.io/my-portfolio/#experiences): Research, teaching assistance, and software engineering roles.
+- [Projects](https://fabiofpaulo.github.io/my-portfolio/#projects): Open source applications, 3D gesture controllers, and web apps.
+- [Publications & Conferences](https://fabiofpaulo.github.io/my-portfolio/#publications): Scientific proceedings and research presentations.

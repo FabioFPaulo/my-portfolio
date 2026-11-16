@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link } from "react-router";
 import Container from "@/components/container";
+import { scrollToSection } from "@/utils/navigation";
 import "./index.css";
 
 export default function FooterSection() {
@@ -16,10 +17,7 @@ export default function FooterSection() {
   };
 
   const scrollToTop = () => {
-    scroll.scrollToTop({
-      duration: 600,
-      smooth: "easeInOutQuart",
-    });
+    scrollToSection("home");
   };
 
   return (
@@ -61,10 +59,8 @@ export default function FooterSection() {
             <ul className="footer-links-list">
               <li>
                 <Link
-                  to="home"
-                  smooth
-                  offset={-70}
-                  duration={500}
+                  to="#home"
+                  onClick={() => scrollToSection("home")}
                   className="footer-nav-link"
                 >
                   <svg className="link-arrow" viewBox="0 0 20 20" fill="currentColor">
@@ -75,10 +71,8 @@ export default function FooterSection() {
               </li>
               <li>
                 <Link
-                  to="about-me"
-                  smooth
-                  offset={-70}
-                  duration={500}
+                  to="#about-me"
+                  onClick={() => scrollToSection("about-me")}
                   className="footer-nav-link"
                 >
                   <svg className="link-arrow" viewBox="0 0 20 20" fill="currentColor">
@@ -89,10 +83,8 @@ export default function FooterSection() {
               </li>
               <li>
                 <Link
-                  to="academic-education"
-                  smooth
-                  offset={-70}
-                  duration={500}
+                  to="#academic-education"
+                  onClick={() => scrollToSection("academic-education")}
                   className="footer-nav-link"
                 >
                   <svg className="link-arrow" viewBox="0 0 20 20" fill="currentColor">
@@ -103,10 +95,8 @@ export default function FooterSection() {
               </li>
               <li>
                 <Link
-                  to="experiences"
-                  smooth
-                  offset={-70}
-                  duration={500}
+                  to="#experiences"
+                  onClick={() => scrollToSection("experiences")}
                   className="footer-nav-link"
                 >
                   <svg className="link-arrow" viewBox="0 0 20 20" fill="currentColor">
@@ -117,10 +107,8 @@ export default function FooterSection() {
               </li>
               <li>
                 <Link
-                  to="projects"
-                  smooth
-                  offset={-70}
-                  duration={500}
+                  to="#projects"
+                  onClick={() => scrollToSection("projects")}
                   className="footer-nav-link"
                 >
                   <svg className="link-arrow" viewBox="0 0 20 20" fill="currentColor">
@@ -138,10 +126,8 @@ export default function FooterSection() {
             <ul className="footer-links-list">
               <li>
                 <Link
-                  to="leadership"
-                  smooth
-                  offset={-70}
-                  duration={500}
+                  to="#leadership"
+                  onClick={() => scrollToSection("leadership")}
                   className="footer-nav-link"
                 >
                   <svg className="link-arrow" viewBox="0 0 20 20" fill="currentColor">
@@ -152,10 +138,8 @@ export default function FooterSection() {
               </li>
               <li>
                 <Link
-                  to="conferences"
-                  smooth
-                  offset={-70}
-                  duration={500}
+                  to="#conferences"
+                  onClick={() => scrollToSection("conferences")}
                   className="footer-nav-link"
                 >
                   <svg className="link-arrow" viewBox="0 0 20 20" fill="currentColor">
@@ -166,10 +150,8 @@ export default function FooterSection() {
               </li>
               <li>
                 <Link
-                  to="certifications"
-                  smooth
-                  offset={-70}
-                  duration={500}
+                  to="#certifications"
+                  onClick={() => scrollToSection("certifications")}
                   className="footer-nav-link"
                 >
                   <svg className="link-arrow" viewBox="0 0 20 20" fill="currentColor">
@@ -180,10 +162,8 @@ export default function FooterSection() {
               </li>
               <li>
                 <Link
-                  to="languages"
-                  smooth
-                  offset={-70}
-                  duration={500}
+                  to="#languages"
+                  onClick={() => scrollToSection("languages")}
                   className="footer-nav-link"
                 >
                   <svg className="link-arrow" viewBox="0 0 20 20" fill="currentColor">
@@ -194,10 +174,8 @@ export default function FooterSection() {
               </li>
               <li>
                 <Link
-                  to="publications"
-                  smooth
-                  offset={-70}
-                  duration={500}
+                  to="#publications"
+                  onClick={() => scrollToSection("publications")}
                   className="footer-nav-link"
                 >
                   <svg className="link-arrow" viewBox="0 0 20 20" fill="currentColor">

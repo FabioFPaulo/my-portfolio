@@ -182,17 +182,23 @@ sequenceDiagram
 
 ---
 
-## 4. Padrões de Navegação e Rolagem Suave (Smooth Scrolling)
+## 4. Padrões de Navegação e Roteamento (React Router & Hash Anchors)
 
-* Em vez de rotas SPA tradicionais (`react-router-dom`), a aplicação é desenhada como **One-Page Storytelling**.
-* A navegação é coordenada pelo pacote `react-scroll` via componente `<Link to="..." smooth spy offset={-60} />`.
+* A navegação é coordenada pelo **React Router** (`BrowserRouter` com `basename={import.meta.env.BASE_URL}`) em conjunto com âncoras no formato `#<nome-section>`.
+* Permite **Deep Linking** completo (acesso direto a `/#<nome-section>`), sincronização bidirecional do URL no browser e rolagem suave compensando a altura da Navbar fixa (offset de 70px).
 * Cada secção possui um identificador unívoco (`id`):
-  * `home` -> Banner principal
-  * `academic-education` -> Formação académica
-  * `experiences` -> Experiência profissional
-  * `projects` -> Vitrina de projetos
-  * `languages` -> Competências técnicas e linguagens
-  * `footer` -> Informações finais
+  * `#home` -> Banner principal
+  * `#about-me` -> Sobre mim e contactos
+  * `#academic-education` -> Formação académica
+  * `#experiences` -> Histórico e cronologia profissional
+  * `#projects` -> Vitrina de projetos pessoais
+  * `#leadership` -> Atividades de liderança e mentoria
+  * `#conferences` -> Conferências e seminários
+  * `#certifications` -> Certificações e workshops
+  * `#languages` -> Competências técnicas e linguagens
+  * `#publications` -> Publicações e artigos científicos
+  * `#footer` -> Rodapé e regresso ao topo
+* O componente `HashScrollHandler` garante que a rolagem suave seja executada assim que o preloader inicial (`isLoading === false`) termina, e o hook `useSectionObserver` sincroniza a secção ativa no ecrã com a Navbar e a barra de endereços do navegador.
 
 ---
 

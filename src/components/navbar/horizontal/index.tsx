@@ -5,9 +5,11 @@ import NavbarLogo from "../logo";
 import LanguageSelector from "@/components/language-selector";
 import { navGroups } from "../nav-groups";
 import NavbarCategoryDropdown from "./dropdown";
+import { useSectionObserver } from "@/hooks/useSectionObserver";
 
 export default function NavbarHorizontal(props: IProps) {
   const { t } = useTranslation();
+  const activeSection = useSectionObserver();
 
   return (
     <nav id="horizontal-nav">
@@ -20,7 +22,11 @@ export default function NavbarHorizontal(props: IProps) {
         {/* Categorias Centrais Suspensas (Desktop >= lg) */}
         <div className="horizontal-categories-pill hidden lg:flex">
           {navGroups.map((group) => (
-            <NavbarCategoryDropdown key={group.id} group={group} />
+            <NavbarCategoryDropdown
+              key={group.id}
+              group={group}
+              activeSection={activeSection}
+            />
           ))}
         </div>
 

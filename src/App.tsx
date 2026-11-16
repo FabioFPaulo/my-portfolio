@@ -10,10 +10,14 @@ import LanguagesSection from "./sections/languages";
 import PublicationsSection from "./sections/publications";
 import FooterSection from "./sections/footer";
 import AppProvider from "./contexts/app";
+import HashScrollHandler from "./components/router/HashScrollHandler";
+import HeadSEO from "./components/seo/HeadSEO";
 
 function App() {
   return (
     <AppProvider totalImages={2}>
+      <HeadSEO />
+      <HashScrollHandler />
       <Banner />
       <AboutSection />
       <AcademicSection />
