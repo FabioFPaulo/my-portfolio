@@ -6,6 +6,7 @@ import {items} from "../utils";
 import NavabarItemComponent from "./item";
 import NavbarLogo from "../logo";
 import LanguageSelector from "@/components/language-selector";
+import { useSectionObserver } from "@/hooks/useSectionObserver";
 import "./index.css";
 
 const panelVariants = {
@@ -30,6 +31,7 @@ const listVariants = {
 
 export default function NavbarVertical(props: IProps) {
     const {t} = useTranslation();
+    const activeSection = useSectionObserver();
     const [isHidden, setIsHidden] = useState(!props.isOpen);
     const mainControls = useAnimation();
 
@@ -102,7 +104,12 @@ export default function NavbarVertical(props: IProps) {
                         className="space-y-1"
                     >
                         {items.map((item, index) => (
-                            <NavabarItemComponent item={item} key={index}/>
+                            <NavabarItemComponent
+                                item={item}
+                                key={index}
+                                isActive={item.url === `#${activeSection}`}
+                                onClick={props.toggle}
+                            />
                         ))}
                     </motion.ul>
                 </div>

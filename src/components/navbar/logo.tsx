@@ -1,12 +1,11 @@
-import { Link } from "react-scroll";
+import { Link } from "react-router";
+import { scrollToSection } from "@/utils/navigation";
 
 export default function NavbarLogo() {
   return (
     <Link
-      to="home"
-      smooth
-      spy
-      offset={-70}
+      to="#home"
+      onClick={() => scrollToSection("home")}
       className="flex items-center gap-3 cursor-pointer group"
     >
       <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-sky-400 via-blue-500 to-indigo-600 flex items-center justify-center shadow-lg shadow-sky-500/20 group-hover:shadow-sky-500/40 transition-all duration-300 group-hover:scale-105">

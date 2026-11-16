@@ -4,11 +4,21 @@ import { useTranslation } from "react-i18next";
 import type { INavGroup } from "../nav-groups";
 import NavbarHorizontalItem from "./item";
 
-export default function NavbarCategoryDropdown({ group }: { group: INavGroup }) {
+export default function NavbarCategoryDropdown({
+  group,
+  activeSection,
+}: {
+  group: INavGroup;
+  activeSection?: string;
+}) {
   const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const hasActiveItem = Boolean(
+    activeSection && group.items.some((item) => item.url === `#${activeSection}`)
+  );
 
   const handleMouseEnter = () => {
     if (timeoutRef.current) {
@@ -67,19 +77,24 @@ export default function NavbarCategoryDropdown({ group }: { group: INavGroup }) 
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      {/* Botão de Categoria */}
+      {/* Botão da Categoria Principal */}
       <button
         type="button"
         onClick={() => setIsOpen((prev) => !prev)}
         aria-expanded={isOpen}
         aria-haspopup="true"
-        className={`category-trigger-btn ${isOpen ? "is-open" : ""}`}
+        className={`category-trigger-btn ${isOpen ? "is-open" : ""} ${
+          hasActiveItem ? "is-active" : ""
+        }`}
       >
+        {hasActiveItem && (
+          <span className="category-active-dot" aria-hidden="true" />
+        )}
         <span>{t(group.labelKey)}</span>
         <svg
           className={`w-3.5 h-3.5 transition-transform duration-200 ${
-            isOpen ? "rotate-180 text-sky-400" : "text-slate-400 group-hover/category:text-slate-200"
-          }`}
+            isOpen ? "rotate-180" : ""
+          } ${hasActiveItem ? "text-sky-400" : "text-slate-400 group-hover/category:text-slate-200"}`}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -110,6 +125,7 @@ export default function NavbarCategoryDropdown({ group }: { group: INavGroup }) 
                   <NavbarHorizontalItem
                     key={item.url}
                     item={item}
+                    isActive={item.url === `#${activeSection}`}
                     onClick={handleClose}
                   />
                 ))}

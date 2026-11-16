@@ -1,8 +1,9 @@
 import { useEffect, useRef } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
-import { Link } from "react-scroll";
+import { Link } from "react-router";
 import { useTranslation } from "react-i18next";
 import useApp from "@/hooks/useApp";
+import { scrollToSection } from "@/utils/navigation";
 import { componentData } from "./utils";
 import "./index.css";
 
@@ -171,10 +172,8 @@ export default function Banner() {
             </a>
 
             <Link
-              to="projects"
-              smooth
-              offset={-70}
-              duration={500}
+              to="#projects"
+              onClick={() => scrollToSection("projects")}
               className="btn-hero-secondary"
             >
               <span>{t("banner.exploreProjects")}</span>

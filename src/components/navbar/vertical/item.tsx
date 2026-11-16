@@ -1,8 +1,9 @@
 import type {IItem} from "../types";
-import {Link} from "react-scroll";
+import {Link} from "react-router";
 import {motion} from "framer-motion";
 import {useTranslation} from "react-i18next";
 import {getNavLabel} from "../nav-translation";
+import {scrollToSection} from "@/utils/navigation";
 
 const itemVariants = {
     open: {
@@ -20,17 +21,30 @@ const itemVariants = {
     },
 };
 
-export default function NavabarItemComponent({item}: { item: IItem }) {
+export default function NavabarItemComponent({
+    item,
+    isActive = false,
+    onClick,
+}: {
+    item: IItem;
+    isActive?: boolean;
+    onClick?: () => void;
+}) {
     const {t} = useTranslation();
+
+    const handleClick = () => {
+        scrollToSection(item.url);
+        if (onClick) onClick();
+    };
+
     return (
         <motion.li variants={itemVariants} className="list-none">
             <Link
-                smooth
-                spy
                 to={item.url}
-                offset={-70}
-                activeClass="sidebar-active-link"
-                className="block py-3 px-4 text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/60 rounded-xl transition-all capitalize cursor-pointer"
+                onClick={handleClick}
+                className={`block py-3 px-4 text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/60 rounded-xl transition-all capitalize cursor-pointer ${
+                    isActive ? "sidebar-active-link" : ""
+                }`}
             >
                 {getNavLabel(item.label, t)}
             </Link>

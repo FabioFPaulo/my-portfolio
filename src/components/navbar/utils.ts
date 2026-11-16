@@ -3,42 +3,42 @@ import type {IItem} from "./types";
 export const items: IItem[] = [
     {
         label: "home",
-        url: "home",
+        url: "#home",
     },
     {
         label: "about me",
-        url: "about-me",
+        url: "#about-me",
     },
     {
         label: "education",
-        url: "academic-education",
+        url: "#academic-education",
     },
     {
         label: "experiences",
-        url: "experiences",
+        url: "#experiences",
     },
     {
         label: "projects",
-        url: "projects",
+        url: "#projects",
     },
     {
         label: "leadership",
-        url: "leadership",
+        url: "#leadership",
     },
     {
         label: "conferences",
-        url: "conferences",
+        url: "#conferences",
     },
     {
         label: "certifications",
-        url: "certifications",
+        url: "#certifications",
     },
     {
         label: "skills",
-        url: "languages",
+        url: "#languages",
     },
     {
         label: "publications",
-        url: "publications",
+        url: "#publications",
     },
 ];

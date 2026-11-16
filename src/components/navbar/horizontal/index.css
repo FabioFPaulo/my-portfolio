@@ -16,10 +16,22 @@
     @apply items-center gap-1.5 py-1 px-2 rounded-full bg-slate-900/60 border border-slate-800/70 backdrop-blur-sm shadow-inner;
 
     .category-trigger-btn {
-      @apply flex items-center gap-1.5 px-3.5 py-1.5 text-xs xl:text-sm font-medium text-slate-300 hover:text-white rounded-full transition-all duration-200 cursor-pointer select-none hover:bg-slate-800/60 focus:outline-none;
+      @apply flex items-center gap-1.5 px-3.5 py-1.5 text-xs xl:text-sm font-medium text-slate-300 hover:text-white rounded-full transition-all duration-200 cursor-pointer select-none hover:bg-slate-800/60 focus:outline-none border border-transparent;
+
+      .category-active-dot {
+        @apply w-1.5 h-1.5 rounded-full bg-sky-400 shadow-sm shadow-sky-400/80 shrink-0 animate-pulse;
+      }
+
+      &.is-active {
+        @apply text-sky-300 font-semibold bg-sky-500/15 border-sky-400/30 shadow-sm shadow-sky-500/10;
+      }
 
       &.is-open {
         @apply text-sky-300 bg-slate-800/80 shadow-sm shadow-black/20;
+
+        &.is-active {
+          @apply text-sky-300 bg-sky-500/20 border-sky-400/40;
+        }
       }
     }
 
