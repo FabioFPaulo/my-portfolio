@@ -37,6 +37,9 @@ export const AUTHOR_EMAIL = "fabiofrapaulo@outlook.pt";
 export const AUTHOR_GITHUB = "https://github.com/FabioFPaulo";
 export const AUTHOR_LOCATION = "Bragança, Portugal";
 
+// Verificação Google Search Console
+export const GOOGLE_SITE_VERIFICATION = "Hdmq328Tkgte8NL8LtAVY253TMWaln34RVduLH8zubg";
+
 // Metadados Open Graph & Social Cards
 export const OG_IMAGE_PATH = `${SITE_URL}/images/person_lg.png`;
 export const OG_IMAGE_WIDTH = 1200;
